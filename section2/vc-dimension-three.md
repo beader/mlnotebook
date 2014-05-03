@@ -1,6 +1,6 @@
 笔记整理自台大林轩田老师的开放课程-[机器学习基石](https://www.coursera.org/course/ntumlone)，笔记中所有图片来自于课堂讲义。
 
-&emsp;&emsp;[上一篇][1]讲到了VC Dimension以及VC Bound。VC Bound所描述的是在给定数据量N以及给定的Hypothesis Set的条件下，遇到坏事情的概率的上界，即$E\_{in}$与$E\_{out}$差很远的概率，最多是多少。VC Bound用公式表示就是：
+&emsp;&emsp;[上一篇](http://beader.me/2014/02/15/vc-dimension-two/)讲到了VC Dimension以及VC Bound。VC Bound所描述的是在给定数据量N以及给定的Hypothesis Set的条件下，遇到坏事情的概率的上界，即$E\_{in}$与$E\_{out}$差很远的概率，最多是多少。VC Bound用公式表示就是：
 
 <script type="math/tex; mode=display">
 \begin{aligned}
@@ -42,7 +42,7 @@
 
 ## 几种Hypothesis Set的VC Dimension
 
-&emsp;&emsp;对于以下几个$\mathcal{H}$，由于之前我们已经知道了他们的成长函数(见[机器学习笔记-VC Dimension, Part I][2])，因此可以根据$m\_{\mathcal{H}}(N)\leq N^{d\_{vc}}$，直接得到他们的VC Dimension：
+&emsp;&emsp;对于以下几个$\mathcal{H}$，由于之前我们已经知道了他们的成长函数(见[机器学习笔记-VC Dimension, Part I](http://beader.me/2014/01/23/vc-dimension-one/))，因此可以根据$m\_{\mathcal{H}}(N)\leq N^{d\_{vc}}$，直接得到他们的VC Dimension：
 
  - positive rays: $m\_{\mathcal{H}}(N)=N+1$，看N的最高次项的次数，知道$d\_{vc}=1$
  - positive intervals: $m\_{\mathcal{H}}(N)=\frac{1}{2}N^2+\frac{1}{2}N+1$，$d\_{vc}=2$
@@ -70,7 +70,7 @@ That is, each hypothesis makes a prediction by first using the $d$ thresholds $t
 
 &emsp;&emsp;如何去理解题意呢？用一个2维的图来帮助理解：
 
-![][3]
+![](images/2d_sim_decision_tree.png)
 
 &emsp;&emsp;首先把二维实数空间$\mathbb{R}^2$中的向量$x$，通过各个维度上的阈值$t\_i$，转换到${\{0,1\}}^2$空间下的一个点$v$，规则为$v\_i=[x\_i\gt t\_i]$。譬如对于$t=[5,10]$，$x=[6,8]$可以转换为新的空间下的$[1,0]$。这样一来，原来的$\mathbb{R}^2$空间就可以被划分为4个区块$S\_1$~$S\_4$（hyper-rectangular regions）。$\mathcal{H}$中每一个方程$h$代表着一种对这4块区域是”圈圈“还是”叉叉“的决策(decision)，并且这4块区域的决策是互相独立的，$S\_1$的决策是”圈圈“还是”叉叉“和$S\_2,S\_3,S\_4$都没有关系。
 
@@ -80,7 +80,7 @@ That is, each hypothesis makes a prediction by first using the $d$ thresholds $t
 
 &emsp;&emsp;我们再来回顾一下Positive Intervals： 
 
-![][4]
+![](images/positive_intervals.png)
 
 &emsp;&emsp;也可以按照上面的方法去理解，Positive Intervals有两个thresholds，把直线切分为3块空间。但这3块空间并不是相互独立，中间的部分永远是+1，左右两边永远是-1，所以还要具体看它能够shatter掉多少个点，这里最多最多只能shatter掉2个点，它的$d\_{vc}=2$。
 
@@ -139,7 +139,7 @@ m _ {\mathcal{H}_1\cup \mathcal{H}_2}(N) \leq \sum _ {i=0} ^ {d_1} \binom{N}{i} 
 
 ## 简单 v.s 复杂
 
-&emsp;&emsp;[机器学习笔记-VC Dimension, Part I][5]一开始就提到，learning的问题应该关注的两个最重要的问题是：1.能不能使$E\_{in}$与$E\_{out}$很接近，2.能不能使$E\_{in}$足够小。
+&emsp;&emsp;[机器学习笔记-VC Dimension, Part I](http://beader.me/2014/01/23/vc-dimension-one/)一开始就提到，learning的问题应该关注的两个最重要的问题是：1.能不能使$E\_{in}$与$E\_{out}$很接近，2.能不能使$E\_{in}$足够小。
 
  - 对于相同的$\mathcal{D}$而言，$d\_{vc}$小的模型，其VC Bound比较小，比较容易保证$E\_{in}$与$E\_{out}$很接近，但较难做到小的$E\_{in}$，试想，对于2D Perceptron，如果规定它一定要过原点($d\_{vc}=2$)，则它就比没有规定要过原点($d\_{vc}=3$)的直线更难实现小的$E\_{in}$，因为可选的方程更少。2维平面的直线，就比双曲线($d\_{vc}=6$)，更难实现小的$E\_{in}$。
  - 对于相同的$\mathcal{D}$而言，$d\_{vc}$大的模型，比较容易实现小的$E\_{in}$，但是其VC Bound就会很大，很难保证模型对$\mathcal{D}$之外的世界也能有同样强的预测能力。
@@ -159,16 +159,9 @@ m _ {\mathcal{H}_1\cup \mathcal{H}_2}(N) \leq \sum _ {i=0} ^ {d_1} \binom{N}{i} 
 
 &emsp;&emsp;令$\Omega (N,\mathcal{H},\delta)=\sqrt{...}$，即上式的根号项为来自模型复杂度的，模型越复杂，$E\_{in}$与$E\_{out}$离得越远。
 
-![][6]
+![](images/model_complexity_curve.png)
 
 &emsp;&emsp;随着$d\_{vc}$的上升，$E\_{in}$不断降低，而$\Omega$项不断上升，他们的上升与下降的速度在每个阶段都是不同的，因此我们能够寻找一个二者兼顾的，比较合适的$d\_{vc}^{\*}$，用来决定应该使用多复杂的模型。
 
 &emsp;&emsp;反过来，如果我们需要使用$d\_{vc}=3$这种复杂程度的模型，并且想保证$\epsilon = 0.1$，置信度$1-\delta =90\%$，我们也可以通过VC Bound来求得大致需要的数据量$N$。通过简单的计算可以得到理论上，我们需要$N\approx 10,000d\_{vc}$笔数据，但VC Bound事实上是一个极为宽松的bound，因为它对于任何演算法$\mathcal{A}$，任何分布的数据，任何目标函数$f$都成立，所以经验上，常常认为$N\approx 10d\_{vc}$就可以有不错的结果。
 
-
-  [1]: http://beader.me/2014/02/15/vc-dimension-two/
-  [2]: http://beader.me/2014/01/23/vc-dimension-one/
-  [3]: https://lh6.googleusercontent.com/-MowAEgU80jo/UwgfsfA8bLI/AAAAAAAAAo4/XZdUKhe_jC4/s800/2d_sim_decision_tree.png "2d_sim_decision_tree.png"
-  [4]: https://lh3.googleusercontent.com/-tF5UPy7jJrc/UwgleYKJooI/AAAAAAAAApI/9pHMnsf0yWk/s800/positive_intervals.png "positive_intervals.png"
-  [5]: http://beader.me/2014/01/23/vc-dimension-one/
-  [6]: https://lh5.googleusercontent.com/--puOr013Czk/UwhRJhpC-1I/AAAAAAAAApw/onPTyBnuBLA/s500/model_complexity_curve.png "model_complexity_curve.png"

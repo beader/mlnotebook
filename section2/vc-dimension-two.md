@@ -1,9 +1,9 @@
-&emsp;&emsp;[上一篇][1]用成长函数$m\_{\mathcal{H}}(N)$来衡量Hypotheses Set $\mathcal{H}$中有效的方程的数量(Effective Number of Hypotheses)，以取代Hoeffding's Inequality中的大$M$，并用一种间接的方式 --- break point，来寻找$m\_{\mathcal{H}}(N)$的上界，从而避免了直接研究$\mathcal{H}$的成长函数的困难。
+&emsp;&emsp;[上一篇](http://beader.me/2014/01/23/vc-dimension-one/)用成长函数$m\_{\mathcal{H}}(N)$来衡量Hypotheses Set $\mathcal{H}$中有效的方程的数量(Effective Number of Hypotheses)，以取代Hoeffding's Inequality中的大$M$，并用一种间接的方式 --- break point，来寻找$m\_{\mathcal{H}}(N)$的上界，从而避免了直接研究$\mathcal{H}$的成长函数的困难。
 
 <!--more-->
 ## 学习所需"维他命"(The VC Dimension)
 $$m\_{\mathcal{H}}(N)\leq \sum\_{i=0}^{k-1}\binom {N}{i}$$
-&emsp;&emsp;根据之前得到的式子，我们知道如果一个$\mathcal{H}$存在break point，我们就有办法保证学出来的东西能够“举一反三”(good generalization)。一般来说break point越大的$\mathcal{H}$，其复杂度也更高，我们可以使用vc dimension来描述一个$\mathcal{H}$的复杂程度，这个vc dimension来自Vladimir Vapnik与Alexey Chervonenkis所提出的[VC Theory][2]。
+&emsp;&emsp;根据之前得到的式子，我们知道如果一个$\mathcal{H}$存在break point，我们就有办法保证学出来的东西能够“举一反三”(good generalization)。一般来说break point越大的$\mathcal{H}$，其复杂度也更高，我们可以使用vc dimension来描述一个$\mathcal{H}$的复杂程度，这个vc dimension来自Vladimir Vapnik与Alexey Chervonenkis所提出的[VC Theory](http://en.wikipedia.org/wiki/Vapnik%E2%80%93Chervonenkis_theory)。
 
 &emsp;&emsp;根据定义，一个$\mathcal{H}$的vc dimension(记为$d\_{vc}(\mathcal{H})$)，是这个$\mathcal{H}$最多能够shatter掉的点的数量 (the largest value of N for which $m\_{\mathcal{H}}(N)=2^N$)，如果不管多少个点$\mathcal{H}$都能够shatter他们，则$d\_{vc}(H)=\infty$。不难看出$d\_{vc}$与break point k的关系，有$k=d\_{vc}+1$，因此我们用这个$d\_{vc}$来描述成长函数的上界：
 $$m\_{\mathcal{H}}(N)\leq \sum\_{i=0}^{d\_{vc}} \binom {N}{i}$$
@@ -21,7 +21,7 @@ $$\mathbb{P}[\exists h \in \mathcal{H}\text{ s.t. } |E\_{in}(h)-E\_{out}(h)|\gt 
 &emsp;&emsp;但事实上上面的不等式是不严谨的，为什么呢？$m\_{\mathcal{H}}(N)$描述的是$\mathcal{H}$作用于数据量为$N$的资料$\mathcal{D}$，有效的方程数，因此$\mathcal{H}$当中每一个$h$作用于$\mathcal{D}$都能算出一个$E\_{in}$来，一共能有$m\_{\mathcal{H}}(N)$个不同的$E\_{in}$，是一个有限的数。但在out of sample的世界里(总体)，往往存在无限多个点，平面中任意一条直线，随便转一转动一动，就能产生一个不同的$E\_out$来。$E\_{in}$的可能取值是有限个的，而$E\_{out}$的可能取值是无限的，无法直接套用union bound，我们得先把上面那个无限多种可能的$E\_{out}$换掉。那么如何把$E\_{out}$变成有限个呢？  
 &emsp;&emsp;假设我们能从总体当中再获得一份$N$笔的验证资料(verification set)$\mathcal{D}'$，对于任何一个$h$我们可以算出它作用于$\mathcal{D}'$上的$E\_{in}^{'}$，由于$\mathcal{D}'$也是总体的一个样本，因此如果$E\_{in}$和$E\_{out}$离很远，有非常大的可能$E\_{in}$和$E\_{in}^{'}$也会离得比较远。 
 
-![][3]
+![](images/pdf_of_ein.png)
 
 &emsp;&emsp;事实上当N很大的时候，$E\_{in}$和$E\_{in}^{'}$可以看做服从以$E\_{out}$为中心的近似正态分布(Gaussian)，如上图。$[|E\_{in}-E\_{out}|\text{ is large}]$这个事件取决于$\mathcal{D}$，如果$[|E\_{in}-E\_{out}|\text{ is large}]$，则如果我们从总体中再抽一份$\mathcal{D}^{'}$出来，有50%左右的可能性会发生$[|E\_{in}-E\_{in}^{'}|\text{ is large}]$，还有大约50%的可能$[|E\_{in}-E\_{in}^{'}|\text{ is not large}]$。  
 &emsp;&emsp;因此，我们可以得到$\mathbb{P}[|E\_{in}-E\_{out}|\text{ is large}]$的一个大概的上界可以是$2\mathbb{P}[|E\_{in}-E\_{in}^{'}|\text{ is large}]$，以此为启发去寻找二者之间的关系。
@@ -95,7 +95,7 @@ $$(1-2e^{-\frac{1}{2}\epsilon^2N})\mathbb{P}[\underset{h\in \mathcal{H}}{sup}\ |
 
 $$\mathbb{P}[\underset{h\in \mathcal{H}}{sup}\ |E\_{in}(h)-E\_{out}(h)| \gt \epsilon]\leq 2\,\mathbb{P}[\underset{h\in \mathcal{H}}{sup}\ |E\_{in}(h)-E\_{in}^{'}(h)| \gt \frac{\epsilon}{2}]$$
 
-&emsp;&emsp;这样一来我们就把无限多种的$E\_{out}$换成了有限多种的$E\_{in}$，因为$\mathcal{D}$与$\mathcal{D}^{'}$的大小相等，都为$N$，因此我们手中一共有$2N$笔数据，这样$\mathcal{H}$作用于$\mathcal{D}+\mathcal{D}^{'}$最多能产生$m\_{\mathcal{H}}(2N)$种dichotomies。此时我们针对上面的不等式，就又可以使用union bound了。(关于union bound，可以参考上一篇[VC Dimension, Part I][4])
+&emsp;&emsp;这样一来我们就把无限多种的$E\_{out}$换成了有限多种的$E\_{in}$，因为$\mathcal{D}$与$\mathcal{D}^{'}$的大小相等，都为$N$，因此我们手中一共有$2N$笔数据，这样$\mathcal{H}$作用于$\mathcal{D}+\mathcal{D}^{'}$最多能产生$m\_{\mathcal{H}}(2N)$种dichotomies。此时我们针对上面的不等式，就又可以使用union bound了。(关于union bound，可以参考上一篇[VC Dimension, Part I](http://beader.me/2014/01/23/vc-dimension-one/))
 
 <script type="math/tex; mode=display">
 \begin{aligned}
@@ -130,7 +130,3 @@ $$|E\_{in}-E\_{in}^{'}|\gt \frac{\epsilon}{2} \Leftrightarrow |E\_{in} - \frac{E
 \end{aligned}
 </script>
 
-  [1]: http://beader.me/2014/01/23/vc-dimension-one/
-  [2]: http://en.wikipedia.org/wiki/Vapnik%E2%80%93Chervonenkis_theory
-  [3]: https://lh5.googleusercontent.com/-Zhjn_rgapGA/UuU-4vwVuPI/AAAAAAAAAno/hSbqGMTizXk/s0/pdf_of_ein.png "pdf_of_ein.png"
-  [4]: http://beader.me/2014/01/23/vc-dimension-one/

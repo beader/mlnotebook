@@ -1,4 +1,4 @@
-&emsp;&emsp;[上一篇][1]讲到，learning的时候如果遇上bad sample，如果遇上bad sample我们就无法保证$E\_{in}$和$E\_{out}$很接近。我们用了一个不等式来衡量遇上bad sample的概率：
+&emsp;&emsp;[上一篇](http://beader.me/2014/01/15/is-learning-feasible/)讲到，learning的时候如果遇上bad sample，如果遇上bad sample我们就无法保证$E\_{in}$和$E\_{out}$很接近。我们用了一个不等式来衡量遇上bad sample的概率：
 
 $$\mathbb{P}_\mathcal{D}[BAD\ D]\leq 2Mexp(-2\epsilon ^2N)$$
 
@@ -25,27 +25,27 @@ $$\mathbb{P}[\mathcal{B}\_1 or \mathcal{B}\_2 or ... or \mathcal{B}\_M] \leq \ma
 
 &emsp;&emsp;但事实上bad event并不是完全独立的。想象$\mathcal{H}$两个非常类似的方程$h\_1\approx h\_2$，他们遇到bad sample分别为事件$\mathcal{B}\_1$与$\mathcal{B}\_2$，因为这两个方程很接近，则往往$\mathcal{B}\_1$发生时，$\mathcal{B}\_2$也会发生，可以说$\mathcal{B}\_1$与$\mathcal{B}\_2$的重合度很高(overlapping)。
 
-![][2]
+![](images/hypothesis_overlap.png)  
 
 &emsp;&emsp;那么我们就会想，我们能不能把结果接近的那些方程看成一类，譬如有些方程他们的预测结果总是相同或是很接近的。
 
 &emsp;&emsp;假设我们的算法要在平面上挑选一条直线方程作为$g$,$\mathcal{H}=\{all\ lines\ in\  \mathbb{R}^2\}$，$\mathcal{H}$当中有无限多个方程，但我们可以把这些个方程归为两类。一类是把$x\_1$判断成圈圈的，另一类是把$x\_1$判断为叉叉的。
 
-![][3]
+![](images/1point2lines.png)  
 
 &emsp;&emsp;那如果我们手中有2个数据点$x\_1$和$x\_2$呢？这样的话$\mathcal{H}$中无数条直线可以分为4类。用这4类线对$x\_1$和$x\_2$进行预测，一共能产生4种不同的结果。
 
-![][4]
+![](images/2points4lines.png)  
 
 &emsp;&emsp;那如果我们手中有3个数据点$x\_1$、$x\_2$和$x\_3$呢？
 
-![][5]  
+![](images/3points8lines.png)  
 
 &emsp;&emsp;$\mathcal{H}$中最多有8类直线，作用于$\mathcal{D}$产生如上8种结果。
 
 &emsp;&emsp;那如果我们手中有4个数据点$x\_1$~$x\_4$，情况又会是怎样。前面的例子中我们基本上把各个数据点的情况用排列组合的方式组合出来即可。但对于4个以上的点而言，就不是那么容易了。
 
-![][6]  
+![](images/4points14lines.png)  
 &emsp;&emsp;在这16种组合中，就有两种是“直线方程”没有办法产生的结果。因此如果$\mathcal{H}$是2维空间中的所有直线，表面上看是在无数条直线方程中去挑，但由于大部分直线方程所产生的结果是一模一样的，结果不一样的直线的类别对应上面的例子分别为2类、4类、8类和14类(Effective Number of Lines)。属于同一类的直线，他们将同时遇到或不遇到bad sample，由于之前那个union bound是基于独立性的假设下的，因此$\mathcal{H}$遭遇bad sample的概率明显被夸大了。所以，我们应该把不等式改写为：
 
 $$\mathbb{P}[|E\_{in}(g)-E\_{out}(g)|\gt \epsilon]\leq 2\cdot effective(N)\cdot exp(-2\epsilon^2N)$$
@@ -70,23 +70,23 @@ $$max|\mathcal{H}(x\_1,x\_2,...,x\_N)|$$
 &emsp;&emsp;上式又称为成长函数（growth function）。在$\mathcal{H}$确定的情况下，growth function是一个与N相关的函数。以下是几种常见的Hypothesis Set的成长函数。
 
  1. Positive Rays  
-    ![][7]  
+    ![](images/postive_rays.png)  
     输入空间为一维实数空间。大于threshold a的预测+1,否则预测-1。
     for example: 当N=4时，Positive Rays作用于$x\_1$~$x\_4$，共能产生5个不同的dichotomies。如下图：  
-    ![][8]  
+    ![](images/positive_rays_dichotomies.png)  
     不难去想，4个点，5个可能的切点，最多产生5种dichotomies。因此Positive Rays的成长函数为：
     $$m\_{\mathcal{H}(N)}=N+1$$
 
  2. Positive Intervals  
-    ![][9]  
+    ![](images/positive_intervals.png)  
     和前面的类似，只不过Positive Intervals有两个threshold，夹在两个threshold之间的预测为+1，其余预测为-1。
     for example: 当N=4时，Positive Intervals作用于$x\_1$~$x\_4$，共能产生11种dichotomies。如下图：  
-    ![][10]  
+    ![](images/positive_intervals_dichotomies.png)  
     同样不难去想，4个点，5个可能的切点选两个作为threshold，加上两个threshold重合产生的一种，因此Positive Intervals的成长函数为：
     $$m\_{\mathcal{H}(N)}=\binom{N+1}{2} + 1 = \frac{1}{2}N^2 + \frac{1}{2}N + 1$$
 
  3. Convex Sets  
-    ![][11]  
+    ![](images/convex_sets.png)  
     任选k个点，在这k个点组成的convex多边形包围内的所有点都预测+1，否则预测-1。前面我们说到成长函数描述的是“**最多**”能产生的dichotomy种数，因此如果我们这N个input摆成一个圈，则这N个点的任意一种排列组合都能成为一个dichotomy。因此Convex Sets的成长函数为：
     $$m\_{\mathcal{H}(N)}=2^N$$
 
@@ -116,19 +116,19 @@ $$max|\mathcal{H}(x\_1,x\_2,...,x\_N)|$$
 
 &emsp;&emsp;从k=2我们可以知道，任意2个数据点都不能被shatter。还记得shatter的概念吗？意思就是我产生的dichotomies不能完全包含任何2个数据点所有的排列组合。让我们从1个dichotomy开始。
 
-1 dichotomy ![][12]
+1 dichotomy ![](images/n3k2d1.png)
 
-2 dichotomies ![][13]
+2 dichotomies ![](images/n3k2d2.png)
 
-3 dichotomies ![][14]
+3 dichotomies ![](images/n3k2d3.png)
 
 &emsp;&emsp;注意看$x\_2$和$x\_3$这两列，这3个dichotomies已经包含$x\_2$和$x\_3$这两个点所有的4种排列组合中的3种了。再多加一种，$x\_2$、$x\_3$就会被shatter。
 
-4 dichotomies ![][15]
+4 dichotomies ![](images/n3k2d4s.png)
 
 &emsp;&emsp;看右边两列，$x\_2$和$x\_3$被shatter了。但之前说了k=2，即任意2个点不能被shatter，因此不可能产生这4种dichotomies。那我们换一个dichotomy试试看。
 
-4 dichotomies ![][16]
+4 dichotomies ![](images/n3k2d4.png)
 
 &emsp;&emsp;换了一个dichotomy之后就行了，右边2列只包含了$x\_2$、$x\_3$所有排列组合4种中的3种，因此那两个点没有被shatter。继续检查任意的两个点($x\_1$、$x\_2$)，($x\_1$、$x\_3$)，都没有被shatter，看来这4种dichotomies是可以的。
 
@@ -144,28 +144,28 @@ $$max|\mathcal{H}(x\_1,x\_2,...,x\_N)|$$
 
 &emsp;&emsp;因此我们可以得到下表：
 
-![][17]
+![](images/bnk_table.png)
  
 &emsp;&emsp;表格剩余的部分该如何填补？$B(4,3)$是否与$B(3,?)$有关呢？  
 &emsp;&emsp;此时某某实验室帮老师抛硬币的研究生要上场了，他穷举了所有可能的dichotomies，发现$B(4,3)=11$，以下是他的研究成果：
 
-![][18]
+![](images/n4k3d11.png)
 
 &emsp;&emsp;我们把这份结果做个排序：
 
-![][19]
+![](images/n4k3d11_ordered.png)
 
 &emsp;&emsp;发现秘密了没有，橙色的部分是成对出现的，只有紫色的部分是单独出现的：
 
-![][20] 
+![](images/n4k3d11_ordered2.png) 
 
  1. 如果拿掉$x\_4$，只看$x\_1,x\_2,x\_3$这3个点：  
- ![][21]  
+ ![](images/n4k3d7.png)  
 &emsp;&emsp;$\alpha + \beta$部分可以成为这3个点的dichotomies，因为$k=3$，所以任3个点不能够被shatter，因此有：：
 $$\alpha + \beta \leq B(3,3)$$
 
  2. 再来看剩下一个$\alpha$的部分：  
- ![][22]  
+ ![](images/n4k2_alpha.png)  
 &emsp;&emsp;注意$\alpha$是之前成对存在的部分，并且$\alpha$部分不可以shatter掉任意2个点，因为如果$\alpha$部分的dichotomies可以shatter掉任意2个点，他每一行都再搭配$x\_4$的两种情况，这样产生的dichotomies就能shatter掉3个点了，和break point为3相违背。所以$\alpha$不能shatter掉任2个点。因此有：
 $$\alpha \leq B(3,2)$$
 
@@ -174,7 +174,7 @@ $$B(4,3)=2\alpha + \beta \leq B(3,3) + B(3,2)$$
 
 &emsp;&emsp;这样就能够把前面那张表给填完整：
 
-![][23]
+![](images/bnk_table_full.png)
 
 <script type="math/tex; mode=display">
 \begin{aligned}
@@ -214,31 +214,3 @@ $$m\_{\mathcal{H}}\leq \sum\_{i=0}^{4-1}\binom {N}{i}=\frac{1}{6}N^3+\frac{5}{6}
 $$\mathbb{P}\_\mathcal{D}[BAD\ D]\leq 2m\_{\mathcal{H}}(N)\cdot exp(-2\epsilon ^2N)$$
 
 &emsp;&emsp;但实际上我们很难确切知道各种$\mathcal{H}$的成长函数$m\_{\mathcal{H}}(N)$究竟长什么样子，我们只好通过break point去寻找成长函数的upper bound。不过这当中仍然有些情况没有考虑到，将在下一篇笔记中继续说明。
-
-
- 
-
-
-  [1]: http://beader.me/2014/01/15/is-learning-feasible/
-  [2]: https://lh5.googleusercontent.com/-ta-1qvI7n0s/Ut-EJp-bZtI/AAAAAAAAAjA/7FJeOCimLDY/s0/hypothesis_overlap.png "hypothesis_overlap.png"
-  [3]: https://lh3.googleusercontent.com/-t4TqkWby4fo/Ut-Fa3388XI/AAAAAAAAAjI/d4DOvdObHww/s0/1point2lines.png "1point2lines.png"
-  [4]: https://lh6.googleusercontent.com/-NoZ6iW2FL9s/Ut-Fy8rnycI/AAAAAAAAAjQ/OJ8_kS7OVZ0/s0/2points4lines.png "2points4lines.png"
-  [5]: https://lh4.googleusercontent.com/-ChcCFD4twks/Ut-GrpRaLnI/AAAAAAAAAjg/lf0EMh3UdlM/s0/3points8lines.png "3points8lines.png"
-  [6]: https://lh3.googleusercontent.com/-MAB_6wsaQ8Y/Ut-Hbt410FI/AAAAAAAAAjo/uC4dwvpfBr8/s0/4points14lines.png "4points14lines.png"
-  [7]: https://lh3.googleusercontent.com/-SQXFfhzC42w/Ut-9wHw3o2I/AAAAAAAAAj4/c0fOuoB5vig/s0/postive_rays.png "postive_rays.png"
-  [8]: https://lh3.googleusercontent.com/-FKSqfR_RaD8/Ut_Am4oAG3I/AAAAAAAAAkM/4p-wfR3UAlI/s0/positive_rays_dichotomies.png "positive_rays_dichotomies.png"
-  [9]: https://lh4.googleusercontent.com/-lWUA8YymrNo/Ut_BzQ67UII/AAAAAAAAAkU/750LlU9oU1A/s0/positive_intervals.png "positive_intervals.png"
-  [10]: https://lh5.googleusercontent.com/-GXPbwVEB59c/Ut_Cwf5AKqI/AAAAAAAAAkc/M5yK17QViNA/s0/positive_intervals_dichotomies.png "positive_intervals_dichotomies.png"
-  [11]: https://lh3.googleusercontent.com/-vB2aeI4APgY/Ut_FE1Lo7uI/AAAAAAAAAkw/LXsVZ-Fwm9w/s0/convex_sets.png "convex_sets.png"
-  [12]: https://lh4.googleusercontent.com/-HKrqYiC14_Y/UuBsqUhaYsI/AAAAAAAAAlA/LTRisXw4q-Y/s0/n3k2d1.png "n3k2d1.png"
-  [13]: https://lh4.googleusercontent.com/-q3p1FGCpDO0/UuBtOw50D0I/AAAAAAAAAlI/Hj5-8X_7Wkw/s0/n3k2d2.png "n3k2d2.png"
-  [14]: https://lh4.googleusercontent.com/-3968Awzh78A/UuBtk8PEBjI/AAAAAAAAAlQ/zRjyVtklUL8/s0/n3k2d3.png "n3k2d3.png"
-  [15]: https://lh4.googleusercontent.com/-fP1vqrhv7FU/UuBu2V9aNJI/AAAAAAAAAlc/TB91rlfBSnU/s0/n3k2d4s.png "n3k2d4s.png"
-  [16]: https://lh6.googleusercontent.com/-Mo1vC9QP7kw/UuBvovYLfeI/AAAAAAAAAls/rwZuhDjEIYU/s0/n3k2d4.png "n3k2d4.png"
-  [17]: https://lh3.googleusercontent.com/-HJLDe8q1HQ4/UuB5UAhioBI/AAAAAAAAAmM/7BdtHcMgg0c/s0/bnk_table.png "bnk_table.png"
-  [18]: https://lh4.googleusercontent.com/-NLisNEk5Nb4/UuB6fCVTGQI/AAAAAAAAAmU/Ln6-IJGsgMc/s0/n4k3d11.png "n4k3d11.png"
-  [19]: https://lh6.googleusercontent.com/-VhNHS_Lxgdk/UuB7QYoAFZI/AAAAAAAAAmk/4wstKcRx2Ss/s0/n4k3d11_ordered.png "n4k3d11_ordered.png"
-  [20]: https://lh5.googleusercontent.com/-gzMCOKRObyU/UuB--PN85PI/AAAAAAAAAm4/8fomghW7e-Q/s0/n4k3d11_ordered2.png "n4k3d11_ordered2.png"
-  [21]: https://lh5.googleusercontent.com/-Kyixvfd70_g/UuB-cf6vrKI/AAAAAAAAAmw/rGKqv0ZElxE/s0/n4k3d7.png "n4k3d7.png"
-  [22]: https://lh5.googleusercontent.com/-HJu40qz1NTY/UuCCHKUsoEI/AAAAAAAAAnM/6OdpQLyrhkk/s0/n4k2_alpha.png "n4k2_alpha.png"
-  [23]: https://lh3.googleusercontent.com/-PO_FLI3Ajfk/UuCDafwpVfI/AAAAAAAAAnY/leAl0-sYBBk/s0/bnk_table_full.png "bnk_table_full.png"
