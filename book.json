@@ -1,0 +1,9 @@
+{
+    "gitbook": "2.0.1",
+    "plugins": ["mathjax", "disqus"],
+    "pluginsConfig": {
+        "disqus": {
+            "shortName": "mlnotebook"
+        }
+    }
+}

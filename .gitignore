@@ -1,7 +1,4 @@
-.Rproj.user
-_book/
-.rmdbuild
-*.DS_Store
-log/
-.Rhistory
-book.json
+*node_modules*
+*_book*
+*tmp*
+.*

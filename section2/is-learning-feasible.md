@@ -7,33 +7,33 @@
 ![](images/basic_setup_of_the _learning_problem.png)
 
  - $f:\mathcal{X} \to \mathcal{Y}$，其中$\mathcal{X}$表示输入空间，譬如下图中第一列
- 
+
     ``(age, gender, annual salary, year in residence, year in job, current debt)``
 
     为输入空间(6维)，而右边一列
-    
+
     ``(23 years, female, NTD 1,000,000, 1 year, 0.5 year, 200,000)``
-    
+
     为该输入空间下的一个向量，每位贷款申请人对应该空间下的一个向量。
 ![](images/feature_vector.png)
     $\mathcal{Y}$表示输出空间，在二元分类中，输出空间是一个1维的取值为+1或-1的空间 $\\{-1,+1\\}^1$，可以用-1表示非违约，+1表示违约。
     $f$是未知的真理，是事物运转的规律，假如我们可以拥有$f$，我们就可以知道一个人到底会不会发生违约行为。但是这个$f$是不可知的，我们无法窥探其中运行的原理(函数内部构造)，我们唯一知道的是$f$在我们已知的历史数据$\mathcal{D}$当中的运行情况(把$x_n$当做$f$输入，把$y_n$当做$f$的输出)，learning要作的事情，就是找一个在$\mathcal{D}$中运行情况与$f$类似的函数，这个函数对于相同的输入，会有与$f$相同的输出，并且希望在$\mathcal{D}$之外，也就是我们未知的世界，我们找的这个函数的运行情况还能与$f$接近。
-    
-    
+
+
 
  - $\mathcal{D}:(x_1,y_1), \dotsb,(x_N,y_N)$为训练集，该训练集有N笔数据，每笔数据由某申请人在$\mathcal{X}$中的向量和与其对应的类别构成。
  - $\mathcal{H}$，hypothesis set是一个由有限个或无限个方程组成的集合，算法$\mathcal{A}$只能从$\mathcal{H}$的范围内挑选方程。
- 
+
  - $\mathcal{A}$，是一个学习算法，它能够帮助我们在$\mathcal{H}$中找到一个与$f$的判断最接近或足够接近的一个方程。当然我们可以说穷举法是一种学习算法，当$\mathcal{H}$当中candidate formula数量不多时，我们可以用穷举法来寻找。但往往candidate formula数量很大甚至是无穷的，我们就需要设计一个比较好的算法，他能够在较短时间找到我们想要的那个方程。
- 
+
  - $g$，final hypothesis，即$\mathcal{A}$从$\mathcal{H}$中挑选的和$f$判断最接近的那个方程。
- 
+
 &emsp;&emsp;说到底，learning在干的事情，就是从hypothesis set里面挑一个“长”的最像$f$的方程$g$，注意前面我的用词是用"它的判断接近$f$"，并不是说$g$和$f$结构很类似，(记住$f$永远是unknown的)，而是说他们的判断很一致，即$f(x)\approx g(x)$。并且这里谈到的接近，是针对训练集$\mathcal{D}$而言的，$\mathcal{D}$之外的数据他们能否表现一致，这才是我们最应该关心的问题，如果$\mathcal{D}$之外他们也能够表现一致，说明我们learning的还不错，我们有从$\mathcal{D}$上面学到东西。这时候换个角度来想，能不能有某个理论，来保证我们的$g$与$f$在$\mathcal{D}$之外也能有差不多的接近程度？
 
 ## Learning真的可行吗？ (Is Learning Feasible?)
 ![](images/a_learning_puzzle.png)
 
-&emsp;&emsp;图片前两行为training set，对于第一行的所有样本，有$f(x)=-1$，对于第二行的所有样本，有$f(x)=+1$，那么我们能不能通过这6笔数据来猜测一下$f$是长什么样的呢？同学1和同学2利用各自的学习方法分别给出了自己的$g$ 
+&emsp;&emsp;图片前两行为training set，对于第一行的所有样本，有$f(x)=-1$，对于第二行的所有样本，有$f(x)=+1$，那么我们能不能通过这6笔数据来猜测一下$f$是长什么样的呢？同学1和同学2利用各自的学习方法分别给出了自己的$g$
 
  - 同学1训练出来的g：
    $g_1(对称图形)=+1$
@@ -45,7 +45,7 @@
 &emsp;&emsp;对于training set中所有样本，有$g_1(x)=g_2(x)=f(x)$，即两个$g_1,g_2$与$f$的表现是一致的，似乎可以认为他们都"学"到了东西，但是对于测试样本来说$g_1(x)=+1,g_2(x)=-1$。真实的$f$我们无法知道，如果他们中的某一个人在所有非训练的资料中也和$f(x)$表现一致，我们才能说他们当中某个人真的学到了东西。但在目前这种情况下，我们无法说同学1学到了东西还是同学2学到了东西。
 
 &emsp;&emsp;让我们再来考虑一个简单的二元分类问题。$\mathcal{X}=\\{0,1\\}^3$，$\mathcal{Y}=\\{\mathrm{o},\times\\}^1$
-    
+
 ![](images/a_simple_binary_classification_problem.png)
 
 &emsp;&emsp;为何要举这么简单的例子呢？因为前面我们说到真实的$f$是我们无法知道的，但在上面这个简单的例子中，我们有办法把所有可能的$f$全部列举出来。
@@ -118,3 +118,4 @@ $$\mathbb{P}[|E\_{in}(h)-E\_{out}(h)|\gt \epsilon]\leq 2 exp(-2\epsilon ^2N)$$
 
 ## 总结 (Summary)
 &emsp;&emsp;从概率论的角度出发，可以证明learning的确是可行的。因此，只有当$E\_{in}(h)$和$E\_{out}(h)$的判断很接近的时候，我们才能说learning是可行的。可行之余，倘若$E\_{in}(h)$很大，这样的learning也没有太大意义，因为你的这个$h$在sample中表现不好，则他在out-of-sample中表现也不大可能会好。我们把$\mathcal{H}$中表现最好($E\_{in}$最低)的那个方程选出来，记为$g$。当然如何定义“最好”，以及如何去寻找“最好”，则是后面的内容。
+
