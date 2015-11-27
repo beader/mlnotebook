@@ -1,5 +1,4 @@
 # 机器学习笔记
-#### by Beader Chen
 
 笔记整理自台大林轩田老师的开放课程-[机器学习基石](https://www.coursera.org/course/ntumlone)，笔记中所有图片来自于课堂讲义。
 
