@@ -1,6 +1,6 @@
 {
     "gitbook": "2.0.1",
-    "plugins": ["mathjax", "disqus", "github"],
+    "plugins": ["mathjax-beta", "disqus", "github"],
     "pluginsConfig": {
         "disqus": {
             "shortName": "mlnotebook"
