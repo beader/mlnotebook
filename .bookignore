@@ -4,4 +4,7 @@
 log/
 *.R
 *.Rproj
+.*
 .rmdbuild
+deploy.sh
+gulpfile.js

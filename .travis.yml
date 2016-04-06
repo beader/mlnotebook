@@ -1,0 +1,21 @@
+language: node_js
+node_js:
+- '0.12'
+git:
+  depth: 1
+branches:
+  only:
+  - master
+install: npm install -g gitbook-cli
+before_script:
+- mv book_github.json book.json
+- gitbook install
+script:
+- rm -rf _book
+- gitbook build
+after_success:
+- bash deploy.sh
+env:
+  global:
+  - GH_REF: github.com/beader/mlnotebook.git
+  - secure: REGRR4iPjl+uZplKGfjrr5wFW60ZPesHwt1VCMY7mbhNHd4wP5NDIfWXAOribJBZk2qRJhFV3mzzjJdq7jyjOwmTOK+8IggDmJ1kTgoRLEJ3FZG/jcK4+5tp0vfJQBp/DpS3oe27/c9imT8B6TyW5+uFV4NIiO3RiML3sdItTNQBLMB1RmOI2J47mTEHBCOlIQp0Pj49Qpv06iZQZ8ZY4mTM2IdCeK/39ECST4NWcyGtbxPmBJv3pJYkOXsdLEjrWwdaplMKcg3o6NAVJSYS08WCG1R7AP7GRbYo4euITss7Js1gIu64sC+qiB8pKNw53BQcPf95czNQnrK4mf8rg6ACWNHFmb6k1Otcfs3qgIrdezM1e62RCKv3Jk/Op+L4mq1v+pq8Wnrm/YqQhDwfrgVIDo+lnDTGgDFwfzG8jfbeww8O/kZaS7BWUFhAZ83YeOiSclZcKvPwV/SdudRbmWApkxROJKX8S1N315nOxkI4vBEXX4OR45hj+RPULbDUdON5TqFse4ZdPVSiqLlQCuAWE5EN1T3JWLL4LlqIpXfovJVXWUJcfxhCfSV5MOsgxrBrrNCKHf7IYkBpJQ7/RsKs+CFPsoICAbL7i2gAzhvY6+/7Tvn6rKNoAuZB8Kg1KRDMnoUg3MmVVVWA4WjAmLJq2TySJedgjchivBSLlv8=

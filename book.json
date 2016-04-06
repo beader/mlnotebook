@@ -1,10 +1,7 @@
 {
-    "gitbook": "2.0.1",
-    "plugins": ["mathjax-beta", "disqus", "github"],
+    "gitbook": "2.x.x",
+    "plugins": ["mathjax", "github", "-search"],
     "pluginsConfig": {
-        "disqus": {
-            "shortName": "mlnotebook"
-        },
         "github": {
             "url": "https://github.com/beader/mlnotebook"
         }
