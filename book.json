@@ -1,6 +1,6 @@
 {
     "gitbook": "2.x.x",
-    "plugins": ["mathjax", "github", "-search"],
+    "plugins": ["mathjax-update", "github", "-search"],
     "pluginsConfig": {
         "github": {
             "url": "https://github.com/beader/mlnotebook"
