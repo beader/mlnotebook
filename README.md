@@ -11,7 +11,6 @@
 
 老师课堂讲义打包下载，有些地区的朋友访问coursera速度较慢，也可以使用下面的链接下载上课视频:
 
-- [机器学习基石](https://pan.baidu.com/s/1jInYpvw) (提取码: fkde)
-- [机器学习技法](http://yunpan.cn/cALhmAVuRPZjh) （提取码: a55b）
+- [机器学习基石](https://pan.baidu.com/s/1i56YGMp)
+- [机器学习技法](https://pan.baidu.com/s/1miHbWjY)
 
-很长时间疏于更新，导致以上某些网盘链接长期失效，给大家造成了麻烦，我感到非常抱歉。感谢大家一直以来的支持。
