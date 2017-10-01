@@ -12,7 +12,7 @@ before_script:
 - gitbook install
 script:
 - rm -rf _book
-- gitbook build --gitbook=3.2.2
+- gitbook build
 after_success:
 - bash deploy.sh
 env:
