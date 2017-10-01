@@ -1,18 +1,18 @@
 language: node_js
 node_js:
-- '0.12'
+- '0.12.17'
 git:
   depth: 1
 branches:
   only:
   - master
-install: npm install -g gitbook-cli
+install: npm install -g gitbook-cli@2.3.0
 before_script:
 - mv book_github.json book.json
 - gitbook install
 script:
 - rm -rf _book
-- gitbook build
+- gitbook build --gitbook=3.2.2
 after_success:
 - bash deploy.sh
 env:
