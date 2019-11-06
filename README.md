@@ -9,8 +9,4 @@
 我的邮箱:
 [beader@qq.com](mailto:beader@qq.com)
 
-老师课堂讲义打包下载，有些地区的朋友访问coursera速度较慢，也可以使用下面的链接下载上课视频:
-
-- [机器学习基石](https://pan.baidu.com/s/1i56YGMp)
-- [机器学习技法](https://pan.baidu.com/s/1miHbWjY)
-
+课程视频，讲义可以到林老师的主页下载，地址是 https://www.csie.ntu.edu.tw/~htlin/mooc/
