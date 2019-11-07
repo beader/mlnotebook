@@ -1,0 +1,530 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
+        <title>Noise and Error | 机器学习笔记</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.0.1">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    
+    
+    <link rel="next" href="../section3/index.html" />
+    
+    
+    <link rel="prev" href="../section2/vc-dimension-three.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+    
+
+        
+    <div class="book" data-level="2.5" data-basepath=".." data-revision="Thu Nov 07 2019 08:46:53 GMT+0000 (UTC)">
+    
+
+<div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Type to search" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+        
+        
+        
+
+        
+
+        
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="section1/index.html">
+            
+                
+                    <a href="../section1/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        When Can Machines Learn?
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="section2/index.html">
+            
+                
+                    <a href="../section2/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        Why Can Machines Learn?
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="section2/is-learning-feasible.html">
+            
+                
+                    <a href="../section2/is-learning-feasible.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        机器学习的可行性
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="section2/vc-dimension-one.html">
+            
+                
+                    <a href="../section2/vc-dimension-one.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        VC Dimension Part I
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="section2/vc-dimension-two.html">
+            
+                
+                    <a href="../section2/vc-dimension-two.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        VC Dimension Part II
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="section2/vc-dimension-three.html">
+            
+                
+                    <a href="../section2/vc-dimension-three.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        VC Dimension Part III
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.5" data-path="section2/noise-and-error.html">
+            
+                
+                    <a href="../section2/noise-and-error.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.</b>
+                        
+                        Noise and Error
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="section3/index.html">
+            
+                
+                    <a href="../section3/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        How Can Machines Learn?
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="section3/linear-regression.html">
+            
+                
+                    <a href="../section3/linear-regression.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        Linear Regression
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="section3/logistic-regression.html">
+            
+                
+                    <a href="../section3/logistic-regression.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        Logistic Regression
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="section3/linear_models_for_classification.html">
+            
+                
+                    <a href="../section3/linear_models_for_classification.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        Linear Models for Classification
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="section4/index.html">
+            
+                
+                    <a href="../section4/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        How Can Machines Learn Better?
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="section5/index.html">
+            
+                
+                    <a href="../section5/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        FAQ
+                    </a>
+                
+            
+            
+        </li>
+    
+
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                Published with GitBook
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Table of Contents"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Search"><i class="fa fa-search"></i></a>
+    
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="Font Settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">Serif</button>
+        <button type="button" data-font="1" class="button">Sans</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="Share"><i class="fa fa-share-alt"></i>
+        </a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                <button type="button" data-sharing="twitter" class="button">
+                    Share on Twitter
+                </button>
+                <button type="button" data-sharing="google-plus" class="button">
+                    Share on Google
+                </button>
+                <button type="button" data-sharing="facebook" class="button">
+                    Share on Facebook
+                </button>
+                <button type="button" data-sharing="weibo" class="button">
+                    Share on Weibo
+                </button>
+                <button type="button" data-sharing="instapaper" class="button">
+                    Share on Instapaper
+                </button>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Google"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
+    
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >机器学习笔记</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="%E7%A1%AE%E5%AE%9A%E6%80%A7-v-s-%E6%A6%82%E7%8E%87%E6%80%A7-deterministic-v-s-probabilistic">&#x786E;&#x5B9A;&#x6027; v.s &#x6982;&#x7387;&#x6027; (deterministic v.s probabilistic)</h1>
+<p>&#x2003;&#x2003;&#x8BA9;&#x6211;&#x4EEC;&#x6765;&#x56DE;&#x5FC6;&#x4E00;&#x4E0B;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x7684;&#x57FA;&#x7840;&#x67B6;&#x6784;&#xFF1A;</p>
+<p>&#x2003;&#x2003;<img src="images/learning_flow_with_noise.png" alt=""></p>
+<p>&#x2003;&#x2003;&#x9996;&#x5148;&#x6211;&#x4EEC;&#x8BA4;&#x4E3A;&#x5B58;&#x5728;&#x4E00;&#x4E2A;&#x672A;&#x77E5;&#x7684;&#x771F;&#x7406; <script type="math/tex; ">f</script>&#xFF0C;&#x8BA4;&#x4E3A; <script type="math/tex; ">\mathcal{D}</script>&#x4E2D;&#x7684;<script type="math/tex; ">y</script>&#x5C31;&#x662F; <script type="math/tex; ">f</script>&#x4F5C;&#x7528;&#x4E8E;<script type="math/tex; ">x</script>&#x4EA7;&#x751F;&#x7684;&#xFF0C;&#x56E0;&#x6B64;&#x867D;&#x7136;&#x65E0;&#x6CD5;&#x76F4;&#x63A5;&#x5F97;&#x5230; <script type="math/tex; ">f</script>&#xFF0C;&#x4F46;&#x82E5;&#x80FD;&#x627E;&#x5230;&#x4E00;&#x4E2A;&#x548C; <script type="math/tex; ">f</script>&#x8868;&#x73B0;&#x5DEE;&#x4E0D;&#x591A;&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x4E5F;&#x7B97;&#x662F;&#x80FD;&#x5B66;&#x5230;&#x4E1C;&#x897F;&#x3002;&#x4F46;&#x5728;&#x73B0;&#x5B9E;&#x4E16;&#x754C;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x62FF;&#x5230;&#x7684; <script type="math/tex; ">\mathcal{D}</script>&#x5E76;&#x4E0D;&#x662F;&#x5B8C;&#x7F8E;&#x7684;&#xFF0C;&#x4F1A;&#x6709;noise&#x7684;&#x5B58;&#x5728;&#xFF0C;&#x4EC0;&#x4E48;&#x662F;noise&#x5462;&#xFF1F;&#x6211;&#x4EEC;&#x5728;&#x7528;&#x6536;&#x97F3;&#x673A;&#x542C;&#x65B0;&#x95FB;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5F80;&#x5F80;&#x4F1A;&#x542C;&#x5230;&#x80CC;&#x666F;&#x6709;&#x4E2A;&#x201C;&#x6C99;&#x6C99;&#x201D;&#x7684;&#x58F0;&#x97F3;&#xFF0C;&#x4FE1;&#x53F7;&#x4E0D;&#x597D;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x8FD9;&#x79CD;&#x201C;&#x6C99;&#x6C99;&#x201D;&#x58F0;&#x4F1A;&#x8D8A;&#x6765;&#x8D8A;&#x5927;&#xFF0C;&#x8FD9;&#x4E2A;&#x201C;&#x6C99;&#x6C99;&#x201D;&#x58F0;&#x5C31;&#x662F;<a href="http://www.simplynoise.com/" target="_blank">noise</a>&#x3002;&#x6211;&#x4EEC;&#x8033;&#x6735;&#x542C;&#x5230;&#x7684;&#x662F; <script type="math/tex; ">\mathcal{D}</script>(&#x6536;&#x97F3;&#x673A;&#x653E;&#x51FA;&#x6765;&#x7684;&#x4E1C;&#x897F;)&#xFF0C;&#x6211;&#x4EEC;&#x5E0C;&#x671B;&#x901A;&#x8FC7; <script type="math/tex; ">\mathcal{D}</script>&#x7406;&#x89E3;&#x5230; <script type="math/tex; ">f</script>(&#x64AD;&#x97F3;&#x5458;&#x771F;&#x5B9E;&#x8981;&#x8868;&#x8FBE;&#x7684;)&#xFF0C;&#x8FD9;&#x4E2A;noise&#x5C31;&#x4F1A;&#x5E72;&#x6270;&#x8FD9;&#x4E2A;&#x7406;&#x89E3;&#x7684;&#x8FC7;&#x7A0B;&#xFF0C; noise&#x8D8A;&#x5927;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x8D8A;&#x96BE;&#x5206;&#x8FA8;&#x64AD;&#x97F3;&#x5458;&#x5230;&#x5E95;&#x5728;&#x8BF4;&#x4EC0;&#x4E48;&#x3002;&#x5728;Learning&#x4E2D;&#xFF0C;noise&#x4E3B;&#x8981;&#x8868;&#x73B0;&#x4E3A;&#x4EE5;&#x4E0B;&#x51E0;&#x79CD;&#x5F62;&#x5F0F;&#xFF1A;</p>
+<ul>
+<li>noise in y : &#x672C;&#x6765;&#x5E94;&#x8BE5;&#x662F;&#x5708;&#x5708;&#x7684;&#xFF0C;&#x5374;&#x88AB;&#x6807;&#x8BB0;&#x4E3A;&#x53C9;&#x53C9;</li>
+<li>noise in y : &#x8F93;&#x5165;<script type="math/tex; ">\mathcal{X}</script>&#x5B8C;&#x5168;&#x76F8;&#x540C;&#x7684;&#x70B9;&#xFF0C;&#x65E2;&#x6709;&#x88AB;&#x6807;&#x8BB0;&#x5708;&#x5708;&#x7684;&#xFF0C;&#x4E5F;&#x6709;&#x88AB;&#x6807;&#x8BB0;&#x53C9;&#x53C9;&#x7684;</li>
+<li>noise in x : &#x8F93;&#x5165;<script type="math/tex; ">\mathcal{X}</script>&#x672C;&#x8EAB;&#x5C31;&#x5B58;&#x5728;&#x95EE;&#x9898;&#xFF0C;&#x8B6C;&#x5982;100&#x88AB;&#x5199;&#x6210;&#x4E86;100&#x4E07;</li>
+</ul>
+<p>&#x2003;&#x2003; <script type="math/tex; ">f</script> &#x662F;&#x4E00;&#x4E2A;&#x201C;&#x786E;&#x5B9A;&#x6027;&#x201D;(deterministic)&#x7684;&#x6A21;&#x578B;&#xFF0C;&#x4F46;<script type="math/tex; ">noise</script>&#x662F;&#x4E00;&#x4E2A;&#x968F;&#x673A;&#x53D1;&#x751F;&#x7684;&#x4E1C;&#x897F;&#xFF0C;&#x4ED6;&#x4EEC;&#x4E24;&#x4E2A;&#x5171;&#x540C;&#x4F5C;&#x7528;&#x7684;&#x7ED3;&#x679C;&#xFF0C;&#x5C31;&#x6210;&#x4E86;&#x4E00;&#x4E2A;&#x201C;&#x6982;&#x7387;&#x6027;&#x201D;(probabilistic)&#x7684;&#x4E1C;&#x897F;&#xFF1A;</p>
+<script type="math/tex; mode=display">
+\left.\begin{matrix}
+\text{idea mini-target }\;\; f(x)=1\\\
+\text{'flipping' noise } level=0.3
+\end{matrix}\right\}
+\Rightarrow 
+\begin{matrix}
+P(+1|x) = 0.7\\\
+P(-1|x) = 0.3
+\end{matrix}
+</script>
+
+<p>&#x2003;&#x2003;&#x5BF9;&#x4E8E;&#x67D0;&#x4E2A;&#x6837;&#x672C; <script type="math/tex; ">x</script>&#xFF0C;&#x7406;&#x60F3;&#x72B6;&#x6001;&#x4E0B;&#xFF0C;&#x5E94;&#x8BE5;&#x6709;<script type="math/tex; ">y=f(x)=+1</script>&#xFF0C;&#x4F46;&#x7531;&#x4E8E;&#x67D0;&#x79CD;noise&#x7684;&#x5B58;&#x5728;&#xFF0C;&#x8BE5;noise&#x4F1A;&#x6709;30%&#x7684;&#x6982;&#x7387;&#x4F1A;&#x8F6C;&#x6362;<script type="math/tex; ">f(x)</script>&#x7684;&#x7ED3;&#x679C;(&#x628A;+1&#x53D8;&#x6210;-1&#x6216;&#x628A;-1&#x53D8;&#x6210;+1)&#x3002;&#x56E0;&#x6B64;&#x5728;<script type="math/tex; ">\mathcal{D}</script>&#x4E2D;&#xFF0C;&#x8BE5;&#x6837;&#x672C;&#x6709;70%&#x7684;&#x6982;&#x7387;&#x8868;&#x73B0;&#x51FA;<script type="math/tex; ">y=+1</script>&#xFF0C;30%&#x7684;&#x6982;&#x7387;&#x8868;&#x73B0;&#x51FA;<script type="math/tex; ">y=-1</script>.</p>
+<p>&#x2003;&#x2003;&#x518D;&#x4E3E;&#x4E2A;&#x4F8B;&#x5B50;&#x6765;&#x5BF9;&#x6BD4;&#x4E0B;&#x4E0D;&#x8003;&#x8651;noise&#x4E0E;&#x8003;&#x8651;noise&#x7684;&#x60C5;&#x5F62;&#x6709;&#x4EC0;&#x4E48;&#x4E0D;&#x540C;&#x3002;&#x5047;&#x8BBE;&#x4E0D;&#x5B58;&#x5728;noise&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x67D0;&#x4E2A;hypothesis <script type="math/tex; ">h</script>&#x5728;<script type="math/tex; ">\mathcal{D}</script>&#x4E2D;&#x7684;&#x9519;&#x8BEF;&#x7387;<script type="math/tex; ">E_{in}=\mu</script>&#x3002;&#x73B0;&#x5728;&#x8003;&#x8651;&#x52A0;&#x4E0A;&#x4E00;&#x4E2A; <em>&apos;flipping&apos; noise level</em> <script type="math/tex; ">=1-\lambda</script>&#x7684;noise&#xFF0C;&#x5373;&#xFF1A;</p>
+<script type="math/tex; mode=display">
+P(y|x)=
+\left\{\begin{matrix}
+\lambda & y=f(x)\\\
+1-\lambda & y\neq f(x)
+\end{matrix}\right.
+</script>
+
+<p>&#x2003;&#x2003;&#x8003;&#x8651;&#x5230;&#x4E86;noise&#xFF0C;<script type="math/tex; ">h</script>&#x5224;&#x65AD;&#x6B63;&#x786E;&#x7684;&#x6837;&#x672C;&#x5F53;&#x4E2D;&#xFF0C;&#x5B9E;&#x9645;&#x53EA;&#x6709;<script type="math/tex; ">\lambda</script>&#x8FD9;&#x4E48;&#x591A;&#x7684;&#x6BD4;&#x4F8B;&#x662F;&#x771F;&#x7684;&#x5224;&#x65AD;&#x6B63;&#x786E;&#x7684;&#xFF0C;&#x540C;&#x7406;<script type="math/tex; ">h</script>&#x5224;&#x65AD;&#x9519;&#x8BEF;&#x7684;&#x6837;&#x672C;&#x4E2D;&#xFF0C;&#x5B9E;&#x9645;&#x4E5F;&#x53EA;&#x6709;<script type="math/tex; ">\lambda</script>&#x8FD9;&#x4E48;&#x591A;&#x7684;&#x6BD4;&#x4F8B;&#x662F;&#x771F;&#x7684;&#x5224;&#x65AD;&#x9519;&#x8BEF;&#x3002;&#x5047;&#x8BBE;<script type="math/tex; ">\mathcal{D}</script>&#x4E2D;&#x6837;&#x672C;&#x91CF;&#x4E3A;N&#xFF1A;</p>
+<script type="math/tex; mode=display">
+\begin{matrix}
+ & \text{no noise} & \text{noise}\\\
+h\text{ on }\mathcal{D} & \left\{\begin{matrix}
+(1-\mu)N & right\\
+\\
+\\
+\mu N& wrong
+\end{matrix}\right. & \begin{matrix}
+\left\{\begin{matrix}
+\lambda(1-\mu)N & \text{true right}\\
+(1-\lambda)(1-\mu)N & \text{false right}
+\end{matrix}\right.\\
+\\
+\left\{\begin{matrix}
+\lambda \mu N & \text{true wrong}\\
+(1-\lambda)\mu N & \text{false wrong}
+\end{matrix}\right.
+\end{matrix}
+\end{matrix}
+</script>
+
+<p>&#x2003;&#x2003;&#x56E0;&#x6B64;&#xFF0C;&#x5982;&#x679C;&#x5B58;&#x5728;noise&#xFF0C;&#x5219;<script type="math/tex; ">h</script>&#x5224;&#x65AD;&#x9519;&#x8BEF;&#x7684;&#x6570;&#x91CF;&#x5B9E;&#x9645;&#x5E94;&#x8BE5;&#x4E3A;<script type="math/tex; ">\lambda \mu N + (1-\lambda)(1-\mu)N</script>&#x8FD9;&#x4E48;&#x591A;&#xFF0C;<script type="math/tex; ">h</script>&#x771F;&#x5B9E;&#x7684;<script type="math/tex; ">E_{in}=\lambda \mu + (1-\lambda)(1-\mu)</script>&#x3002;&#x7A0D;&#x5FAE;&#x505A;&#x4E2A;&#x5408;&#x5E76;&#xFF0C;&#x5F97;&#x5230;&#xFF1A;</p>
+<p><script type="math/tex; mode=display">
+\text{true  }E_{in} = (2\lambda - 1)\mu + (1-\lambda)
+</script></p>
+<p>&#x2003;&#x2003;&#x5047;&#x8BBE;&#x901A;&#x8FC7;&#x5B66;&#x4E60;&#x6211;&#x4EEC;&#x5F97;&#x5230;&#x4E00;&#x4E2A;<script type="math/tex; ">g</script>&#xFF0C;&#x5E76;&#x4E14;&#x6709;<script type="math/tex; ">E_{in}(g)=0.2</script>(&#x5373;<script type="math/tex; ">\mu = 0.2</script>)&#xFF0C;&#x82E5;&#x5B66;&#x4E60;&#x6240;&#x7528;&#x7684;<script type="math/tex; ">\mathcal{D}</script>&#x4E2D;&#x5B58;&#x5728; <em>&apos;flipping&apos; level=0.1</em> &#x7684;noise(&#x5373;<script type="math/tex; mode=display">
+\lambda = 0.9</script>)&#xFF0C;&#x5219;&#x771F;&#x5B9E;&#x7684;<script type="math/tex; ">E_{in}(g)=0.26</script>&#x3002;&#x82E5; <em>&apos;flipping&apos; level</em> &#x8FBE;&#x5230;0.2&#xFF0C;&#x5219;&#x771F;&#x5B9E;&#x7684;<script type="math/tex; ">E_{in}(g) = 0.32</script>&#x3002;&#x53EF;&#x89C1;noise&#x7684;&#x5B58;&#x5728;&#x5BF9;learning&#x662F;&#x6709;&#x4E00;&#x5B9A;&#x5F71;&#x54CD;&#x7684;&#xFF0C;&#x5728;noise&#x8F83;&#x5927;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x7B97;&#x51FA;&#x7684;<script type="math/tex; ">E_{in}</script>&#x4E0E;&#x771F;&#x5B9E;&#x7684;<script type="math/tex; ">E_{in}</script>&#x4E5F;&#x4F1A;&#x6709;&#x5F88;&#x5927;&#x7684;&#x5DEE;&#x522B;&#x3002;&#x56E0;&#x6B64;&#x60F3;&#x8981;&#x5B66;&#x5F97;&#x597D;&#xFF0C;<script type="math/tex; ">\mathcal{D}</script>&#x7684;&#x8D28;&#x91CF;&#x975E;&#x5E38;&#x91CD;&#x8981;&#x3002;</p>
+<h1 id="%E8%AF%AF%E5%B7%AE%E7%9A%84%E8%A1%A1%E9%87%8F-error-measure">&#x8BEF;&#x5DEE;&#x7684;&#x8861;&#x91CF;(Error Measure)</h1>
+<p>&#x2003;&#x2003;&#x5728;&#x628A;learning&#x7684;&#x5DE5;&#x4F5C;&#x4EA4;&#x7ED9;&#x673A;&#x5668;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5FC5;&#x987B;&#x8BA9;&#x673A;&#x5668;&#x660E;&#x767D;&#x4F60;&#x5B66;&#x4E60;&#x7684;&#x76EE;&#x6807;&#xFF0C;&#x8B6C;&#x5982;&#x4F60;&#x60F3;&#x8BA9;&#x4EC0;&#x4E48;&#x4EC0;&#x4E48;&#x6700;&#x5927;&#x5316;&#xFF0C;&#x6216;&#x8005;&#x4EC0;&#x4E48;&#x4EC0;&#x4E48;&#x6700;&#x5C0F;&#x5316;&#x3002;&#x901A;&#x5E38;&#x7684;&#x505A;&#x6CD5;&#x662F;&#x628A;&#x6BCF;&#x4E00;&#x4E2A;&#x9884;&#x6D4B;&#x503C;&#x4E0E;&#x771F;&#x5B9E;&#x503C;&#x4E4B;&#x95F4;&#x7684;&#x8BEF;&#x5DEE;(error)&#x770B;&#x6210;&#x4E00;&#x79CD;&#x6210;&#x672C;&#xFF0C;&#x673A;&#x5668;&#x8981;&#x505A;&#x7684;&#xFF0C;&#x5C31;&#x662F;&#x5728;<script type="math/tex; ">\mathcal{H}</script>&#x4E2D;&#xFF0C;&#x6311;&#x9009;&#x4E00;&#x4E2A;&#x80FD;&#x4F7F;&#x603B;&#x6210;&#x672C;&#x6700;&#x4F4E;&#x7684;&#x51FD;&#x6570;&#x3002;</p>
+<p>&#x2003;&#x2003;&#x4E4B;&#x524D;&#x63D0;&#x5230;&#x7684;&#x4E8C;&#x5143;&#x5206;&#x7C7B;&#x95EE;&#x9898;&#xFF0C;&#x5C31;&#x662F;&#x5BF9;&#x5224;&#x65AD;&#x9519;&#x8BEF;&#x7684;&#x70B9;&#xFF0C;&#x8BB0;&#x8BEF;&#x5DEE;&#x4E3A;1&#xFF0C;&#x5224;&#x65AD;&#x6B63;&#x786E;&#x7684;&#x70B9;&#xFF0C;&#x8BB0;&#x8BEF;&#x5DEE;&#x4E3A;0&#xFF1A;</p>
+<p><script type="math/tex; mode=display">
+\text{error of h on }x_n
+\left\{\begin{matrix}
+1 & h(x_n)\neq y_n\\\
+0 & h(x_n) = y_n
+\end{matrix}\right.
+</script></p>
+<p>&#x2003;&#x2003;&#x4E0D;&#x7BA1;&#x662F;&#x628A;<script type="math/tex; ">y=+1</script>&#x7684;&#x731C;&#x9519;&#x6210;<script type="math/tex; ">-1</script>&#xFF0C;&#x6216;&#x662F;&#x628A;<script type="math/tex; ">y=-1</script>&#x7684;&#x731C;&#x9519;&#x6210;<script type="math/tex; ">+1</script>&#xFF0C;&#x5176;&#x4EA7;&#x751F;&#x7684;&#x8BEF;&#x5DEE;&#x90FD;&#x4E3A;1&#x3002;</p>
+<p>&#x2003;&#x2003;&#x5728;&#x5B9E;&#x9645;&#x5E94;&#x7528;&#x4E2D;&#xFF0C;&#x8FD9;&#x4E2A;&#x8BEF;&#x5DEE;&#x7684;&#x5B9A;&#x4E49;&#x53EF;&#x4EE5;&#x5F88;&#x7075;&#x6D3B;&#xFF0C;&#x4F8B;&#x5982;&#x4E0B;&#x9762;&#x4E24;&#x4E2A;&#x6307;&#x7EB9;&#x9A8C;&#x8BC1;&#x7684;&#x4F8B;&#x5B50;&#xFF1A;</p>
+<ol>
+<li><p>&#x8D85;&#x5E02;&#x5229;&#x7528;&#x6307;&#x7EB9;&#x8BC6;&#x522B;&#x5224;&#x65AD;&#x67D0;&#x4E2A;&#x4EBA;&#x662F;&#x5426;&#x662F;&#x4ED6;&#x4EEC;&#x7684;&#x4F1A;&#x5458;&#xFF0C;&#x82E5;&#x662F;&#x4F1A;&#x5458;&#x4F1A;&#x7ED9;&#x76F8;&#x5E94;&#x7684;&#x6298;&#x6263;&#x3002;&#x8FD9;&#x79CD;&#x60C5;&#x5F62;&#x4E0B;&#xFF0C;&#x53EF;&#x80FD;&#x505A;&#x51FA;&#x4E24;&#x79CD;&#x4E0D;&#x540C;&#x7684;&#x9519;&#x8BEF;&#x5224;&#x65AD;&#xFF0C;&#x628A;&#x975E;&#x4F1A;&#x5458;&#x9519;&#x8BA4;&#x4E3A;&#x662F;&#x4F1A;&#x5458;&#xFF0C;&#x628A;&#x4F1A;&#x5458;&#x9519;&#x8BA4;&#x4E3A;&#x662F;&#x975E;&#x4F1A;&#x5458;&#x3002;&#x4F46;&#x5BF9;&#x4E8E;&#x8D85;&#x5E02;&#x6765;&#x8BF4;&#xFF0C;&#x8FD9;&#x4E24;&#x79CD;&#x9519;&#x8BEF;&#x7684;&#x6210;&#x672C;&#x5E94;&#x8BE5;&#x662F;&#x4E0D;&#x540C;&#x7684;&#x3002;&#x628A;&#x975E;&#x4F1A;&#x5458;&#x9519;&#x8BA4;&#x4E3A;&#x662F;&#x4F1A;&#x5458;&#xFF0C;&#x65E0;&#x975E;&#x635F;&#x5931;&#x4E9B;&#x8BB8;&#x7684;&#x6298;&#x6263;&#xFF1B;&#x4F46;&#x82E5;&#x662F;&#x628A;&#x4F1A;&#x5458;&#x8BC6;&#x522B;&#x4E3A;&#x975E;&#x4F1A;&#x5458;&#x4ECE;&#x800C;&#x4E0D;&#x7ED9;&#x6298;&#x6263;&#xFF0C;&#x5C31;&#x4F1A;&#x5BFC;&#x81F4;&#x987E;&#x5BA2;&#x7684;&#x4E0D;&#x6EE1;&#xFF0C;&#x4ECE;&#x800C;&#x635F;&#x5931;&#x6389;&#x4E86;&#x672A;&#x6765;&#x7684;&#x751F;&#x610F;&#x3002;&#x9488;&#x5BF9;&#x8FD9;&#x79CD;&#x9700;&#x6C42;&#xFF0C;&#x6216;&#x8BB8;&#x4E0B;&#x9762;&#x8FD9;&#x4E2A;error&#x7684;&#x8861;&#x91CF;&#x529E;&#x6CD5;&#x4F1A;&#x66F4;&#x52A0;&#x5408;&#x7406;&#x4E00;&#x4E9B;&#x3002;&#x628A;+1(&#x4F1A;&#x5458;)&#x9519;&#x5224;&#x4E3A;-1(&#x975E;&#x4F1A;&#x5458;)&#x7684;error&#x4E3A;10&#xFF0C;&#x628A;-1&#x9519;&#x5224;&#x4E3A;+1&#x7684;error&#x4E3A;1&#x3002;</p>
+<p> <img src="images/cost_supermarket.png" alt=""><br> (f&#x4EE3;&#x8868;&#x771F;&#x5B9E;&#x503C;&#xFF0C;g&#x4EE3;&#x8868;&#x9884;&#x6D4B;&#x503C;)</p>
+</li>
+<li><p>&#x4E2D;&#x60C5;&#x5C40;&#x7684;&#x95E8;&#x7981;&#x7CFB;&#x7EDF;&#xFF0C;&#x5229;&#x7528;&#x6307;&#x7EB9;&#x5224;&#x65AD;&#x662F;&#x5185;&#x90E8;&#x5DE5;&#x4F5C;&#x4EBA;&#x5458;&#xFF0C;&#x624D;&#x5141;&#x8BB8;&#x8FDB;&#x5165;&#x3002;&#x8FD9;&#x79CD;&#x60C5;&#x5F62;&#x4E0B;&#xFF0C;&#x82E5;&#x662F;&#x628A;&#x597D;&#x4EBA;&#x5F53;&#x574F;&#x4EBA;&#xFF0C;&#x4EE3;&#x4EF7;&#x5E76;&#x4E0D;&#x9AD8;&#xFF0C;&#x65E0;&#x975E;&#x5C31;&#x662F;&#x8BF7;&#x5DE5;&#x4F5C;&#x4EBA;&#x5458;&#x591A;&#x6309;&#x4E00;&#x6B21;&#x6307;&#x7EB9;&#x7684;&#x529F;&#x592B;&#xFF0C;&#x4F46;&#x5982;&#x679C;&#x628A;&#x574F;&#x4EBA;&#x5F53;&#x597D;&#x4EBA;&#xFF0C;&#x635F;&#x5931;&#x53EF;&#x5C31;&#x5927;&#x4E86;&#x3002;&#x9488;&#x5BF9;&#x8FD9;&#x79CD;&#x9700;&#x6C42;&#xFF0C;&#x4E0B;&#x9762;&#x8FD9;&#x4E2A;error&#x7684;&#x8861;&#x91CF;&#x529E;&#x6CD5;&#x53EF;&#x80FD;&#x66F4;&#x52A0;&#x5408;&#x7406;&#x3002;</p>
+<p> <img src="images/cost_cia.png" alt=""></p>
+</li>
+</ol>
+<p>&#x2003;&#x2003;&#x4E4B;&#x524D;&#x4E00;&#x76F4;&#x8BF4;&#x7684;<script type="math/tex; ">E_{in}(h)</script>&#xFF0C;&#x5C31;&#x662F;<script type="math/tex; ">h</script>&#x4F5C;&#x7528;&#x4E8E;<script type="math/tex; ">\mathcal{D}</script>&#x4E2D;&#x6BCF;&#x4E00;&#x7B14;&#x6570;&#x636E;&#xFF0C;&#x6240;&#x4EA7;&#x751F;&#x7684;&#x6210;&#x672C;&#x4E4B;&#x548C;&#xFF1A;</p>
+<p><script type="math/tex; mode=display">
+E_{in}(h)=\frac{1}{N}\sum_{n=1}^{N}err(h,x_n,y_n)
+</script></p>
+<p>&#x2003;&#x2003;&#x5BF9;&#x4E8E;&#x4E0A;&#x9762;&#x4E2D;&#x60C5;&#x5C40;&#x7684;&#x4F8B;&#x5B50;&#xFF0C;<script type="math/tex; ">err(h,x_n,y_n)</script>&#x7684;&#x5B9A;&#x4E49;&#x5982;&#x4E0B;&#xFF1A;</p>
+<p><script type="math/tex; mode=display">
+err(h,x_n,y_n)=\left\{\begin{matrix}
+1 & h(x_n)\neq y_n,y_n=+1 \\\
+1000 & h(x_n)\neq y_n,y_n=-1
+\end{matrix}\right.
+</script></p>
+<p>&#x2003;&#x2003;&#x8FD9;&#x79CD;&#x8BEF;&#x5DEE;&#x8861;&#x91CF;&#x65B9;&#x5F0F;&#x79F0;&#x4E3A;&quot;pointwise measure&quot;&#xFF0C;&#x5373;&#x5BF9;&#x6BCF;&#x4E2A;&#x70B9;&#x8BB0;&#x5F55;&#x8BEF;&#x5DEE;&#xFF0C;&#x603B;&#x8BEF;&#x5DEE;&#x4E3A;&#x6240;&#x6709;&#x70B9;&#x4EA7;&#x751F;&#x7684;&#x8BEF;&#x5DEE;&#x4E4B;&#x548C;&#x3002;&#x5728;Ng&#x90A3;&#x95E8;&#x8BFE;&#x4E0A;&#xFF0C;&#x8FD9;&#x4E2A;<script type="math/tex; ">E_{in}(h)</script>&#x88AB;&#x79F0;&#x4E3A;cost function&#xFF0C;&#x901A;&#x8FC7;cost function&#x53EF;&#x4EE5;&#x8BA1;&#x7B97;&#x51FA;&#x5F53;&#x524D;<script type="math/tex; ">h</script>&#x4F5C;&#x7528;&#x4E8E;<script type="math/tex; ">\mathcal{D}</script>&#x6240;&#x9020;&#x6210;&#x7684;&#x603B;&#x6210;&#x672C;&#xFF0C;&#x901A;&#x8FC7;learning&#x627E;&#x5230;&#x4E00;&#x4E2A;&#x80FD;&#x591F;&#x4F7F;&#x603B;&#x6210;&#x672C;&#x6700;&#x5C0F;&#x7684;<script type="math/tex; ">h</script>&#xFF0C;&#x5C31;&#x5B8C;&#x6210;&#x4E86;&#x5B66;&#x4E60;&#x7684;&#x8FC7;&#x7A0B;&#x3002;</p>
+<p>&#x2003;&#x2003;&#x9488;&#x5BF9;&#x4E0D;&#x540C;&#x7684;&#x95EE;&#x9898;&#x4E0E;&#x4E0D;&#x540C;&#x7684;&#x4F7F;&#x7528;&#x73AF;&#x5883;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x8BBE;&#x8BA1;&#x4E0D;&#x540C;&#x7684;&#x8BEF;&#x5DEE;&#x8861;&#x91CF;&#x65B9;&#x6CD5;&#xFF0C;&#x4E0B;&#x9762;&#x662F;&#x96C6;&#x4E2D;&#x5E38;&#x89C1;&#x7684;&#x8BEF;&#x5DEE;&#x7684;&#x5B9A;&#x4E49;&#xFF1A;</p>
+<ul>
+<li><p>0/1 error &#xFF0C;&#x901A;&#x5E38;&#x7528;&#x4E8E;&#x5206;&#x7C7B;&#x95EE;&#x9898;&#xFF1A;<br><script type="math/tex; ">err(\widetilde{y},y)=[\widetilde{y}\neq y]</script></p>
+</li>
+<li><p>squared error&#xFF0C;&#x901A;&#x5E38;&#x7528;&#x4E8E;&#x56DE;&#x5F52;&#x95EE;&#x9898;&#xFF1A;<br><script type="math/tex; ">err(\widetilde{y},y)=(\widetilde{y}-y)^2</script></p>
+</li>
+<li><p>absolute error&#xFF1A;<br><script type="math/tex; ">err(\widetilde{y},y)=abs(\widetilde{y}-y)</script></p>
+</li>
+</ul>
+<p>&#x2003;&#x2003;&#x603B;&#x7ED3;&#x4E00;&#x4E0B;&#xFF0C;&#x5148;&#x6839;&#x636E;&#x95EE;&#x9898;&#x7684;&#x4E0D;&#x540C;&#x9009;&#x62E9;&#x5408;&#x9002;&#x7684;&#x8BEF;&#x5DEE;&#x8861;&#x91CF;&#x65B9;&#x5F0F;&#xFF0C;0/1 error&#x8FD8;&#x662F;squared error&#x6216;&#x8005;&#x662F;&#x5176;&#x4ED6;&#x9488;&#x5BF9;&#x67D0;&#x4E00;&#x573A;&#x666F;&#x7279;&#x6B8A;&#x8BBE;&#x8BA1;&#x7684;error&#xFF1F;&#x628A;<script type="math/tex; ">h</script>&#x4F5C;&#x7528;&#x4E8E;<script type="math/tex; ">\mathcal{D}</script>&#x4E2D;&#x6240;&#x6709;&#x70B9;&#x7684;error&#x52A0;&#x603B;&#x8D77;&#x6765;&#x5C31;&#x6210;&#x4E86;&#x4E00;&#x4E2A;cost function&#xFF0C;&#x4E5F;&#x5C31;&#x662F;<script type="math/tex; ">E_{in}(h)</script>&#xFF0C;&#x63A5;&#x7740;&#x8981;&#x8BBE;&#x8BA1;&#x4E00;&#x4E2A;&#x6700;&#x4F18;&#x5316;&#x7B97;&#x6CD5;<script type="math/tex; ">\mathcal{A}</script>&#xFF0C;&#x5B83;&#x80FD;&#x591F;&#x4ECE;<script type="math/tex; ">\mathcal{H}</script>&#x4E2D;&#x6311;&#x9009;&#x51FA;&#x80FD;&#x591F;&#x4F7F;<script type="math/tex; ">E_{in}</script>&#x6700;&#x5C0F;&#x7684;&#x65B9;&#x7A0B;<script type="math/tex; ">g</script>&#xFF0C;learning&#x5C31;&#x5B8C;&#x6210;&#x4E86;&#x3002;&#x5BF9;&#x4E8E;&#x4E0D;&#x540C;&#x7C7B;&#x578B;&#x7684;cost function&#xFF0C;&#x901A;&#x5E38;&#x4F1A;&#x4F7F;&#x7528;&#x4E0D;&#x540C;&#x7684;&#x6700;&#x4F18;&#x5316;&#x7B97;&#x6CD5;&#x3002;&#x5BF9;&#x4E8E;&#x67D0;&#x4E9B;cost function&#xFF0C;&#x5F88;&#x5BB9;&#x6613;&#x5B9E;&#x73B0;<script type="math/tex; ">E_{in}</script>&#x6700;&#x5C0F;&#xFF0C;&#x6BD4;&#x5982;&#x4E4B;&#x540E;&#x4F1A;&#x8BF4;&#x7684;&#x7EBF;&#x6027;&#x56DE;&#x5F52;&#x3002;&#x5BF9;&#x4E8E;&#x67D0;&#x4E9B;cost function&#xFF0C;&#x5BFB;&#x627E;&#x6700;&#x5C0F;&#x7684;<script type="math/tex; ">E_{in}</script>&#x662F;&#x56F0;&#x96BE;&#x7684;&#xFF0C;&#x56DE;&#x5FC6;&#x4E4B;&#x524D;&#x8BF4;&#x7684;<a href="http://beader.me/2013/12/21/perceptron-learning-algorithm/" target="_blank">PLA</a>&#xFF0C;&#x7528;0/1 error&#x6765;&#x8861;&#x91CF;&#x8BEF;&#x5DEE;&#xFF0C;&#x8981;minimize <script type="math/tex; ">E_{in}</script>&#x5C31;&#x662F;&#x4E2A;NP Hard&#x95EE;&#x9898;&#x3002;</p>
+<p>&#x2003;&#x2003;&#x5F53;&#x7136;&#x9664;&#x6B64;&#x4E4B;&#x5916;&#xFF0C;cost function&#x4E2D;&#x8FD8;&#x53EF;&#x4EE5;&#x589E;&#x52A0;&#x4E00;&#x4E9B;&#x6765;&#x81EA;&#x4E8E;error&#x4E4B;&#x5916;&#x7684;&#x6210;&#x672C;&#xFF0C;&#x4EE5;&#x8FBE;&#x5230;&#x9650;&#x5236;&#x6A21;&#x578B;&#x590D;&#x6742;&#x5EA6;&#x65B9;&#x9762;&#x7684;&#x76EE;&#x7684;&#xFF0C;&#x5982;ridge regression&#x3001;lasso&#x7B49;&#xFF0C;&#x8FD9;&#x4E9B;&#x4EE5;&#x540E;&#x6709;&#x673A;&#x4F1A;&#x90FD;&#x4F1A;&#x63D0;&#x5230;&#x3002;</p>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../section2/vc-dimension-three.html" class="navigation navigation-prev " aria-label="Previous page: VC Dimension Part III"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../section3/index.html" class="navigation navigation-next " aria-label="Next page: How Can Machines Learn?"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="http://cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-mathjax-update/plugin.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-disqus/plugin.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-github/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2},"disqus":{"shortName":"mlnotebook"},"github":{"url":"https://github.com/beader/mlnotebook"},"mathjax":{}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

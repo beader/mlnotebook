@@ -1,0 +1,568 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
+        <title>VC Dimension Part I | 机器学习笔记</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.0.1">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    
+    
+    <link rel="next" href="../section2/vc-dimension-two.html" />
+    
+    
+    <link rel="prev" href="../section2/is-learning-feasible.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+    
+
+        
+    <div class="book" data-level="2.2" data-basepath=".." data-revision="Thu Nov 07 2019 08:46:53 GMT+0000 (UTC)">
+    
+
+<div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Type to search" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+        
+        
+        
+
+        
+
+        
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="section1/index.html">
+            
+                
+                    <a href="../section1/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        When Can Machines Learn?
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="section2/index.html">
+            
+                
+                    <a href="../section2/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        Why Can Machines Learn?
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="section2/is-learning-feasible.html">
+            
+                
+                    <a href="../section2/is-learning-feasible.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        机器学习的可行性
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.2" data-path="section2/vc-dimension-one.html">
+            
+                
+                    <a href="../section2/vc-dimension-one.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        VC Dimension Part I
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="section2/vc-dimension-two.html">
+            
+                
+                    <a href="../section2/vc-dimension-two.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        VC Dimension Part II
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="section2/vc-dimension-three.html">
+            
+                
+                    <a href="../section2/vc-dimension-three.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        VC Dimension Part III
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="section2/noise-and-error.html">
+            
+                
+                    <a href="../section2/noise-and-error.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.</b>
+                        
+                        Noise and Error
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="section3/index.html">
+            
+                
+                    <a href="../section3/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        How Can Machines Learn?
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="section3/linear-regression.html">
+            
+                
+                    <a href="../section3/linear-regression.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        Linear Regression
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="section3/logistic-regression.html">
+            
+                
+                    <a href="../section3/logistic-regression.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        Logistic Regression
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="section3/linear_models_for_classification.html">
+            
+                
+                    <a href="../section3/linear_models_for_classification.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        Linear Models for Classification
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="section4/index.html">
+            
+                
+                    <a href="../section4/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        How Can Machines Learn Better?
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="section5/index.html">
+            
+                
+                    <a href="../section5/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        FAQ
+                    </a>
+                
+            
+            
+        </li>
+    
+
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                Published with GitBook
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Table of Contents"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Search"><i class="fa fa-search"></i></a>
+    
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="Font Settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">Serif</button>
+        <button type="button" data-font="1" class="button">Sans</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="Share"><i class="fa fa-share-alt"></i>
+        </a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                <button type="button" data-sharing="twitter" class="button">
+                    Share on Twitter
+                </button>
+                <button type="button" data-sharing="google-plus" class="button">
+                    Share on Google
+                </button>
+                <button type="button" data-sharing="facebook" class="button">
+                    Share on Facebook
+                </button>
+                <button type="button" data-sharing="weibo" class="button">
+                    Share on Weibo
+                </button>
+                <button type="button" data-sharing="instapaper" class="button">
+                    Share on Instapaper
+                </button>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Google"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
+    
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >机器学习笔记</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <p>&#x2003;&#x2003;<a href="http://beader.me/2014/01/15/is-learning-feasible/" target="_blank">&#x4E0A;&#x4E00;&#x7BC7;</a>&#x8BB2;&#x5230;&#xFF0C;learning&#x7684;&#x65F6;&#x5019;&#x5982;&#x679C;&#x9047;&#x4E0A;bad sample&#xFF0C;&#x5982;&#x679C;&#x9047;&#x4E0A;bad sample&#x6211;&#x4EEC;&#x5C31;&#x65E0;&#x6CD5;&#x4FDD;&#x8BC1;<script type="math/tex; ">E_{in}</script>&#x548C;<script type="math/tex; ">E_{out}</script>&#x5F88;&#x63A5;&#x8FD1;&#x3002;&#x6211;&#x4EEC;&#x7528;&#x4E86;&#x4E00;&#x4E2A;&#x4E0D;&#x7B49;&#x5F0F;&#x6765;&#x8861;&#x91CF;&#x9047;&#x4E0A;bad sample&#x7684;&#x6982;&#x7387;&#xFF1A;</p>
+<p><script type="math/tex; mode=display">
+\mathbb{P}_\mathcal{D}[BAD\ D]\leq 2Mexp(-2\epsilon ^2N)
+</script></p>
+<!--more-->
+<p>&#x2003;&#x2003;&#x56E0;&#x6B64;&#x5982;&#x679C;Hypothesis Set&#x4E2D;&#x65B9;&#x7A0B;&#x7684;&#x6570;&#x91CF;<script type="math/tex; ">|\mathcal{H}|=M</script>&#x662F;&#x6709;&#x9650;&#x4E2A;&#xFF0C;&#x5E76;&#x4E14;N&#x8DB3;&#x591F;&#x5927;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x6709;&#x5F88;&#x5927;&#x7684;&#x6982;&#x7387;&#x4FDD;&#x8BC1;&#x4E0D;&#x4F1A;&#x9047;&#x4E0A;bad sample&#xFF0C;&#x5373;&#x4E0D;&#x7BA1;<script type="math/tex; ">\mathcal{A}</script>&#x6311;&#x9009;&#x4E86;&#x4EFB;&#x610F;&#x4E00;&#x4E2A;<script type="math/tex; ">g</script>&#xFF0C;&#x90FD;&#x53EF;&#x4EE5;&#x4FDD;&#x8BC1;<script type="math/tex; ">E_{out}(g) \approx E_{in}(g)</script>&#x3002;&#x56E0;&#x6B64;learning&#x7684;&#x95EE;&#x9898;&#x53EF;&#x4EE5;&#x805A;&#x7126;&#x5230;&#x4EE5;&#x4E0B;&#x4E24;&#x4E2A;&#x95EE;&#x9898;&#xFF1A;</p>
+<ol>
+<li>&#x80FD;&#x4E0D;&#x80FD;&#x786E;&#x4FDD;<script type="math/tex; ">E_{in}(g)</script>&#x548C;<script type="math/tex; ">E_{out}(g)</script>&#x5F88;&#x63A5;&#x8FD1;&#xFF1F;(Hypothesis Set&#x4E2D;&#x65B9;&#x7A0B;&#x7684;&#x4E2A;&#x6570;&#x4F1A;&#x4E0D;&#x4F1A;&#x592A;&#x591A;&#xFF0C;&#x7528;&#x6765;&#x8BAD;&#x7EC3;&#x7684;&#x6570;&#x636E;&#x91CF;&#x591F;&#x4E0D;&#x591F;&#x5927;)</li>
+<li>&#x80FD;&#x4E0D;&#x80FD;&#x4F7F;<script type="math/tex; ">E_{in}(g)</script>&#x8DB3;&#x591F;&#x5C0F;&#xFF1F;(Hypothesis Set&#x4E2D;&#x65B9;&#x7A0B;&#x7684;&#x4E2A;&#x6570;&#x4F1A;&#x4E0D;&#x4F1A;&#x592A;&#x5C11;)  </li>
+</ol>
+<p>&#x2003;&#x2003;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x4FBF;&#x9047;&#x5230;&#x4E86;&#x4E00;&#x4E2A;&#x4E24;&#x96BE;&#x7684;&#x9009;&#x62E9;&#xFF1A;</p>
+<ul>
+<li>&#x5982;&#x679C;M&#x5F88;&#x5C0F;&#xFF0C;&#x6839;&#x636E;<script type="math/tex; ">\mathbb{P}[BAD]\leq 2Mexp(...)</script>&#xFF0C;&#x7B2C;1&#x4E2A;&#x95EE;&#x9898;&#xFF0C;&#x201C;&#x5F88;&#x63A5;&#x8FD1;&#x201D;&#xFF0C;&#x505A;&#x7684;&#x4E0D;&#x9519;&#x3002;&#x4F46;&#x662F;&#x5BF9;&#x4E8E;&#x7B2C;2&#x4E2A;&#x95EE;&#x9898;&#xFF0C;&#x7531;&#x4E8E;&#x9009;&#x62E9;&#x6027;&#x592A;&#x5C11;&#xFF0C;&#x5F88;&#x96BE;&#x627E;&#x5230;<script type="math/tex; ">E_{in}(g)</script>&#x8F83;&#x5C0F;&#x7684;<script type="math/tex; ">g</script>&#x3002;(&#x60F3;&#x8C61;&#x4E00;&#x4E0B;&#x5982;&#x679C;&#x6570;&#x636E;&#x662F;&#x7531;&#x4E00;&#x4E2A;&#x4E8C;&#x6B21;&#x65B9;&#x7A0B;&#x6240;&#x4EA7;&#x751F;&#xFF0C;&#x800C;Hypothesis Set&#x5F53;&#x4E2D;&#x53EA;&#x6709;&#x76F4;&#x7EBF;&#x65B9;&#x7A0B;&#x53EF;&#x4EE5;&#x9009;)</li>
+<li>&#x5982;&#x679C;M&#x5F88;&#x5927;&#xFF0C;&#x6211;&#x4EEC;&#x9009;&#x62E9;&#x65B9;&#x7A0B;&#x7684;&#x65F6;&#x5019;&#x66F4;&#x52A0;&#x81EA;&#x7531;(&#x81EA;&#x7531;&#x5EA6;)&#xFF0C;&#x66F4;&#x6709;&#x673A;&#x4F1A;&#x9009;&#x5230;<script type="math/tex; ">E_{in}</script>&#x5F88;&#x4F4E;&#x7684;&#x65B9;&#x7A0B;&#x3002;&#x4F46;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x6839;&#x636E;&#x516C;&#x5F0F;&#xFF0C;&#x6211;&#x4EEC;&#x9047;&#x5230;bad sample&#x7684;&#x53EF;&#x80FD;&#x6027;&#x4E5F;&#x5927;&#x5927;&#x589E;&#x52A0;&#x3002;</li>
+</ul>
+<p>&#x2003;&#x2003;&#x56E0;&#x6B64;&#x8FD9;&#x7BC7;&#x7B14;&#x8BB0;&#x4E3B;&#x8981;&#x56F4;&#x7ED5;&#x516C;&#x5F0F;&#x4E2D;&#x8FD9;&#x4E2A;<script type="math/tex; ">M</script>&#x5C55;&#x5F00;&#xFF1A;</p>
+<p><script type="math/tex; mode=display">
+\mathbb{P}[| E_{in}(g) - E_{out}(g) | \gt \epsilon] \leq 2\cdot M \cdot exp(-2\epsilon ^2N)
+</script></p>
+<h2 id="%E6%9C%89%E6%95%88%E7%9A%84%E6%96%B9%E7%A8%8B-effective-number-of-hypotheses">&#x6709;&#x6548;&#x7684;&#x65B9;&#x7A0B; (Effective Number of Hypotheses)</h2>
+<p>&#x2003;&#x2003;&#x8BA9;&#x6211;&#x4EEC;&#x6765;&#x56DE;&#x5FC6;&#x4E0B;&#x8FD9;&#x4E2A;M&#x662F;&#x4ECE;&#x54EA;&#x91CC;&#x6765;&#x7684;&#x3002;&#x8BB0;<script type="math/tex; ">\mathcal{H}</script>&#x4E2D;&#x7B2C;m&#x4E2A;&#x65B9;&#x7A0B;&#x9047;&#x5230;bad sample&#x4E3A;&#x4E8B;&#x4EF6;<script type="math/tex; ">\mathcal{B}_m:|E_{in}(h_m) - E_{out}(h_m)| \gt \epsilon</script>&#xFF0C;&#x5219;<script type="math/tex; ">\mathcal{H}</script>&#x9047;&#x5230;bad sample&#x7684;&#x6982;&#x7387;&#x4E3A;&#x5176;&#x6240;&#x6709;&#x65B9;&#x7A0B;&#x9047;&#x5230;bad sample&#x6982;&#x7387;&#x7684;&#x8054;&#x5408;&#x6982;&#x7387;&#x3002;&#x5982;&#x679C;&#x6BCF;&#x4E2A;&#x65B9;&#x7A0B;&#x9047;&#x4E0A;bad sample&#x8FD9;&#x4EF6;&#x4E8B;&#x662F;&#x4E92;&#x76F8;&#x72EC;&#x7ACB;&#x7684;&#xFF0C;&#x5219;<script type="math/tex; ">\mathcal{H}</script>&#x9047;&#x4E0A;bad sample&#x7684;&#x6982;&#x7387;&#x662F;&#x5404;&#x65B9;&#x7A0B;&#x9047;&#x4E0A;bad sample&#x7684;&#x6982;&#x7387;&#x4E4B;&#x548C;&#xFF0C;&#x56E0;&#x6B64;&#x4ED6;&#x4EEC;&#x7684;&#x8054;&#x5408;&#x6982;&#x7387;&#x4E00;&#x5B9A;&#x5C0F;&#x4E8E;&#x7B49;&#x4E8E;&#x5404;&#x4E2A;&#x4E8B;&#x4EF6;&#x5355;&#x72EC;&#x53D1;&#x751F;&#x7684;&#x6982;&#x7387;&#x4E4B;&#x548C;&#x3002;</p>
+<p><script type="math/tex; mode=display">
+\mathbb{P}[\mathcal{B}_1 or \mathcal{B}_2 or ... or \mathcal{B}_M] \leq \mathbb{P}[\mathcal{B}_1] + \mathbb{P}[\mathcal{B}_2] + ... + \mathbb{P}[\mathcal{B}_M]
+</script></p>
+<p>&#x2003;&#x2003;&#x4F46;&#x4E8B;&#x5B9E;&#x4E0A;bad event&#x5E76;&#x4E0D;&#x662F;&#x5B8C;&#x5168;&#x72EC;&#x7ACB;&#x7684;&#x3002;&#x60F3;&#x8C61;<script type="math/tex; ">\mathcal{H}</script>&#x4E24;&#x4E2A;&#x975E;&#x5E38;&#x7C7B;&#x4F3C;&#x7684;&#x65B9;&#x7A0B;<script type="math/tex; ">h_1\approx h_2</script>&#xFF0C;&#x4ED6;&#x4EEC;&#x9047;&#x5230;bad sample&#x5206;&#x522B;&#x4E3A;&#x4E8B;&#x4EF6;<script type="math/tex; ">\mathcal{B}_1</script>&#x4E0E;<script type="math/tex; ">\mathcal{B}_2</script>&#xFF0C;&#x56E0;&#x4E3A;&#x8FD9;&#x4E24;&#x4E2A;&#x65B9;&#x7A0B;&#x5F88;&#x63A5;&#x8FD1;&#xFF0C;&#x5219;&#x5F80;&#x5F80;<script type="math/tex; ">\mathcal{B}_1</script>&#x53D1;&#x751F;&#x65F6;&#xFF0C;<script type="math/tex; ">\mathcal{B}_2</script>&#x4E5F;&#x4F1A;&#x53D1;&#x751F;&#xFF0C;&#x53EF;&#x4EE5;&#x8BF4;<script type="math/tex; ">\mathcal{B}_1</script>&#x4E0E;<script type="math/tex; ">\mathcal{B}_2</script>&#x7684;&#x91CD;&#x5408;&#x5EA6;&#x5F88;&#x9AD8;(overlapping)&#x3002;</p>
+<p><img src="images/hypothesis_overlap.png" alt="">  </p>
+<p>&#x2003;&#x2003;&#x90A3;&#x4E48;&#x6211;&#x4EEC;&#x5C31;&#x4F1A;&#x60F3;&#xFF0C;&#x6211;&#x4EEC;&#x80FD;&#x4E0D;&#x80FD;&#x628A;&#x7ED3;&#x679C;&#x63A5;&#x8FD1;&#x7684;&#x90A3;&#x4E9B;&#x65B9;&#x7A0B;&#x770B;&#x6210;&#x4E00;&#x7C7B;&#xFF0C;&#x8B6C;&#x5982;&#x6709;&#x4E9B;&#x65B9;&#x7A0B;&#x4ED6;&#x4EEC;&#x7684;&#x9884;&#x6D4B;&#x7ED3;&#x679C;&#x603B;&#x662F;&#x76F8;&#x540C;&#x6216;&#x662F;&#x5F88;&#x63A5;&#x8FD1;&#x7684;&#x3002;</p>
+<p>&#x2003;&#x2003;&#x5047;&#x8BBE;&#x6211;&#x4EEC;&#x7684;&#x7B97;&#x6CD5;&#x8981;&#x5728;&#x5E73;&#x9762;&#x4E0A;&#x6311;&#x9009;&#x4E00;&#x6761;&#x76F4;&#x7EBF;&#x65B9;&#x7A0B;&#x4F5C;&#x4E3A;<script type="math/tex; ">g</script>,<script type="math/tex; ">\mathcal{H}=\{all\ lines\ in\  \mathbb{R}^2\}</script>&#xFF0C;<script type="math/tex; ">\mathcal{H}</script>&#x5F53;&#x4E2D;&#x6709;&#x65E0;&#x9650;&#x591A;&#x4E2A;&#x65B9;&#x7A0B;&#xFF0C;&#x4F46;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x628A;&#x8FD9;&#x4E9B;&#x4E2A;&#x65B9;&#x7A0B;&#x5F52;&#x4E3A;&#x4E24;&#x7C7B;&#x3002;&#x4E00;&#x7C7B;&#x662F;&#x628A;<script type="math/tex; ">x_1</script>&#x5224;&#x65AD;&#x6210;&#x5708;&#x5708;&#x7684;&#xFF0C;&#x53E6;&#x4E00;&#x7C7B;&#x662F;&#x628A;<script type="math/tex; ">x_1</script>&#x5224;&#x65AD;&#x4E3A;&#x53C9;&#x53C9;&#x7684;&#x3002;</p>
+<p><img src="images/1point2lines.png" alt="">  </p>
+<p>&#x2003;&#x2003;&#x90A3;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x624B;&#x4E2D;&#x6709;2&#x4E2A;&#x6570;&#x636E;&#x70B9;<script type="math/tex; ">x_1</script>&#x548C;<script type="math/tex; ">x_2</script>&#x5462;&#xFF1F;&#x8FD9;&#x6837;&#x7684;&#x8BDD;<script type="math/tex; ">\mathcal{H}</script>&#x4E2D;&#x65E0;&#x6570;&#x6761;&#x76F4;&#x7EBF;&#x53EF;&#x4EE5;&#x5206;&#x4E3A;4&#x7C7B;&#x3002;&#x7528;&#x8FD9;4&#x7C7B;&#x7EBF;&#x5BF9;<script type="math/tex; ">x_1</script>&#x548C;<script type="math/tex; ">x_2</script>&#x8FDB;&#x884C;&#x9884;&#x6D4B;&#xFF0C;&#x4E00;&#x5171;&#x80FD;&#x4EA7;&#x751F;4&#x79CD;&#x4E0D;&#x540C;&#x7684;&#x7ED3;&#x679C;&#x3002;</p>
+<p><img src="images/2points4lines.png" alt="">  </p>
+<p>&#x2003;&#x2003;&#x90A3;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x624B;&#x4E2D;&#x6709;3&#x4E2A;&#x6570;&#x636E;&#x70B9;<script type="math/tex; ">x_1</script>&#x3001;<script type="math/tex; ">x_2</script>&#x548C;<script type="math/tex; ">x_3</script>&#x5462;&#xFF1F;</p>
+<p><img src="images/3points8lines.png" alt="">  </p>
+<p>&#x2003;&#x2003;<script type="math/tex; ">\mathcal{H}</script>&#x4E2D;&#x6700;&#x591A;&#x6709;8&#x7C7B;&#x76F4;&#x7EBF;&#xFF0C;&#x4F5C;&#x7528;&#x4E8E;<script type="math/tex; ">\mathcal{D}</script>&#x4EA7;&#x751F;&#x5982;&#x4E0A;8&#x79CD;&#x7ED3;&#x679C;&#x3002;</p>
+<p>&#x2003;&#x2003;&#x90A3;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x624B;&#x4E2D;&#x6709;4&#x4E2A;&#x6570;&#x636E;&#x70B9;<script type="math/tex; ">x_1</script>~<script type="math/tex; ">x_4</script>&#xFF0C;&#x60C5;&#x51B5;&#x53C8;&#x4F1A;&#x662F;&#x600E;&#x6837;&#x3002;&#x524D;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x4E2D;&#x6211;&#x4EEC;&#x57FA;&#x672C;&#x4E0A;&#x628A;&#x5404;&#x4E2A;&#x6570;&#x636E;&#x70B9;&#x7684;&#x60C5;&#x51B5;&#x7528;&#x6392;&#x5217;&#x7EC4;&#x5408;&#x7684;&#x65B9;&#x5F0F;&#x7EC4;&#x5408;&#x51FA;&#x6765;&#x5373;&#x53EF;&#x3002;&#x4F46;&#x5BF9;&#x4E8E;4&#x4E2A;&#x4EE5;&#x4E0A;&#x7684;&#x70B9;&#x800C;&#x8A00;&#xFF0C;&#x5C31;&#x4E0D;&#x662F;&#x90A3;&#x4E48;&#x5BB9;&#x6613;&#x4E86;&#x3002;</p>
+<p><img src="images/4points14lines.png" alt=""><br>&#x2003;&#x2003;&#x5728;&#x8FD9;16&#x79CD;&#x7EC4;&#x5408;&#x4E2D;&#xFF0C;&#x5C31;&#x6709;&#x4E24;&#x79CD;&#x662F;&#x201C;&#x76F4;&#x7EBF;&#x65B9;&#x7A0B;&#x201D;&#x6CA1;&#x6709;&#x529E;&#x6CD5;&#x4EA7;&#x751F;&#x7684;&#x7ED3;&#x679C;&#x3002;&#x56E0;&#x6B64;&#x5982;&#x679C;<script type="math/tex; ">\mathcal{H}</script>&#x662F;2&#x7EF4;&#x7A7A;&#x95F4;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x76F4;&#x7EBF;&#xFF0C;&#x8868;&#x9762;&#x4E0A;&#x770B;&#x662F;&#x5728;&#x65E0;&#x6570;&#x6761;&#x76F4;&#x7EBF;&#x65B9;&#x7A0B;&#x4E2D;&#x53BB;&#x6311;&#xFF0C;&#x4F46;&#x7531;&#x4E8E;&#x5927;&#x90E8;&#x5206;&#x76F4;&#x7EBF;&#x65B9;&#x7A0B;&#x6240;&#x4EA7;&#x751F;&#x7684;&#x7ED3;&#x679C;&#x662F;&#x4E00;&#x6A21;&#x4E00;&#x6837;&#x7684;&#xFF0C;&#x7ED3;&#x679C;&#x4E0D;&#x4E00;&#x6837;&#x7684;&#x76F4;&#x7EBF;&#x7684;&#x7C7B;&#x522B;&#x5BF9;&#x5E94;&#x4E0A;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x5206;&#x522B;&#x4E3A;2&#x7C7B;&#x3001;4&#x7C7B;&#x3001;8&#x7C7B;&#x548C;14&#x7C7B;(Effective Number of Lines)&#x3002;&#x5C5E;&#x4E8E;&#x540C;&#x4E00;&#x7C7B;&#x7684;&#x76F4;&#x7EBF;&#xFF0C;&#x4ED6;&#x4EEC;&#x5C06;&#x540C;&#x65F6;&#x9047;&#x5230;&#x6216;&#x4E0D;&#x9047;&#x5230;bad sample&#xFF0C;&#x7531;&#x4E8E;&#x4E4B;&#x524D;&#x90A3;&#x4E2A;union bound&#x662F;&#x57FA;&#x4E8E;&#x72EC;&#x7ACB;&#x6027;&#x7684;&#x5047;&#x8BBE;&#x4E0B;&#x7684;&#xFF0C;&#x56E0;&#x6B64;<script type="math/tex; ">\mathcal{H}</script>&#x906D;&#x9047;bad sample&#x7684;&#x6982;&#x7387;&#x660E;&#x663E;&#x88AB;&#x5938;&#x5927;&#x4E86;&#x3002;&#x6240;&#x4EE5;&#xFF0C;&#x6211;&#x4EEC;&#x5E94;&#x8BE5;&#x628A;&#x4E0D;&#x7B49;&#x5F0F;&#x6539;&#x5199;&#x4E3A;&#xFF1A;</p>
+<p><script type="math/tex; mode=display">
+\mathbb{P}[|E_{in}(g)-E_{out}(g)|\gt \epsilon]\leq 2\cdot effective(N)\cdot exp(-2\epsilon^2N)
+</script></p>
+<h2 id="-blk289-%E4%BD%9C%E7%94%A8%E4%BA%8E-blk290-%E8%83%BD%E5%A4%9F%E4%BA%A7%E7%94%9F%E5%A4%9A%E5%B0%91%E4%B8%8D%E5%90%8C%E7%9A%84%E7%BB%93%E6%9E%9C%EF%BC%9F-dichotomies"><script type="math/tex; ">\mathcal{H}</script>&#x4F5C;&#x7528;&#x4E8E;<script type="math/tex; ">\mathcal{D}</script>&#x80FD;&#x591F;&#x4EA7;&#x751F;&#x591A;&#x5C11;&#x4E0D;&#x540C;&#x7684;&#x7ED3;&#x679C;&#xFF1F; (Dichotomies)</h2>
+<p>&#x2003;&#x2003;&#x4ECE;<script type="math/tex; ">\mathcal{H}</script>&#x4E2D;&#x4EFB;&#x610F;&#x9009;&#x53D6;&#x4E00;&#x4E2A;&#x65B9;&#x7A0B;<script type="math/tex; ">h</script>&#xFF0C;&#x8BA9;&#x8FD9;&#x4E2A;<script type="math/tex; ">h</script>&#x5BF9;<script type="math/tex; ">\mathcal{D}</script>&#x8FDB;&#x884C;&#x4E8C;&#x5143;&#x5206;&#x7C7B;&#xFF0C;&#x8F93;&#x51FA;&#x4E00;&#x4E2A;&#x7ED3;&#x679C;&#x5411;&#x91CF;&#xFF0C;&#x6BD4;&#x5982;&#x5BF9;4&#x4E2A;&#x70B9;&#x8FDB;&#x884C;&#x9884;&#x6D4B;&#xFF0C;&#x8F93;&#x51FA;<script type="math/tex; ">\{\mathrm{o},\mathrm{o},\mathrm{o},\times\}</script>&#xFF0C;&#x8FD9;&#x6837;&#x7684;&#x4E00;&#x4E2A;&#x8F93;&#x51FA;&#x5411;&#x91CF;&#x6211;&#x4EEC;&#x79F0;&#x5B83;&#x4E3A;&#x4E00;&#x4E2A;dichotomy&#x3002;&#x4E0D;&#x96BE;&#x5F97;&#x51FA;&#xFF0C;&#x4E00;&#x4E2A;&#x76F4;&#x7EBF;&#x65B9;&#x7A0B;&#x5728;<script type="math/tex; ">\mathcal{D}</script>&#x4E2D;&#x5BF9;&#x5E94;&#x4E00;&#x4E2A;dichotomy&#xFF0C;&#x4F46;&#x4E00;&#x4E2A;dichotomy&#x81F3;&#x5C11;&#x5BF9;&#x5E94;&#x4E00;&#x4E2A;&#x76F4;&#x7EBF;&#x65B9;&#x7A0B;&#xFF0C;&#x6211;&#x4EEC;&#x628A;&#x4E00;&#x4E2A;dichotomy&#x5BF9;&#x5E94;&#x7684;&#x6240;&#x6709;&#x76F4;&#x7EBF;&#x65B9;&#x7A0B;&#x89C6;&#x4E3A;&#x4E00;&#x7C7B;&#xFF0C;&#x5219;effective number of lines&#x5C31;&#x7B49;&#x4E8E;&#x4E0D;&#x540C;<script type="math/tex; ">\mathcal{D}</script>&#x4E2D;&#x4E0D;&#x540C;&#x7684;dichotomy&#x7684;&#x6570;&#x91CF;&#x3002;&#x663E;&#x7136;&#x8FD9;&#x4E2A;dichotomy&#x7684;&#x6570;&#x91CF;&#x5C0F;&#x4E8E;&#x7B49;&#x4E8E;&#x6240;&#x6709;&#x6570;&#x636E;&#x70B9;&#x7684;&#x6392;&#x5217;&#x7EC4;&#x5408;&#x6570;&#x7684;&#xFF0C;&#x4F8B;&#x5982;&#x4E0A;&#x56FE;&#x4E2D;&#x753B;&#x5927;&#x53C9;&#x7684;&#x90A3;&#x5E45;&#x56FE;&#x5BF9;&#x5E94;&#x7684;&#x6392;&#x5217;&#x7EC4;&#x5408;&#xFF0C;&#x5C31;&#x4E0D;&#x80FD;&#x6210;&#x4E3A;&#x4E00;&#x4E2A;dichotomy&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x4EEC;&#x65E0;&#x6CD5;&#x7531;&#x4EFB;&#x4F55;&#x4E00;&#x6761;&#x76F4;&#x7EBF;&#x65B9;&#x7A0B;&#x4EA7;&#x751F;&#x3002;&#xFF08;&#x5F53;&#x7136;&#x5982;&#x679C;&#x8003;&#x8651;&#x7684;&#x4E0D;&#x662F;&#x76F4;&#x7EBF;&#x65B9;&#x7A0B;&#xFF0C;&#x5219;&#x90A3;&#x79CD;&#x6392;&#x5217;&#x7EC4;&#x5408;&#x662F;&#x53EF;&#x4EE5;&#x6210;&#x4E3A;&#x4E00;&#x79CD;dichotomy&#x7684;&#xFF09;<br>&#x2003;&#x2003;&#x56E0;&#x6B64;&#x6211;&#x4EEC;&#x524D;&#x9762;&#x8981;&#x627E;&#x7684;<br>&#x2003;&#x2003;<script type="math/tex; ">effective(N)</script><br>&#x2003;&#x2003;&#x2003;&#x2003;&#x2003;&#x2003;=&#x5E73;&#x9762;&#x4E2D;&#x80FD;&#x627E;&#x51FA;&#x591A;&#x5C11;&#x6761;&#x4E0D;&#x540C;&#x7C7B;&#x7684;&#x76F4;&#x7EBF;<br>&#x2003;&#x2003;&#x2003;&#x2003;&#x2003;&#x2003;=<script type="math/tex; ">\mathcal{H}</script>&#x4F5C;&#x7528;&#x4E8E;<script type="math/tex; ">\mathcal{D}</script>&#x80FD;&#x4EA7;&#x751F;&#x591A;&#x5C11;&#x4E0D;&#x540C;&#x7684;dichotomy&#x3002;<br>&#x2003;&#x2003;&#x56E0;&#x4E3A;&#x4E0D;&#x4E00;&#x5B9A;&#x6240;&#x6709;&#x6392;&#x5217;&#x7EC4;&#x5408;&#x90FD;&#x80FD;&#x6210;&#x4E3A;dichotomy&#xFF0C;&#x6240;&#x4EE5;&#x4E0D;&#x540C;&#x7684;dichotomy&#x7684;&#x6570;&#x91CF;&#x4E00;&#x5B9A;&#x4E0D;&#x4F1A;&#x8D85;&#x8FC7;&#x6392;&#x5217;&#x7EC4;&#x5408;&#x6570;<script type="math/tex; ">2^N</script>&#xFF0C;&#x4E0A;&#x4F8B;&#x4E2D;&#x5982;&#x679C;&#x5B58;&#x5728;&#x4E09;&#x70B9;&#x5171;&#x7EBF;&#x7684;&#x60C5;&#x51B5;&#xFF0C;&#x5219;dichotomy&#x7684;&#x6570;&#x91CF;&#x4F1A;&#x66F4;&#x5C11;&#xFF0C;&#x56E0;&#x6B64;&#xFF1A;<br>&#x2003;&#x2003;<script type="math/tex; ">effective(N)</script><br>&#x2003;&#x2003;&#x2003;&#x2003;&#x2003;&#x2003;=<script type="math/tex; ">\mathcal{H}</script>&#x4F5C;&#x7528;&#x4E8E;<script type="math/tex; ">\mathcal{D}</script>&#x201C;<strong>&#x6700;&#x591A;</strong>&#x201D;&#x80FD;&#x4EA7;&#x751F;&#x591A;&#x5C11;&#x4E0D;&#x540C;&#x7684;dichotomy</p>
+<h2 id="%E6%88%90%E9%95%BF%E5%87%BD%E6%95%B0-growth-function">&#x6210;&#x957F;&#x51FD;&#x6570; (Growth Function)</h2>
+<p>&#x2003;&#x2003;&#x90A3;&#x4E48;&#xFF0C;<script type="math/tex; ">\mathcal{H}</script>&#x4F5C;&#x7528;&#x4E8E;<script type="math/tex; ">\mathcal{D}</script>&#x201C;<strong>&#x6700;&#x591A;</strong>&#x201D;&#x80FD;&#x4EA7;&#x751F;&#x591A;&#x5C11;&#x79CD;&#x4E0D;&#x540C;&#x7684;dichotomy&#x5462;&#xFF1F;&#x8FD9;&#x4E2A;&#x6570;&#x91CF;&#x4E0E;<script type="math/tex; ">\mathcal{H}</script>&#x6709;&#x5173;&#xFF0C;&#x4E5F;&#x4E0E;&#x6570;&#x636E;&#x91CF;<script type="math/tex; ">N</script>&#x6709;&#x5173;&#x3002;&#x7528;&#x6570;&#x5B66;&#x5F0F;&#x53EF;&#x4EE5;&#x8868;&#x8FBE;&#x4E3A;&#xFF1A;</p>
+<p><script type="math/tex; mode=display">
+max|\mathcal{H}(x_1,x_2,...,x_N)|
+</script></p>
+<p>&#x2003;&#x2003;&#x4E0A;&#x5F0F;&#x53C8;&#x79F0;&#x4E3A;&#x6210;&#x957F;&#x51FD;&#x6570;&#xFF08;growth function&#xFF09;&#x3002;&#x5728;<script type="math/tex; ">\mathcal{H}</script>&#x786E;&#x5B9A;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;growth function&#x662F;&#x4E00;&#x4E2A;&#x4E0E;N&#x76F8;&#x5173;&#x7684;&#x51FD;&#x6570;&#x3002;&#x4EE5;&#x4E0B;&#x662F;&#x51E0;&#x79CD;&#x5E38;&#x89C1;&#x7684;Hypothesis Set&#x7684;&#x6210;&#x957F;&#x51FD;&#x6570;&#x3002;</p>
+<ol>
+<li><p>Positive Rays<br><img src="images/postive_rays.png" alt=""><br>&#x8F93;&#x5165;&#x7A7A;&#x95F4;&#x4E3A;&#x4E00;&#x7EF4;&#x5B9E;&#x6570;&#x7A7A;&#x95F4;&#x3002;&#x5927;&#x4E8E;threshold a&#x7684;&#x9884;&#x6D4B;+1,&#x5426;&#x5219;&#x9884;&#x6D4B;-1&#x3002;
+for example: &#x5F53;N=4&#x65F6;&#xFF0C;Positive Rays&#x4F5C;&#x7528;&#x4E8E;<script type="math/tex; ">x_1</script>~<script type="math/tex; ">x_4</script>&#xFF0C;&#x5171;&#x80FD;&#x4EA7;&#x751F;5&#x4E2A;&#x4E0D;&#x540C;&#x7684;dichotomies&#x3002;&#x5982;&#x4E0B;&#x56FE;&#xFF1A;<br><img src="images/positive_rays_dichotomies.png" alt=""><br>&#x4E0D;&#x96BE;&#x53BB;&#x60F3;&#xFF0C;4&#x4E2A;&#x70B9;&#xFF0C;5&#x4E2A;&#x53EF;&#x80FD;&#x7684;&#x5207;&#x70B9;&#xFF0C;&#x6700;&#x591A;&#x4EA7;&#x751F;5&#x79CD;dichotomies&#x3002;&#x56E0;&#x6B64;Positive Rays&#x7684;&#x6210;&#x957F;&#x51FD;&#x6570;&#x4E3A;&#xFF1A;
+<script type="math/tex; ">m_{\mathcal{H}(N)}=N+1</script></p>
+</li>
+<li><p>Positive Intervals<br><img src="images/positive_intervals.png" alt=""><br>&#x548C;&#x524D;&#x9762;&#x7684;&#x7C7B;&#x4F3C;&#xFF0C;&#x53EA;&#x4E0D;&#x8FC7;Positive Intervals&#x6709;&#x4E24;&#x4E2A;threshold&#xFF0C;&#x5939;&#x5728;&#x4E24;&#x4E2A;threshold&#x4E4B;&#x95F4;&#x7684;&#x9884;&#x6D4B;&#x4E3A;+1&#xFF0C;&#x5176;&#x4F59;&#x9884;&#x6D4B;&#x4E3A;-1&#x3002;
+for example: &#x5F53;N=4&#x65F6;&#xFF0C;Positive Intervals&#x4F5C;&#x7528;&#x4E8E;<script type="math/tex; ">x_1</script>~<script type="math/tex; ">x_4</script>&#xFF0C;&#x5171;&#x80FD;&#x4EA7;&#x751F;11&#x79CD;dichotomies&#x3002;&#x5982;&#x4E0B;&#x56FE;&#xFF1A;<br><img src="images/positive_intervals_dichotomies.png" alt=""><br>&#x540C;&#x6837;&#x4E0D;&#x96BE;&#x53BB;&#x60F3;&#xFF0C;4&#x4E2A;&#x70B9;&#xFF0C;5&#x4E2A;&#x53EF;&#x80FD;&#x7684;&#x5207;&#x70B9;&#x9009;&#x4E24;&#x4E2A;&#x4F5C;&#x4E3A;threshold&#xFF0C;&#x52A0;&#x4E0A;&#x4E24;&#x4E2A;threshold&#x91CD;&#x5408;&#x4EA7;&#x751F;&#x7684;&#x4E00;&#x79CD;&#xFF0C;&#x56E0;&#x6B64;Positive Intervals&#x7684;&#x6210;&#x957F;&#x51FD;&#x6570;&#x4E3A;&#xFF1A;
+<script type="math/tex; ">m_{\mathcal{H}(N)}=\binom{N+1}{2} + 1 = \frac{1}{2}N^2 + \frac{1}{2}N + 1</script></p>
+</li>
+<li><p>Convex Sets<br><img src="images/convex_sets.png" alt=""><br>&#x4EFB;&#x9009;k&#x4E2A;&#x70B9;&#xFF0C;&#x5728;&#x8FD9;k&#x4E2A;&#x70B9;&#x7EC4;&#x6210;&#x7684;convex&#x591A;&#x8FB9;&#x5F62;&#x5305;&#x56F4;&#x5185;&#x7684;&#x6240;&#x6709;&#x70B9;&#x90FD;&#x9884;&#x6D4B;+1&#xFF0C;&#x5426;&#x5219;&#x9884;&#x6D4B;-1&#x3002;&#x524D;&#x9762;&#x6211;&#x4EEC;&#x8BF4;&#x5230;&#x6210;&#x957F;&#x51FD;&#x6570;&#x63CF;&#x8FF0;&#x7684;&#x662F;&#x201C;<strong>&#x6700;&#x591A;</strong>&#x201D;&#x80FD;&#x4EA7;&#x751F;&#x7684;dichotomy&#x79CD;&#x6570;&#xFF0C;&#x56E0;&#x6B64;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x8FD9;N&#x4E2A;input&#x6446;&#x6210;&#x4E00;&#x4E2A;&#x5708;&#xFF0C;&#x5219;&#x8FD9;N&#x4E2A;&#x70B9;&#x7684;&#x4EFB;&#x610F;&#x4E00;&#x79CD;&#x6392;&#x5217;&#x7EC4;&#x5408;&#x90FD;&#x80FD;&#x6210;&#x4E3A;&#x4E00;&#x4E2A;dichotomy&#x3002;&#x56E0;&#x6B64;Convex Sets&#x7684;&#x6210;&#x957F;&#x51FD;&#x6570;&#x4E3A;&#xFF1A;
+<script type="math/tex; ">m_{\mathcal{H}(N)}=2^N</script></p>
+</li>
+</ol>
+<h2 id="%E5%9D%8F%E6%8E%89%E7%9A%84%E6%95%A3%E5%BC%B9%E6%9E%AA-shatter-break">&#x574F;&#x6389;&#x7684;&#x6563;&#x5F39;&#x67AA; (Shatter &amp; Break)</h2>
+<p>&#x2003;&#x2003;&#x5F53;<script type="math/tex; ">\mathcal{H}</script>&#x4F5C;&#x7528;&#x4E8E;&#x6709;N&#x4E2A;inputs&#x7684;<script type="math/tex; ">\mathcal{D}</script>&#x65F6;&#xFF0C;&#x4EA7;&#x751F;&#x7684;dichotomies&#x6570;&#x91CF;&#x7B49;&#x4E8E;&#x8FD9;N&#x4E2A;&#x70B9;&#x7684;&#x6392;&#x5217;&#x7EC4;&#x5408;&#x6570;<script type="math/tex; ">2^N</script>&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x79F0;&#x8FD9;N&#x4E2A;inputs&#x88AB;<script type="math/tex; ">\mathcal{H}</script>&#x7ED9;shatter&#x6389;&#x4E86;&#x3002;&#x6216;&#x8005;&#x4E5F;&#x53EF;&#x4EE5;&#x8BF4;<script type="math/tex; ">\mathcal{H}</script>&#x4EA7;&#x751F;&#x7684;<script type="math/tex; ">2^N</script>&#x4E2A;dichotomies&#x628A;&#x8FD9;N&#x4E2A;&#x70B9;&#x7684;<script type="math/tex; ">2^N</script>&#x79CD;&#x6392;&#x5217;&#x7EC4;&#x5408;&#x7ED9;shatter&#x4E86;&#x3002;</p>
+<p>&#x2003;&#x2003;&#x8FD9;&#x4E2A;shatter&#x7684;&#x610F;&#x601D;&#x4F3C;&#x4E4E;&#x4E0D;&#x592A;&#x597D;&#x7406;&#x89E3;&#xFF0C;&#x8FD9;&#x662F;&#x6797;&#x8001;&#x5E08;&#x5728;&#x8BA8;&#x8BBA;&#x533A;&#x4E2D;&#x7684;&#x56DE;&#x590D;&#xFF1A;</p>
+<p>&#x2003;&#x2003;&#x201C;&#x5927;&#x5BB6;&#x5C0D; break point &#x7684;&#x8A0E;&#x8AD6;&#x5F88;&#x597D;&#xFF0C;&#x4E0D;&#x904E;&#x6CE8;&#x610F;&#x5230; shatter &#x7684;&#x539F;&#x610F;&#x662F;&#x300C;&#x6253;&#x788E;&#x300D;&#xFF0C;&#x5728;&#x6B64;&#x6307;&#x300C;N &#x500B;&#x9EDE;&#x7684;&#x6240;&#x6709;(&#x788E;&#x7247;&#x822C;&#x7684;)&#x53EF;&#x80FD;&#x60C5;&#x5F62;&#x90FD;&#x88AB;<script type="math/tex; ">\mathcal{H}</script>&#x7522;&#x751F;&#x4E86;&#x300D;&#x3002;&#x6240;&#x4EE5;<script type="math/tex; ">m_{\mathcal{H}}(N)=2^N</script> &#x7684;&#x60C5;&#x5F62;&#x662F;&#x300C;shatter&#x300D;&#x3002;&#x201D;</p>
+<p>&#x2003;&#x2003;&#x6211;&#x4ECE;&#x6253;&#x6E38;&#x620F;&#x8FC7;&#x5173;&#x7684;&#x89D2;&#x5EA6;&#x53BB;&#x7406;&#x89E3;&#xFF0C;shatter&#x4F5C;&#x6253;&#x788E;&#x7406;&#x89E3;&#xFF1A;</p>
+<p>&#x2003;&#x2003;&#x201C;<script type="math/tex; ">m_{\mathcal{H}}</script>&#x662F;&#x628A;&#x6563;&#x5F39;&#x67AA;&#xFF0C;&#x5728;&#x6BCF;&#x4E2A;&#x5173;&#x5361;(level N)&#x4E2D;&#xFF0C;&#x4ED6;&#x53EF;&#x4EE5;&#x6709;<script type="math/tex; ">m_{\mathcal{H}}(N)</script>&#x53D1;&#x5C0F;&#x5B50;&#x5F39;&#xFF08;&#x6BCF;&#x53D1;&#x5C0F;&#x5B50;&#x5F39;&#x5BF9;&#x5E94;&#x4E00;&#x79CD;dichotomy&#xFF09;&#xFF0C;&#x800C;&#x4F60;&#x9762;&#x4E34;&#x7684;&#x662F;<script type="math/tex; ">2^N</script>&#x4E2A;&#x654C;&#x4EBA;&#x3002;&#x4F60;&#x5F97;&#x4E00;&#x67AA;&#x6253;&#x51FA;&#x53BB;shatter&#x6389;&#x6240;&#x6709;&#x4EBA;&#x3002;&#x5BF9;&#x4E8E;<script type="math/tex; ">m_{\mathcal{H}}(N)=2N</script>&#x8FD9;&#x628A;&#x6563;&#x5F39;&#x67AA;&#x6765;&#x8BF4;&#xFF0C;&#x7B2C;&#x4E00;&#x5173;&#x548C;&#x7B2C;&#x4E8C;&#x5173;&#x90FD;&#x8FD8;&#x597D;&#xFF0C;&#x7B2C;&#x4E09;&#x5173;6&#x53D1;&#x5C0F;&#x5B50;&#x5F39;shatter&#x4E0D;&#x6389;8&#x4E2A;&#x4EBA;&#xFF0C;&#x4E8E;&#x662F;&#x5B83;&#x5C31;break&#x4E86;&#x3002;&#x201D;</p>
+<p>&#x2003;&#x2003;&#x5BF9;&#x4E8E;&#x7ED9;&#x5B9A;&#x7684;&#x6210;&#x957F;&#x51FD;&#x6570;<script type="math/tex; ">m_{\mathcal{H}}(N)</script>&#xFF0C;&#x4ECE;<script type="math/tex; ">N=1</script>&#x51FA;&#x53D1;&#xFF0C;N&#x6162;&#x6162;&#x589E;&#x5927;&#xFF0C;&#x5F53;&#x589E;&#x5927;&#x5230;k&#x65F6;&#xFF0C;&#x51FA;&#x73B0;<script type="math/tex; ">m_{\mathcal{H}}(k)\lt 2^k</script>&#x7684;&#x60C5;&#x5F62;&#xFF0C;&#x5219;&#x6211;&#x4EEC;&#x8BF4;k&#x662F;&#x8BE5;&#x6210;&#x957F;&#x51FD;&#x6570;&#x7684;break point&#xFF0C;&#x5BF9;&#x4E8E;&#x4EFB;&#x4F55;<script type="math/tex; ">N \gt k</script>&#x4E2A;inputs&#x800C;&#x8A00;&#xFF0C;<script type="math/tex; ">\mathcal{H}</script>&#x90FD;&#x6CA1;&#x6709;&#x529E;&#x6CD5;&#x518D;shatter&#x4ED6;&#x4EEC;&#x3002;</p>
+<p>&#x2003;&#x2003;&#x4E0D;&#x96BE;&#x6839;&#x636E;&#x6210;&#x957F;&#x51FD;&#x6570;&#x5F97;&#x51FA;Positive Rays&#x6210;&#x957F;&#x51FD;&#x6570;&#x7684;break point&#x4E3A;2&#xFF0C;Positive Intervals&#x6210;&#x957F;&#x51FD;&#x6570;&#x7684;break point&#x4E3A;3&#xFF0C;Convex Sets&#x4E0D;&#x7BA1;N&#x591A;&#x5927;&#x90FD;&#x53EF;&#x4EE5;&#x53BB;shatter&#x6389;&#x90A3;N&#x4E2A;&#x70B9;&#xFF0C;&#x56E0;&#x6B64;&#x5B83;&#x7684;&#x6210;&#x957F;&#x51FD;&#x6570;&#x6CA1;&#x6709;break point&#x3002;2D Perceptrons&#x7684;break point&#x4E3A;4&#xFF0C;&#x56E0;&#x4E3A;&#x5728;N=3&#x65F6;&#xFF0C;&#x5B83;&#x90FD;&#x80FD;&#x591F;shatter&#xFF0C;&#x4EA7;&#x751F;<script type="math/tex; ">2^3=8</script>&#x79CD;dichotomies&#xFF0C;&#x5F53;N=4&#x65F6;&#xFF0C;&#x5B83;&#x4E0D;&#x80FD;&#x591F;shatter&#xFF0C;&#x6700;&#x591A;&#x53EA;&#x80FD;&#x4EA7;&#x751F;14 (<script type="math/tex; ">\lt 2^4 = 16</script>) &#x79CD;dichotomies&#xFF0C;&#x56E0;&#x6B64;2D Perceptrons&#x6210;&#x957F;&#x51FD;&#x6570;&#x7684;break point&#x4E3A;4&#x3002;</p>
+<h2 id="%E6%8B%BF%E4%BB%80%E4%B9%88%E6%9D%A5%E9%95%87%E9%95%87%E6%88%90%E9%95%BF%E5%87%BD%E6%95%B0-restriction-of-break-point">&#x62FF;&#x4EC0;&#x4E48;&#x6765;&#x9547;&#x9547;&#x6210;&#x957F;&#x51FD;&#x6570; (Restriction of Break Point)</h2>
+<p>&#x2003;&#x2003;&#x6709;&#x4E9B;<script type="math/tex; ">\mathcal{H}</script>&#x7684;&#x6210;&#x957F;&#x51FD;&#x6570;&#x5F88;&#x5BB9;&#x6613;&#x627E;&#x5230;&#xFF0C;&#x6BD4;&#x5982;&#x524D;&#x9762;&#x8BF4;&#x5230;&#x7684;Positive Rays&#x3001;Positive Intervals&#x4EE5;&#x53CA;Convex Sets&#xFF1B;&#x6709;&#x4E9B;<script type="math/tex; ">\mathcal{H}</script>&#x5219;&#x6CA1;&#x6709;&#x90A3;&#x4E48;&#x5BB9;&#x6613;&#xFF0C;&#x6BD4;&#x5982;2D perceptrons&#xFF0C;&#x6211;&#x4EEC;&#x65E0;&#x6CD5;&#x76F4;&#x63A5;&#x770B;&#x51FA;&#x5B83;&#x7684;&#x6210;&#x957F;&#x51FD;&#x6570;&#x662F;&#x4EC0;&#x4E48;&#xFF0C;&#x90A3;&#x4E48;&#x6211;&#x4EEC;&#x5BF9;&#x4E8E;&#x8FD9;&#x6837;&#x7684;<script type="math/tex; ">\mathcal{H}</script>&#x5C31;&#x6CA1;&#x8F99;&#x4E86;&#x5417;&#xFF1F;&#x4E5F;&#x4E0D;&#x5B8C;&#x5168;&#x662F;&#xFF0C;&#x81F3;&#x5C11;&#x6211;&#x4EEC;&#x624B;&#x4E0A;&#x8FD8;&#x638C;&#x63E1;&#x7740;&#x5B83;&#x7684;break point&#xFF0C;&#x80FD;&#x4E0D;&#x80FD;&#x7528;&#x8FD9;&#x4E2A;break point&#x5E72;&#x70B9;&#x4E8B;&#x5462;&#xFF1F;&#x5982;&#x679C;&#x6CA1;&#x529E;&#x6CD5;&#x5F97;&#x5230;&#x6210;&#x957F;&#x51FD;&#x6570;&#xFF0C;&#x80FD;&#x5F97;&#x5230;&#x6210;&#x957F;&#x51FD;&#x6570;&#x7684;upper bound&#x4E5F;&#x662F;&#x4E0D;&#x9519;&#x7684;&#x3002;</p>
+<p>&#x2003;&#x2003;&#x5148;&#x7528;&#x4F8B;&#x5B50;&#x6765;&#x770B;&#x770B;&#xFF0C;&#x5F53;&#x6211;&#x4EEC;&#x5B8C;&#x5168;&#x4E0D;&#x77E5;&#x9053;<script type="math/tex; ">\mathcal{H}</script>&#x662F;&#x4EC0;&#x4E48;&#xFF0C;&#x53EA;&#x77E5;&#x9053;&#x5B83;&#x7684;break point k&#x65F6;&#xFF0C;<script type="math/tex; ">\mathcal{H}</script>&#x4F5C;&#x7528;&#x4E8E;<script type="math/tex; ">\mathcal{D}</script>&#x201C;<strong>&#x6700;&#x591A;&#x6700;&#x591A;</strong>&#x201D;&#x53EF;&#x4EE5;&#x4EA7;&#x751F;&#x591A;&#x5C11;&#x8FD9;dichotomies&#x3002;&#x6CE8;&#x610F;&#x8FD9;&#x91CC;&#x6211;&#x7528;&#x4E86;&#x4E24;&#x4E2A;&#x201C;<strong>&#x6700;&#x591A;</strong>&#x201D;&#xFF0C;&#x7531;&#x4E8E;&#x6211;&#x4EEC;&#x65E0;&#x6CD5;&#x786E;&#x5207;&#x77E5;&#x9053;&#x6210;&#x957F;&#x51FD;&#x6570;&#xFF0C;&#x56E0;&#x6B64;&#x6211;&#x4EEC;&#x7528;&#x8FD9;&#x4E2A;break point&#x63A8;&#x7B97;&#x51FA;&#x7684;&#x8FD9;&#x4E2A;dichotomies&#x7684;&#x6570;&#x91CF;&#x4ECD;&#x7136;&#x662F;&#x4E2A;&#x9AD8;&#x4F30;&#x503C;&#xFF0C;&#x8FD9;&#x4E2A;&#x9AD8;&#x4F30;&#x503C;&#x5B9E;&#x9645;&#x4E0A;&#x662F;&#x4EFB;&#x4F55;break point&#x4E3A;k&#x7684;<script type="math/tex; ">\mathcal{H}</script>&#x4F5C;&#x7528;&#x4E8E;<script type="math/tex; ">\mathcal{D}</script>&#x6240;&#x771F;&#x5B9E;&#x4EA7;&#x751F;&#x7684;dichotomies&#x6570;&#x91CF;&#x7684;&#x4E0A;&#x754C; (upper bound)&#x3002;</p>
+<p>&#x2003;&#x2003;&#x4E3E;&#x4F8B;&#x8BF4;&#x660E;&#xFF0C;&#x5047;&#x8BBE;&#x6211;&#x4EEC;&#x4E0D;&#x77E5;&#x9053;&#x67D0;&#x4E2A;<script type="math/tex; ">\mathcal{H}</script>&#x7684;&#x6210;&#x957F;&#x51FD;&#x6570;<script type="math/tex; ">m_{\mathcal{H}}(N)</script>&#xFF0C;&#x4F46;&#x77E5;&#x9053;&#x5B83;&#x7684;break point k=2&#xFF0C;&#x90A3;&#x4E48;<script type="math/tex; ">\mathcal{H}</script>&#x4F5C;&#x7528;&#x4E8E;N=3&#x7684;<script type="math/tex; ">\mathcal{D}</script>&#x65F6;&#xFF0C;&#x201C;<strong>&#x6700;&#x591A;&#x6700;&#x591A;</strong>&#x201D;&#x80FD;&#x4EA7;&#x751F;&#x591A;&#x5C11;&#x79CD;dichotomies&#xFF1F;</p>
+<p>&#x2003;&#x2003;&#x4ECE;k=2&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x77E5;&#x9053;&#xFF0C;&#x4EFB;&#x610F;2&#x4E2A;&#x6570;&#x636E;&#x70B9;&#x90FD;&#x4E0D;&#x80FD;&#x88AB;shatter&#x3002;&#x8FD8;&#x8BB0;&#x5F97;shatter&#x7684;&#x6982;&#x5FF5;&#x5417;&#xFF1F;&#x610F;&#x601D;&#x5C31;&#x662F;&#x6211;&#x4EA7;&#x751F;&#x7684;dichotomies&#x4E0D;&#x80FD;&#x5B8C;&#x5168;&#x5305;&#x542B;&#x4EFB;&#x4F55;2&#x4E2A;&#x6570;&#x636E;&#x70B9;&#x6240;&#x6709;&#x7684;&#x6392;&#x5217;&#x7EC4;&#x5408;&#x3002;&#x8BA9;&#x6211;&#x4EEC;&#x4ECE;1&#x4E2A;dichotomy&#x5F00;&#x59CB;&#x3002;</p>
+<p>1 dichotomy <img src="images/n3k2d1.png" alt=""></p>
+<p>2 dichotomies <img src="images/n3k2d2.png" alt=""></p>
+<p>3 dichotomies <img src="images/n3k2d3.png" alt=""></p>
+<p>&#x2003;&#x2003;&#x6CE8;&#x610F;&#x770B;<script type="math/tex; ">x_2</script>&#x548C;<script type="math/tex; ">x_3</script>&#x8FD9;&#x4E24;&#x5217;&#xFF0C;&#x8FD9;3&#x4E2A;dichotomies&#x5DF2;&#x7ECF;&#x5305;&#x542B;<script type="math/tex; ">x_2</script>&#x548C;<script type="math/tex; ">x_3</script>&#x8FD9;&#x4E24;&#x4E2A;&#x70B9;&#x6240;&#x6709;&#x7684;4&#x79CD;&#x6392;&#x5217;&#x7EC4;&#x5408;&#x4E2D;&#x7684;3&#x79CD;&#x4E86;&#x3002;&#x518D;&#x591A;&#x52A0;&#x4E00;&#x79CD;&#xFF0C;<script type="math/tex; ">x_2</script>&#x3001;<script type="math/tex; ">x_3</script>&#x5C31;&#x4F1A;&#x88AB;shatter&#x3002;</p>
+<p>4 dichotomies <img src="images/n3k2d4s.png" alt=""></p>
+<p>&#x2003;&#x2003;&#x770B;&#x53F3;&#x8FB9;&#x4E24;&#x5217;&#xFF0C;<script type="math/tex; ">x_2</script>&#x548C;<script type="math/tex; ">x_3</script>&#x88AB;shatter&#x4E86;&#x3002;&#x4F46;&#x4E4B;&#x524D;&#x8BF4;&#x4E86;k=2&#xFF0C;&#x5373;&#x4EFB;&#x610F;2&#x4E2A;&#x70B9;&#x4E0D;&#x80FD;&#x88AB;shatter&#xFF0C;&#x56E0;&#x6B64;&#x4E0D;&#x53EF;&#x80FD;&#x4EA7;&#x751F;&#x8FD9;4&#x79CD;dichotomies&#x3002;&#x90A3;&#x6211;&#x4EEC;&#x6362;&#x4E00;&#x4E2A;dichotomy&#x8BD5;&#x8BD5;&#x770B;&#x3002;</p>
+<p>4 dichotomies <img src="images/n3k2d4.png" alt=""></p>
+<p>&#x2003;&#x2003;&#x6362;&#x4E86;&#x4E00;&#x4E2A;dichotomy&#x4E4B;&#x540E;&#x5C31;&#x884C;&#x4E86;&#xFF0C;&#x53F3;&#x8FB9;2&#x5217;&#x53EA;&#x5305;&#x542B;&#x4E86;<script type="math/tex; ">x_2</script>&#x3001;<script type="math/tex; ">x_3</script>&#x6240;&#x6709;&#x6392;&#x5217;&#x7EC4;&#x5408;4&#x79CD;&#x4E2D;&#x7684;3&#x79CD;&#xFF0C;&#x56E0;&#x6B64;&#x90A3;&#x4E24;&#x4E2A;&#x70B9;&#x6CA1;&#x6709;&#x88AB;shatter&#x3002;&#x7EE7;&#x7EED;&#x68C0;&#x67E5;&#x4EFB;&#x610F;&#x7684;&#x4E24;&#x4E2A;&#x70B9;(<script type="math/tex; ">x_1</script>&#x3001;<script type="math/tex; ">x_2</script>)&#xFF0C;(<script type="math/tex; ">x_1</script>&#x3001;<script type="math/tex; ">x_3</script>)&#xFF0C;&#x90FD;&#x6CA1;&#x6709;&#x88AB;shatter&#xFF0C;&#x770B;&#x6765;&#x8FD9;4&#x79CD;dichotomies&#x662F;&#x53EF;&#x4EE5;&#x7684;&#x3002;</p>
+<p>&#x2003;&#x2003;5&#x4E2A;dichotomies&#x7684;&#x60C5;&#x5F62;&#x8FD9;&#x91CC;&#x5C31;&#x4E0D;&#x518D;&#x753B;&#x51FA;&#x6765;&#x4E86;&#xFF0C;&#x5F88;&#x5BB9;&#x6613;&#x770B;&#x51FA;&#x4E0D;&#x7BA1;&#x589E;&#x52A0;&#x600E;&#x6837;&#x7684;dichotomy&#x8FDB;&#x53BB;&#xFF0C;&#x90FD;&#x4F1A;&#x6709;&#x4E24;&#x4E2A;&#x70B9;&#x88AB;shatter&#x6389;&#x3002;&#x56E0;&#x6B64;&#x8FD9;&#x91CC;&#x201C;<strong>&#x6700;&#x591A;&#x6700;&#x591A;</strong>&#x201D;&#x53EA;&#x80FD;&#x6709;4&#x79CD;dichotomies&#x3002;&#x56E0;&#x6B64;<script type="math/tex; ">N=3</script>&#xFF0C;<script type="math/tex; ">k=2</script>&#x65F6;&#x7684;upper bound&#x662F;4&#x3002;&#x6211;&#x4EEC;&#x7528;<script type="math/tex; ">B(N,k)</script>&#x6765;&#x8868;&#x793A;break point&#x4E3A;k&#x7684;&#x4EFB;&#x610F;&#x7684;<script type="math/tex; ">\mathcal{H}</script>&#x4F5C;&#x7528;&#x4E8E;size&#x4E3A;N&#x7684;&#x4EFB;&#x610F;&#x7684;<script type="math/tex; ">\mathcal{D}</script>&#x6240;&#x80FD;&#x4EA7;&#x751F;&#x7684;dichotomies&#x7684;&#x6570;&#x91CF;&#x7684;&#x4E0A;&#x9650;&#xFF08;&#x201C;<strong>&#x6700;&#x591A;&#x6700;&#x591A;</strong>&#x201D;&#xFF09;&#x3002;&#x5219;&#x521A;&#x521A;&#x5F97;&#x51FA;&#x7684;&#x7ED3;&#x8BBA;&#x53EF;&#x4EE5;&#x8868;&#x793A;&#x4E3A;<script type="math/tex; ">B(3,2)=4</script>&#xFF0C;&#x56E0;&#x4E3A;&#x4EFB;&#x610F;2&#x4E2A;&#x6570;&#x636E;&#x70B9;&#x4E0D;&#x80FD;&#x88AB;shatter&#xFF0C;&#x56E0;&#x6B64;&#x5F53;<script type="math/tex; ">N=2,K=2</script>&#x65F6;&#xFF0C;<script type="math/tex; ">B(2,2)\lt 4</script>&#xFF0C;&#x56E0;&#x6B64;&#x6700;&#x591A;&#x6700;&#x591A;&#x6709;<script type="math/tex; ">B(2,2)=3</script>&#x3002;</p>
+<p>&#x2003;&#x2003;&#x7F8E;&#x5999;&#x7684;&#x5730;&#x65B9;&#x9A6C;&#x4E0A;&#x5C31;&#x8981;&#x5230;&#x4E86;&#xFF0C;&#x867D;&#x7136;&#x5F88;&#x591A;&#x65F6;&#x5019;&#x6211;&#x4EEC;&#x65E0;&#x6CD5;&#x76F4;&#x63A5;&#x5F97;&#x5230;&#x6210;&#x957F;&#x51FD;&#x6570;<script type="math/tex; ">m_{\mathcal{H}}(N)</script>&#xFF0C;&#x4F46;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x77E5;&#x9053;&#x5B83;&#x7684;break point&#x662F;&#x591A;&#x5C11;&#xFF0C;&#x6211;&#x4EEC;&#x4F3C;&#x4E4E;&#x8FD8;&#x662F;&#x6709;&#x529E;&#x6CD5;&#x7B97;&#x51FA;&#x8FD9;&#x4E2A;<script type="math/tex; ">m_{\mathcal{H}}(N)</script>&#x7684;&#x4E0A;&#x754C;<script type="math/tex; ">B(N,k)</script>&#x7684;&#x3002;&#x4E8E;&#x662F;&#x4E4E;&#x6211;&#x4EEC;&#x5C31;&#x6709;&#x4E86;&#x65B0;&#x7684;&#x76EE;&#x6807;&#xFF0C;&#x4E0D;&#x53BB;&#x76F4;&#x63A5;&#x7814;&#x7A76;<script type="math/tex; ">m_{\mathcal{H}}(N)</script>&#xFF0C;&#x8F6C;&#x800C;&#x53BB;&#x7814;&#x7A76;<script type="math/tex; ">B(N,k)</script>&#x3002;</p>
+<p>&#x2003;&#x2003;&#x524D;&#x9762;&#x6211;&#x4EEC;&#x5DF2;&#x77E5;&#x4E86;<script type="math/tex; ">B(2,2)=3</script>&#xFF0C;<script type="math/tex; ">B(3,2)=4</script>&#x3002;&#x4E0D;&#x96BE;&#x77E5;&#x9053;&#xFF1A;</p>
+<ul>
+<li><script type="math/tex; ">k=1</script>&#x65F6;&#xFF0C;1&#x4E2A;&#x70B9;(2&#x79CD;&#x6392;&#x5217;&#x7EC4;&#x5408;)&#x90FD;&#x6CA1;&#x6709;&#x529E;&#x6CD5;shatter&#xFF0C;&#x56E0;&#x6B64;<script type="math/tex; ">B(?,1)</script>&#x6052;&#x7B49;&#x4E8E;1&#x3002;</li>
+<li><script type="math/tex; ">k>N</script>&#x65F6;&#xFF0C;<script type="math/tex; ">\mathcal{H}</script>&#x4E00;&#x5B9A;&#x80FD;shatter&#x6389;<script type="math/tex; ">N</script>&#x4E2A;&#x70B9;&#xFF0C;&#x56E0;&#x6B64;&#x5B83;&#x4EA7;&#x751F;&#x7684;dichotomies&#x7684;&#x79CD;&#x7C7B;&#x7B49;&#x4E8E;&#x8FD9;<script type="math/tex; ">N</script>&#x4E2A;&#x70B9;&#x6240;&#x6709;&#x7684;&#x6392;&#x5217;&#x7EC4;&#x5408;&#x6570;<script type="math/tex; ">2^N</script>&#x3002;</li>
+<li><script type="math/tex; ">k=N</script>&#x65F6;&#xFF0C;&#x4ECE;<script type="math/tex; ">2^N</script>&#x4E2A;&#x6392;&#x5217;&#x7EC4;&#x5408;&#x4E2D;&#x79FB;&#x9664;&#x6389;&#x4E00;&#x4E2A;&#xFF0C;&#x5269;&#x4E0B;&#x7684;&#x90FD;&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;dichotomies&#xFF0C;&#x56E0;&#x6B64;&#x5B83;&#x4EA7;&#x751F;&#x7684;dichotomies&#x7684;&#x6570;&#x91CF;&#x201C;<strong>&#x6700;&#x591A;&#x6700;&#x591A;</strong>&#x201D;&#x53EF;&#x4EE5;&#x662F;<script type="math/tex; ">2^N-1</script>&#x3002;</li>
+</ul>
+<p>&#x2003;&#x2003;&#x56E0;&#x6B64;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5F97;&#x5230;&#x4E0B;&#x8868;&#xFF1A;</p>
+<p><img src="images/bnk_table.png" alt=""></p>
+<p>&#x2003;&#x2003;&#x8868;&#x683C;&#x5269;&#x4F59;&#x7684;&#x90E8;&#x5206;&#x8BE5;&#x5982;&#x4F55;&#x586B;&#x8865;&#xFF1F;<script type="math/tex; ">B(4,3)</script>&#x662F;&#x5426;&#x4E0E;<script type="math/tex; ">B(3,?)</script>&#x6709;&#x5173;&#x5462;&#xFF1F;<br>&#x2003;&#x2003;&#x6B64;&#x65F6;&#x67D0;&#x67D0;&#x5B9E;&#x9A8C;&#x5BA4;&#x5E2E;&#x8001;&#x5E08;&#x629B;&#x786C;&#x5E01;&#x7684;&#x7814;&#x7A76;&#x751F;&#x8981;&#x4E0A;&#x573A;&#x4E86;&#xFF0C;&#x4ED6;&#x7A77;&#x4E3E;&#x4E86;&#x6240;&#x6709;&#x53EF;&#x80FD;&#x7684;dichotomies&#xFF0C;&#x53D1;&#x73B0;<script type="math/tex; ">B(4,3)=11</script>&#xFF0C;&#x4EE5;&#x4E0B;&#x662F;&#x4ED6;&#x7684;&#x7814;&#x7A76;&#x6210;&#x679C;&#xFF1A;</p>
+<p><img src="images/n4k3d11.png" alt=""></p>
+<p>&#x2003;&#x2003;&#x6211;&#x4EEC;&#x628A;&#x8FD9;&#x4EFD;&#x7ED3;&#x679C;&#x505A;&#x4E2A;&#x6392;&#x5E8F;&#xFF1A;</p>
+<p><img src="images/n4k3d11_ordered.png" alt=""></p>
+<p>&#x2003;&#x2003;&#x53D1;&#x73B0;&#x79D8;&#x5BC6;&#x4E86;&#x6CA1;&#x6709;&#xFF0C;&#x6A59;&#x8272;&#x7684;&#x90E8;&#x5206;&#x662F;&#x6210;&#x5BF9;&#x51FA;&#x73B0;&#x7684;&#xFF0C;&#x53EA;&#x6709;&#x7D2B;&#x8272;&#x7684;&#x90E8;&#x5206;&#x662F;&#x5355;&#x72EC;&#x51FA;&#x73B0;&#x7684;&#xFF1A;</p>
+<p><img src="images/n4k3d11_ordered2.png" alt=""> </p>
+<ol>
+<li><p>&#x5982;&#x679C;&#x62FF;&#x6389;<script type="math/tex; ">x_4</script>&#xFF0C;&#x53EA;&#x770B;<script type="math/tex; ">x_1,x_2,x_3</script>&#x8FD9;3&#x4E2A;&#x70B9;&#xFF1A;<br><img src="images/n4k3d7.png" alt=""><br>&#x2003;&#x2003;<script type="math/tex; ">\alpha + \beta</script>&#x90E8;&#x5206;&#x53EF;&#x4EE5;&#x6210;&#x4E3A;&#x8FD9;3&#x4E2A;&#x70B9;&#x7684;dichotomies&#xFF0C;&#x56E0;&#x4E3A;<script type="math/tex; ">k=3</script>&#xFF0C;&#x6240;&#x4EE5;&#x4EFB;3&#x4E2A;&#x70B9;&#x4E0D;&#x80FD;&#x591F;&#x88AB;shatter&#xFF0C;&#x56E0;&#x6B64;&#x6709;&#xFF1A;&#xFF1A;
+<script type="math/tex; ">\alpha + \beta \leq B(3,3)</script></p>
+</li>
+<li><p>&#x518D;&#x6765;&#x770B;&#x5269;&#x4E0B;&#x4E00;&#x4E2A;<script type="math/tex; ">\alpha</script>&#x7684;&#x90E8;&#x5206;&#xFF1A;<br><img src="images/n4k2_alpha.png" alt=""><br>&#x2003;&#x2003;&#x6CE8;&#x610F;<script type="math/tex; ">\alpha</script>&#x662F;&#x4E4B;&#x524D;&#x6210;&#x5BF9;&#x5B58;&#x5728;&#x7684;&#x90E8;&#x5206;&#xFF0C;&#x5E76;&#x4E14;<script type="math/tex; ">\alpha</script>&#x90E8;&#x5206;&#x4E0D;&#x53EF;&#x4EE5;shatter&#x6389;&#x4EFB;&#x610F;2&#x4E2A;&#x70B9;&#xFF0C;&#x56E0;&#x4E3A;&#x5982;&#x679C;<script type="math/tex; ">\alpha</script>&#x90E8;&#x5206;&#x7684;dichotomies&#x53EF;&#x4EE5;shatter&#x6389;&#x4EFB;&#x610F;2&#x4E2A;&#x70B9;&#xFF0C;&#x4ED6;&#x6BCF;&#x4E00;&#x884C;&#x90FD;&#x518D;&#x642D;&#x914D;<script type="math/tex; ">x_4</script>&#x7684;&#x4E24;&#x79CD;&#x60C5;&#x51B5;&#xFF0C;&#x8FD9;&#x6837;&#x4EA7;&#x751F;&#x7684;dichotomies&#x5C31;&#x80FD;shatter&#x6389;3&#x4E2A;&#x70B9;&#x4E86;&#xFF0C;&#x548C;break point&#x4E3A;3&#x76F8;&#x8FDD;&#x80CC;&#x3002;&#x6240;&#x4EE5;<script type="math/tex; ">\alpha</script>&#x4E0D;&#x80FD;shatter&#x6389;&#x4EFB;2&#x4E2A;&#x70B9;&#x3002;&#x56E0;&#x6B64;&#x6709;&#xFF1A;
+<script type="math/tex; ">\alpha \leq B(3,2)</script></p>
+</li>
+</ol>
+<p>&#x2003;&#x2003;&#x7EFC;&#x5408;&#x4E0A;&#x9762;&#x4E24;&#x4E2A;&#x4E0D;&#x7B49;&#x5F0F;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5F97;&#x5230;&#xFF1A;
+<script type="math/tex; ">B(4,3)=2\alpha + \beta \leq B(3,3) + B(3,2)</script></p>
+<p>&#x2003;&#x2003;&#x8FD9;&#x6837;&#x5C31;&#x80FD;&#x591F;&#x628A;&#x524D;&#x9762;&#x90A3;&#x5F20;&#x8868;&#x7ED9;&#x586B;&#x5B8C;&#x6574;&#xFF1A;</p>
+<p><img src="images/bnk_table_full.png" alt=""></p>
+<p><script type="math/tex; mode=display">
+\begin{aligned}
+B(N,k) &= 2\alpha + \beta \\\
+\alpha + \beta &\leq B(N-1,k) \\\
+\alpha &\leq B(N-1,k-1) \\\
+\Rightarrow B(N,k) &\leq B(N-1,k) + B(N-1,k-1)
+\end{aligned}
+</script></p>
+<p>&#x2003;&#x2003;&#x7528;&#x6570;&#x5B66;&#x5F52;&#x7EB3;&#x6CD5;&#x53EF;&#x4EE5;&#x8BC1;&#x660E;&#xFF1A;
+<script type="math/tex; ">B(N,k)\leq \sum_{i=0}^{k-1}\binom {N}{i}</script></p>
+<p>&#x2003;&#x2003;&#x5F53;<script type="math/tex; ">k=1</script>&#x65F6;&#x4E0D;&#x7B49;&#x5F0F;&#x6052;&#x6210;&#x7ACB;&#xFF0C;&#x56E0;&#x6B64;&#x53EA;&#x8981;&#x8BA8;&#x8BBA;<script type="math/tex; ">k\geq 2</script>&#x7684;&#x60C5;&#x5F62;&#x3002;<script type="math/tex; ">N=1</script>&#x65F6;&#xFF0C;&#x4E0D;&#x7B49;&#x5F0F;&#x6210;&#x7ACB;&#xFF0C;&#x5047;&#x8BBE;<script type="math/tex; ">N\leq N_{o}</script>&#x65F6;&#x5BF9;&#x4E8E;&#x6240;&#x6709;&#x7684;<script type="math/tex; ">k</script>&#x4E0D;&#x7B49;&#x5F0F;&#x90FD;&#x6210;&#x7ACB;&#xFF0C;&#x5219;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x8BC1;&#x660E;&#x5F53;<script type="math/tex; ">N=N_{o}+1</script>&#x65F6;&#xFF0C;&#x4E0D;&#x7B49;&#x5F0F;&#x4E5F;&#x6210;&#x7ACB;&#x3002;&#x6839;&#x636E;&#x524D;&#x9762;&#x5F97;&#x5230;&#x7684;&#x7ED3;&#x8BBA;&#xFF0C;&#x6709;&#xFF1A;</p>
+<p><script type="math/tex; mode=display">
+\begin{aligned}
+B(N_{o}+1,k) &\leq B(N_{o},k) + B(N_{o},k-1) \\\
+&\leq \sum_{i=0}^{k-1}\binom{N_{o}}{i}+\sum_{i=0}^{k-2}\binom{N_{o}}{i} \\\
+&=1+\sum_{i=1}^{k-1}\binom{N_{o}}{i}+\sum_{i=1}^{k-1}\binom{N_{o}}{i-1} \\\
+&=1+\sum_{i=1}^{k-1}[\binom{N_{o}}{i}+\binom{N_{o}}{i-1}] \\\
+&=1+\sum_{i=1}^{k-1}\binom{N_{o}+1}{i}=\sum_{i=0}^{k-1}\binom{N_{o}+1}{i}
+\end{aligned}
+</script></p>
+<p>&#x2003;&#x2003;&#x56E0;&#x6B64;&#x5F53;<script type="math/tex; ">N=N_{o}+1</script>&#x65F6;&#xFF0C;&#x4E0D;&#x7B49;&#x5F0F;&#x4E5F;&#x6210;&#x7ACB;&#x3002;</p>
+<p>&#x2003;&#x2003;&#x6210;&#x957F;&#x51FD;&#x6570;&#x7684;&#x4E0A;&#x754C;-<script type="math/tex; ">B(N,k)</script>&#x90FD;&#x88AB;bound&#x4F4F;&#x4E86;&#xFF0C;&#x90A3;&#x6211;&#x4EEC;&#x7684;&#x6210;&#x957F;&#x51FD;&#x6570;&#x540C;&#x6837;&#x4E5F;&#x53EF;&#x4EE5;&#x88AB;&#x8FD9;&#x4E2A;bound&#x4F4F;&#xFF0C;&#x56E0;&#x6B64;&#x5BF9;&#x4E8E;&#x5B58;&#x5728;break point k&#x7684;&#x6210;&#x957F;&#x51FD;&#x6570;&#x800C;&#x8A00;&#xFF0C;&#x6709;&#xFF1A;
+<script type="math/tex; ">m_{\mathcal{H}}\leq \sum_{i=0}^{k-1}\binom {N}{i}</script>
+&#x2003;&#x2003;By the way&#xFF0C;&#x53F3;&#x624B;&#x8FB9;(RHS)&#x5B9E;&#x9645;&#x4E0A;&#x662F;&#x4E00;&#x4E2A;&#x6700;&#x9AD8;&#x6B21;&#x9879;&#x4E3A;k-1&#x6B21;&#x7684;&#x591A;&#x9879;&#x5F0F;&#x3002;&#x4EE5;2D Perceptrons&#x4E3A;&#x4F8B;&#xFF0C;&#x5B83;&#x7684;break point <script type="math/tex; ">k=4</script>&#xFF0C;&#x5219;&#x5B83;&#x7684;&#x6210;&#x957F;&#x51FD;&#x6570;&#x4F1A;&#x88AB;<script type="math/tex; ">B(N,4)</script>&#x7ED9;bound&#x4F4F;&#xFF1A;</p>
+<p><script type="math/tex; mode=display">
+m_{\mathcal{H}}\leq \sum_{i=0}^{4-1}\binom {N}{i}=\frac{1}{6}N^3+\frac{5}{6}N+1
+</script></p>
+<h2 id="%E6%80%BB%E7%BB%93">&#x603B;&#x7ED3;</h2>
+<p>&#x2003;&#x2003;&#x4E0A;&#x4E00;&#x7BC7;&#x8BF4;&#x7684;learning&#x7684;&#x53EF;&#x884C;&#x6027;&#xFF0C;&#x8BB2;&#x5230;&#xFF0C;&#x5982;&#x679C;&#x9047;&#x4E0A;bad sample&#xFF0C;<script type="math/tex; ">E_{in}(h)</script>&#x4E0E;<script type="math/tex; ">E_{out}(h)</script>&#x5C31;&#x4F1A;&#x5DEE;&#x5F88;&#x591A;&#xFF0C;&#x6B64;&#x65F6;learning&#x4E0D;&#x53EF;&#x884C;&#x3002;&#x9047;&#x5230;bad sample&#x7684;&#x6982;&#x7387;&#x4E0E;<script type="math/tex; ">\mathcal{H}</script>&#x4E2D;&#x65B9;&#x7A0B;&#x7684;&#x6570;&#x91CF;<script type="math/tex; ">M</script>&#x4EE5;&#x53CA;<script type="math/tex; ">\mathcal{D}</script>&#x4E2D;&#x7684;&#x6570;&#x636E;&#x91CF;<script type="math/tex; ">N</script>&#x6709;&#x5173;&#x3002;&#x7136;&#x800C;<script type="math/tex; ">\mathcal{H}</script>&#x4E2D;&#x65B9;&#x7A0B;&#x7684;&#x6570;&#x91CF;&#x5F80;&#x5F80;&#x662F;&#x65E0;&#x7A77;&#x7684;(&#x6BD4;&#x5982;2D Perceptrons&#x7684;<script type="math/tex; ">\mathcal{H}</script>&#x662F;&#x5E73;&#x9762;&#x4E0A;&#x6240;&#x6709;&#x7684;&#x76F4;&#x7EBF;)&#xFF0C;&#x672C;&#x7BC7;&#x5219;&#x7EE7;&#x7EED;&#x9610;&#x8FF0;&#xFF0C;&#x65B9;&#x7A0B;&#x7684;&#x6570;&#x91CF;&#x770B;&#x4E0A;&#x53BB;&#x662F;&#x65E0;&#x7A77;&#x7684;&#xFF0C;&#x4F46;&#x771F;&#x6B63;&#x6709;&#x6548;(effective)&#x7684;&#x65B9;&#x7A0B;&#x7684;&#x6570;&#x91CF;&#x5374;&#x662F;&#x6709;&#x9650;&#x7684;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x7528;&#x6210;&#x957F;&#x51FD;&#x6570;<script type="math/tex; ">m_{\mathcal{H}}(N)</script>&#x6765;&#x63CF;&#x8FF0;<script type="math/tex; ">\mathcal{H}</script>&#x4F5C;&#x7528;&#x4E8E;<script type="math/tex; ">\mathcal{D}</script>&#x4F1A;&#x4EA7;&#x751F;&#x591A;&#x5C11;&#x79CD;&#x6709;&#x6548;&#x7684;&#x65B9;&#x7A0B;&#x3002;&#x5982;&#x679C;&#x7528;&#x6709;&#x9650;&#x7684;&#x6210;&#x957F;&#x51FD;&#x6570;&#x53BB;&#x4EE3;&#x66FF;&#x65E0;&#x9650;&#x7684;<script type="math/tex; ">M</script>&#xFF0C;&#x5C31;&#x6709;&#xFF1A;</p>
+<p><script type="math/tex; mode=display">
+\mathbb{P}_\mathcal{D}[BAD\ D]\leq 2m_{\mathcal{H}}(N)\cdot exp(-2\epsilon ^2N)
+</script></p>
+<p>&#x2003;&#x2003;&#x4F46;&#x5B9E;&#x9645;&#x4E0A;&#x6211;&#x4EEC;&#x5F88;&#x96BE;&#x786E;&#x5207;&#x77E5;&#x9053;&#x5404;&#x79CD;<script type="math/tex; ">\mathcal{H}</script>&#x7684;&#x6210;&#x957F;&#x51FD;&#x6570;<script type="math/tex; ">m_{\mathcal{H}}(N)</script>&#x7A76;&#x7ADF;&#x957F;&#x4EC0;&#x4E48;&#x6837;&#x5B50;&#xFF0C;&#x6211;&#x4EEC;&#x53EA;&#x597D;&#x901A;&#x8FC7;break point&#x53BB;&#x5BFB;&#x627E;&#x6210;&#x957F;&#x51FD;&#x6570;&#x7684;upper bound&#x3002;&#x4E0D;&#x8FC7;&#x8FD9;&#x5F53;&#x4E2D;&#x4ECD;&#x7136;&#x6709;&#x4E9B;&#x60C5;&#x51B5;&#x6CA1;&#x6709;&#x8003;&#x8651;&#x5230;&#xFF0C;&#x5C06;&#x5728;&#x4E0B;&#x4E00;&#x7BC7;&#x7B14;&#x8BB0;&#x4E2D;&#x7EE7;&#x7EED;&#x8BF4;&#x660E;&#x3002;</p>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../section2/is-learning-feasible.html" class="navigation navigation-prev " aria-label="Previous page: 机器学习的可行性"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../section2/vc-dimension-two.html" class="navigation navigation-next " aria-label="Next page: VC Dimension Part II"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="http://cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-mathjax-update/plugin.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-disqus/plugin.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-github/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2},"disqus":{"shortName":"mlnotebook"},"github":{"url":"https://github.com/beader/mlnotebook"},"mathjax":{}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

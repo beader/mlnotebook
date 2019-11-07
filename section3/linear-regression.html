@@ -1,0 +1,612 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
+        <title>Linear Regression | 机器学习笔记</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.0.1">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    
+    
+    <link rel="next" href="../section3/logistic-regression.html" />
+    
+    
+    <link rel="prev" href="../section3/index.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+    
+
+        
+    <div class="book" data-level="3.1" data-basepath=".." data-revision="Thu Nov 07 2019 08:46:53 GMT+0000 (UTC)">
+    
+
+<div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Type to search" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+        
+        
+        
+
+        
+
+        
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="section1/index.html">
+            
+                
+                    <a href="../section1/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        When Can Machines Learn?
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="section2/index.html">
+            
+                
+                    <a href="../section2/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        Why Can Machines Learn?
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="section2/is-learning-feasible.html">
+            
+                
+                    <a href="../section2/is-learning-feasible.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        机器学习的可行性
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="section2/vc-dimension-one.html">
+            
+                
+                    <a href="../section2/vc-dimension-one.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        VC Dimension Part I
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="section2/vc-dimension-two.html">
+            
+                
+                    <a href="../section2/vc-dimension-two.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        VC Dimension Part II
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="section2/vc-dimension-three.html">
+            
+                
+                    <a href="../section2/vc-dimension-three.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        VC Dimension Part III
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="section2/noise-and-error.html">
+            
+                
+                    <a href="../section2/noise-and-error.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.</b>
+                        
+                        Noise and Error
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="section3/index.html">
+            
+                
+                    <a href="../section3/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        How Can Machines Learn?
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="3.1" data-path="section3/linear-regression.html">
+            
+                
+                    <a href="../section3/linear-regression.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        Linear Regression
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="section3/logistic-regression.html">
+            
+                
+                    <a href="../section3/logistic-regression.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        Logistic Regression
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="section3/linear_models_for_classification.html">
+            
+                
+                    <a href="../section3/linear_models_for_classification.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        Linear Models for Classification
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="section4/index.html">
+            
+                
+                    <a href="../section4/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        How Can Machines Learn Better?
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="section5/index.html">
+            
+                
+                    <a href="../section5/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        FAQ
+                    </a>
+                
+            
+            
+        </li>
+    
+
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                Published with GitBook
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Table of Contents"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Search"><i class="fa fa-search"></i></a>
+    
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="Font Settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">Serif</button>
+        <button type="button" data-font="1" class="button">Sans</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="Share"><i class="fa fa-share-alt"></i>
+        </a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                <button type="button" data-sharing="twitter" class="button">
+                    Share on Twitter
+                </button>
+                <button type="button" data-sharing="google-plus" class="button">
+                    Share on Google
+                </button>
+                <button type="button" data-sharing="facebook" class="button">
+                    Share on Facebook
+                </button>
+                <button type="button" data-sharing="weibo" class="button">
+                    Share on Weibo
+                </button>
+                <button type="button" data-sharing="instapaper" class="button">
+                    Share on Instapaper
+                </button>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Google"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
+    
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >机器学习笔记</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <p>&#x2003;&#x2003;&#x524D;&#x9762;&#x82B1;&#x4E86;&#x5F88;&#x5927;&#x7BC7;&#x5E45;&#x5728;&#x8BF4;&#x673A;&#x5668;&#x4E3A;&#x4F55;&#x80FD;&#x5B66;&#x4E60;&#xFF0C;&#x63A5;&#x4E0B;&#x6765;&#x8981;&#x8BF4;&#x7684;&#x662F;&#x673A;&#x5668;&#x662F;&#x600E;&#x4E48;&#x5B66;&#x4E60;&#x7684;&#xFF0C;&#x8FDB;&#x5165;&#x7B97;&#x6CD5;<script type="math/tex; ">\mathcal{A}</script>&#x7684;&#x90E8;&#x5206;&#x3002;<a href="http://beader.me/2014/03/02/noise-and-error/" target="_blank">&#x4E0A;&#x4E00;&#x7BC7;</a>&#x7A0D;&#x5FAE;&#x63D0;&#x5230;&#x4E86;&#x51E0;&#x4E2A;error&#x7684;&#x8861;&#x91CF;&#x65B9;&#x5F0F;&#xFF0C;&#x63A5;&#x4E0B;&#x6765;&#x7684;&#x51E0;&#x7BC7;&#x7B14;&#x8BB0;&#x8981;&#x8BB2;&#x7684;&#x5C31;&#x662F;&#x5404;&#x79CD;error measurement&#x7684;&#x533A;&#x522B;&#x4EE5;&#x53CA;&#x9488;&#x5BF9;&#x5B83;&#x4EEC;&#x5982;&#x4F55;&#x8BBE;&#x8BA1;&#x6700;&#x4F18;&#x5316;&#x7684;&#x7B97;&#x6CD5;&#x3002;&#x901A;&#x8FC7;&#x8BBE;&#x8BA1;&#x51FA;&#x6765;&#x7684;&#x7B97;&#x6CD5;&#xFF0C;&#x4F7F;&#x5F97;&#x673A;&#x5668;&#x80FD;&#x591F;&#x4ECE;<script type="math/tex; ">\mathcal{H}</script>(Hypothesis Set)&#x5F53;&#x4E2D;&#x6311;&#x9009;&#x53EF;&#x4EE5;&#x4F7F;&#x5F97;cost function&#x6700;&#x5C0F;&#x7684;<script type="math/tex; ">h</script>&#x4F5C;&#x4E3A;<script type="math/tex; ">g</script>&#x8F93;&#x51FA;&#x3002;</p>
+<p>&#x2003;&#x2003;&#x672C;&#x7BC7;&#x4EE5;&#x4F17;&#x6240;&#x5468;&#x77E5;&#x7684;&#x7EBF;&#x6027;&#x56DE;&#x5F52;&#x4E3A;&#x4F8B;&#xFF0C;&#x4ECE;&#x65B9;&#x7A0B;&#x7684;&#x5F62;&#x5F0F;&#x3001;&#x8BEF;&#x5DEE;&#x7684;&#x8861;&#x91CF;&#x65B9;&#x5F0F;&#x3001;&#x5982;&#x4F55;&#x6700;&#x5C0F;&#x5316;<script type="math/tex; ">E_{in}</script>&#x7684;&#x89D2;&#x5EA6;&#x51FA;&#x53D1;&#xFF0C;&#x5E76;&#x7B80;&#x5355;&#x5206;&#x6790;&#x4E86;Hat Matrix&#x7684;&#x6027;&#x8D28;&#x4E0E;&#x51E0;&#x4F55;&#x610F;&#x4E49;&#xFF0C;&#x5E0C;&#x671B;&#x5BF9;&#x7EBF;&#x6027;&#x56DE;&#x5F52;&#x8FD9;&#x4E00;&#x7B80;&#x5355;&#x7684;&#x6A21;&#x578B;&#x6709;&#x4E2A;&#x66F4;&#x52A0;&#x6DF1;&#x523B;&#x7684;&#x7406;&#x89E3;&#x3002;</p>
+<h1 id="%E6%96%B9%E7%A8%8B%E7%9A%84%E5%BD%A2%E5%BC%8F%EF%BC%9A">&#x65B9;&#x7A0B;&#x7684;&#x5F62;&#x5F0F;&#xFF1A;</h1>
+<p><script type="math/tex; mode=display">
+h(x)=\sum_{i=\color{red}{0}}^d w_ix_i= w^Tx \\\
+</script></p>
+<p>&#x2003;&#x2003;&#x957F;&#x5F97;&#x5F88;&#x50CF;perceptron(&#x90FD;&#x662F;&#x76F4;&#x7EBF;&#x561B;)&#xFF0C;perceptron&#x662F;<script type="math/tex; ">h(x)=sign(w^Tx)</script>&#x3002;</p>
+<h1 id="%E8%AF%AF%E5%B7%AE%E7%9A%84%E8%A1%A1%E9%87%8F-%E2%80%94-%E5%B9%B3%E6%96%B9%E8%AF%AF%E5%B7%AE-squared-error-%EF%BC%9A">&#x8BEF;&#x5DEE;&#x7684;&#x8861;&#x91CF; &#x2014; &#x5E73;&#x65B9;&#x8BEF;&#x5DEE;(squared error)&#xFF1A;</h1>
+<p><script type="math/tex; mode=display">
+\begin{matrix}
+err(\hat{y}_n,y_n) = (\hat{y}_n-y_n)^2\\\
+(\hat{y}_n\text{为预测值，}y_n\text{为真实值})
+\end{matrix}
+</script></p>
+<h1 id="cost-function%EF%BC%9A">Cost function&#xFF1A;</h1>
+<p><script type="math/tex; mode=display">
+E_{in}(w)=\frac{1}{N}\sum_{n=1}^N(\hat{y}_n - y_n)=\frac{1}{N}\sum_{n=1}^N(w^Tx_n-y_n)^2
+</script></p>
+<p>&#x2003;&#x2003;<script type="math/tex; ">h(x)</script>&#x662F;&#x4E00;&#x4E2A;&#x4EE5;<script type="math/tex; ">x</script>&#x4E3A;&#x53D8;&#x91CF;&#x7684;&#x65B9;&#x7A0B;&#xFF0C;&#x800C;<script type="math/tex; ">E_{in}(w)</script>&#x53D8;&#x6210;&#x4E86;&#x4E00;&#x4E2A;&#x4EE5;<script type="math/tex; ">w</script>&#x4E3A;&#x53D8;&#x91CF;&#x7684;&#x65B9;&#x7A0B;&#x3002;&#x8FD9;&#x6837;&#x4E00;&#x6765;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x628A;&#x201C;&#x5728;<script type="math/tex; ">\mathcal{H}</script>&#x4E2D;&#x5BFB;&#x627E;&#x80FD;&#x4F7F;&#x5E73;&#x5747;&#x8BEF;&#x5DEE;&#x6700;&#x5C0F;&#x7684;&#x65B9;&#x7A0B;&#x201D;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;&#x8F6C;&#x6362;&#x4E3A;&#x201C;&#x6C42;&#x89E3;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#x7684;&#x6700;&#x5C0F;&#x503C;&#x201D;&#x7684;&#x95EE;&#x9898;&#x3002;&#x4F7F;&#x5F97;<script type="math/tex; ">E_{in}(w)</script>&#x6700;&#x5C0F;&#x7684;<script type="math/tex; ">w</script>&#xFF0C;&#x5C31;&#x662F;&#x6211;&#x4EEC;&#x8981;&#x5BFB;&#x627E;&#x7684;&#x90A3;&#x4E2A;&#x6700;&#x4F18;&#x65B9;&#x7A0B;&#x7684;&#x53C2;&#x6570;&#x3002;</p>
+<h1 id="%E5%A6%82%E4%BD%95%E6%9C%80%E5%B0%8F%E5%8C%96-blk737-%EF%BC%9A">&#x5982;&#x4F55;&#x6700;&#x5C0F;&#x5316;<script type="math/tex; ">E_{in}(w)</script>&#xFF1A;</h1>
+<p>&#x2003;&#x2003;&#x7528;&#x77E9;&#x9635;&#x5F62;&#x5F0F;&#x8868;&#x793A;&#xFF1A;</p>
+<p><script type="math/tex; mode=display">
+\begin{aligned}
+E_{in}(\color{blue}{w}) &= \frac{1}{N}\sum_{n=1}^{N}(\color{blue}{w^T}\color{red}{x_n}-\color{purple}{y_n})^2=\frac{1}{N}\sum_{n=1}^{N}(\color{red}{x_n^T}\color{blue}{w}-\color{purple}{y_n})^2 \\\
+
+&=\frac{1}{N}\begin{Vmatrix}
+\color{red}{x_1^T}\color{blue}{w}-\color{purple}{y_1}\\\
+\color{red}{x_2^T}\color{blue}{w}-\color{purple}{y_2}\\\
+...\\\
+\color{red}{x_N^T}\color{blue}{w}-\color{purple}{y_N}
+\end{Vmatrix}^2 \\\
+
+&=\frac{1}{N}\begin{Vmatrix}
+\color{red}{\begin{bmatrix}
+--x_1^T--\\\
+--x_2^T--\\\
+...\\\
+--x_N^T--
+\end{bmatrix}}
+\color{blue}{w} -
+\color{purple}{\begin{bmatrix}
+y_1\\\
+y_2\\\
+...\\\
+y_3
+\end{bmatrix}}
+\end{Vmatrix}^2 \\\
+
+&=\frac{1}{N}||
+\underbrace{\color{red}{X}}_{N\times d+1}\;\;\;
+\underbrace{\color{blue}{w}}_{d+1\times 1} \; - \;
+\underbrace{\color{purple}{y}}_{N\times 1}
+||^2
+
+\end{aligned}
+</script></p>
+<p>&#x2003;&#x2003;<script type="math/tex; ">\color{red}{X}</script>&#x4E0E;<script type="math/tex; ">\color{purple}{y}</script>&#x6765;&#x6E90;&#x4E8E;<script type="math/tex; ">\mathcal{D}</script>&#xFF0C;&#x662F;&#x56FA;&#x5B9A;&#x4E0D;&#x53D8;&#x7684;&#xFF0C;&#x56E0;&#x6B64;&#x5B83;&#x662F;&#x4E00;&#x4E2A;&#x4EE5;<script type="math/tex; ">\color{blue}{w}</script>&#x4E3A;&#x53D8;&#x91CF;&#x7684;&#x51FD;&#x6570;&#x3002;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x89E3;&#x4F7F;&#x5F97;<script type="math/tex; ">E_{in}</script>&#x6700;&#x5C0F;&#x7684;<script type="math/tex; ">\color{blue}{w}</script>&#xFF0C;&#x5373;<script type="math/tex; ">\underset{\color{blue}{w}}{min}\,E_{in}(\color{blue}{w})=\frac{1}{N}\begin{Vmatrix}\color{red}{X}\color{blue}{w}-\color{purple}{y}\end{Vmatrix}^2</script>&#x3002;&#x8FD9;&#x4E2A;<script type="math/tex; ">E_{in}(\color{blue}{w})</script>&#x662F;&#x4E00;&#x4E2A;&#x8FDE;&#x7EED;(continuous)&#x3001;&#x5904;&#x5904;&#x53EF;&#x5FAE;(differentiable)&#x7684;&#x51F8;&#x51FD;&#x6570;(convex)&#xFF1A;</p>
+<p>  <img src="images/wlin.png" alt=""> &#x2003;&#x2003;</p>
+<p>&#x2003;&#x2003;&#x5BF9;&#x4E8E;&#x8FD9;&#x4E00;&#x7C7B;&#x51FD;&#x6570;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x89E3;&#x5176;&#x4E00;&#x9636;&#x5BFC;&#x6570;&#x4E3A;0&#x65F6;&#x7684;&#x89E3;&#x5373;&#x53EF;&#x3002;</p>
+<p><script type="math/tex; mode=display">
+E_{in}(\color{blue}{w}) \equiv
+\begin{bmatrix}
+\frac{\partial E_{in}}{\partial \color{blue}{w}_0}(\color{blue}{w})\\\
+\frac{\partial E_{in}}{\partial \color{blue}{w}_1}(\color{blue}{w})\\\
+...\\\
+\frac{\partial E_{in}}{\partial \color{blue}{w}_d}(\color{blue}{w})
+\end{bmatrix}=\begin{bmatrix}
+\color{orange}{0}\\\
+\color{orange}{0}\\\
+...\\\
+\color{orange}{0}
+\end{bmatrix}
+</script></p>
+<p>&#x2003;&#x2003;&#x5173;&#x4E8E;&#x591A;&#x5143;&#x51FD;&#x6570;&#x7684;&#x6C42;&#x5BFC;&#xFF0C;&#x5C31;&#x662F;&#x7EBF;&#x6027;&#x4EE3;&#x6570;&#x7684;&#x8303;&#x7574;&#x4E86;&#xFF1A;</p>
+<p><script type="math/tex; mode=display">
+\boxed
+{
+\begin{matrix}
+\text{一元的情况}\\\
+\\\
+E_{in}(\color{blue}{w})=\frac{1}{N}(\color{red}{a}\color{blue}{w^2}-2\color{brown}{b}\color{blue}{w}+\color{purple}{c})\\\
+\nabla E_{in}(\color{blue}{w})=\frac{1}{N}(2\color{red}{a}\color{blue}{w}-2\color{brown}{b})
+\end{matrix}
+}
+\xrightarrow{\text{推广至}}
+\boxed{
+\begin{matrix}
+\text{多元的情况}\\\
+\\\
+E_{in}(\color{blue}{w})=\frac{1}{N}(\color{blue}{w^T}\color{red}{A}\color{blue}{w}-2\color{blue}{w^T}\color{brown}{b}+\color{purple}{c})\\\
+\nabla E_{in}(\color{blue}{w})=\frac{1}{N}(2\color{red}{A}\color{blue}{w}-2\color{brown}{b})
+\end{matrix}
+}
+</script></p>
+<p>&#x2003;&#x2003;&#x6240;&#x4EE5;&#x6709;&#xFF1A;</p>
+<p><script type="math/tex; mode=display">
+\begin{aligned}
+\nabla E_{in}(\color{blue}{w}) &=\nabla \frac{1}{N}(\color{blue}{w^T}\color{red}{X^TX}\color{blue}{w}-2\color{blue}{w^T}\color{brown}{X^Ty}+\color{purple}{y^Ty}) \\\
+&=\frac{2}{N}(\color{red}{X^TX}\color{blue}{w}-\color{brown}{X^Ty})
+\end{aligned}
+</script></p>
+<p>&#x2003;&#x2003;&#x4EE4;<script type="math/tex; ">\nabla E_{in}(\color{blue}{w})=0</script>&#xFF0C;&#x53EF;&#x5F97;&#x6700;&#x4F73;&#x89E3;&#xFF1A;</p>
+<p><script type="math/tex; mode=display">
+\color{blue}{w_{LIN}}=\underbrace{(\color{red}{X^TX})^{-1}\color{red}{X^T}}_{pseudo-inverse\;\color{red}{X^{\dagger}}}\;\;\;\color{purple}{y} = \color{red}{X^{\dagger}} \color{purple}{y}
+</script></p>
+<p>&#x2003;&#x2003;&#x5F53;<script type="math/tex; ">\color{red}{X^TX}</script>&#x53EF;&#x9006;&#x7684;&#x65F6;&#x5019;&#x7528;&#x5B83;&#x4F5C;&#x4E3A;pseudo-inverse&#x77E9;&#x9635;<script type="math/tex; ">\color{red}{X^{\dagger}}</script>&#xFF0C;&#x5F53;<script type="math/tex; ">\color{red}{X^TX}</script>&#x4E0D;&#x53EF;&#x9006;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x518D;&#x7528;&#x5176;&#x4ED6;&#x65B9;&#x5F0F;&#x5B9A;&#x4E49;<script type="math/tex; ">\color{red}{X^{\dagger}}</script>&#xFF0C;&#x8FD9;&#x91CC;&#x5C31;&#x4E0D;&#x8BE6;&#x8FF0;&#x4E86;&#x3002;</p>
+<p>&#x2003;&#x2003;&#x7528;&#x4EE5;<script type="math/tex; ">\color{blue}{w_{LIN}}</script>&#x4E3A;&#x53C2;&#x6570;&#x7684;&#x7EBF;&#x6027;&#x65B9;&#x7A0B;&#x5BF9;&#x539F;&#x59CB;&#x6570;&#x636E;&#x505A;&#x9884;&#x6D4B;&#xFF0C;&#x53EF;&#x4EE5;&#x5F97;&#x5230;&#x62DF;&#x5408;&#x503C;<script type="math/tex; ">\hat{y}=\color{red}{X}\color{blue}{w_{LIN}}=\color{red}{XX^{\dagger}}\color{purple}{y}</script>&#x3002;&#x8FD9;&#x91CC;&#x53C8;&#x79F0;<script type="math/tex; ">\color{orange}{H}=\color{red}{XX^{\dagger}}</script>&#x4E3A;Hat Matrix&#xFF0C;&#x5E3D;&#x5B50;&#x77E9;&#x9635;&#xFF0C;<script type="math/tex; ">\color{orange}{H}</script>&#x4E3A;<script type="math/tex; ">\color{purple}{y}</script>&#x5E26;&#x4E0A;&#x4E86;&#x5E3D;&#x5B50;&#xFF0C;&#x6210;&#x4E3A;<script type="math/tex; ">\hat{y}</script>&#xFF0C;&#x5F88;&#x5F62;&#x8C61;&#x5427;&#x3002;</p>
+<h1 id="hat-matrix-%E7%9A%84%E5%87%A0%E4%BD%95%E6%84%8F%E4%B9%89">Hat Matrix &#x7684;&#x51E0;&#x4F55;&#x610F;&#x4E49;</h1>
+<p><img src="images/geoview_hatmatrix.png" alt=""></p>
+<p>&#x2003;&#x2003;&#x8FD9;&#x5F20;&#x56FE;&#x5C55;&#x793A;&#x7684;&#x662F;&#x5728;N&#x7EF4;&#x5B9E;&#x6570;&#x7A7A;&#x95F4;<script type="math/tex; ">\mathbb{R}^N</script>&#x4E2D;&#xFF0C;&#x6CE8;&#x610F;&#x8FD9;&#x91CC;&#x662F;N=&#x6570;&#x636E;&#x7B14;&#x6570;&#xFF0C;<script type="math/tex; ">\color{purple}{y}</script>&#x4E2D;&#x5305;&#x542B;&#x6240;&#x6709;&#x771F;&#x5B9E;&#x503C;&#xFF0C;<script type="math/tex; ">\hat{y}</script>&#x4E2D;&#x5305;&#x542B;&#x6240;&#x6709;&#x9884;&#x6D4B;&#x503C;&#xFF0C;&#x4E0E;&#x4E4B;&#x524D;&#x8BB2;&#x7684;&#x8F93;&#x5165;&#x7A7A;&#x95F4;&#x662F;d+1&#x7EF4;&#x662F;&#x4E0D;&#x4E00;&#x6837;&#x7684;&#x5662;&#x3002;<script type="math/tex; ">\color{red}{X}</script>&#x4E2D;&#x5305;&#x542B;d+1&#x4E2A;column&#xFF1A;</p>
+<ul>
+<li><script type="math/tex; ">\hat{y}=\color{red}{X}\color{blue}{w_{LIN}}</script>&#x662F;<script type="math/tex; ">\color{red}{X}</script>&#x7684;&#x4E00;&#x4E2A;&#x7EBF;&#x6027;&#x7EC4;&#x5408;&#xFF0C;<script type="math/tex; ">\color{red}{X}</script>&#x4E2D;&#x6BCF;&#x4E2A;column&#x5BF9;&#x5E94;<script type="math/tex; ">\mathbb{R}^N</script>&#x4E0B;&#x7684;&#x4E00;&#x4E2A;&#x5411;&#x91CF;&#xFF0C;&#x5171;&#x6709;d+1&#x4E2A;&#x8FD9;&#x6837;&#x7684;&#x5411;&#x91CF;&#xFF0C;&#x56E0;&#x6B64;<script type="math/tex; ">\hat{y}</script>&#x5728;&#x8FD9;d+1&#x4E2A;&#x5411;&#x91CF;&#x6240;&#x6784;&#x6210;&#x7684;<script type="math/tex; ">\color{red}{span}</script>(&#x5E73;&#x9762;)&#x4E0A;&#x3002;</li>
+<li>&#x4E8B;&#x5B9E;&#x4E0A;&#x6211;&#x4EEC;&#x8981;&#x505A;&#x7684;&#x5C31;&#x662F;&#x5728;&#x8FD9;&#x4E2A;&#x5E73;&#x9762;&#x4E0A;&#x627E;&#x5230;&#x4E00;&#x4E2A;&#x5411;&#x91CF;<script type="math/tex; ">\hat{y}</script>&#x4F7F;&#x5F97;&#x4ED6;&#x4E0E;&#x771F;&#x5B9E;&#x503C;&#x4E4B;&#x95F4;&#x7684;&#x8DDD;&#x79BB;<script type="math/tex; ">|\color{green}{y-\hat{y}}|</script>&#x6700;&#x77ED;&#x3002;&#x4E0D;&#x96BE;&#x53D1;&#x73B0;&#x5F53;<script type="math/tex; ">\hat{y}</script>&#x662F;<script type="math/tex; ">\color{purple}{y}</script>&#x5728;&#x8FD9;&#x4E2A;&#x5E73;&#x9762;&#x4E0A;&#x7684;&#x6295;&#x5F71;&#x65F6;&#xFF0C;&#x5373;<script type="math/tex; ">\color{green}{y-\hat{y}}\perp \color{red}{span}</script>&#x65F6;&#xFF0C;<script type="math/tex; ">|\color{green}{y-\hat{y}}|</script>&#x6700;&#x77ED;&#x3002;</li>
+<li>&#x6240;&#x4EE5;&#x4E4B;&#x524D;&#x8BF4;&#x8FC7;&#x7684;Hat Matrix <script type="math/tex; ">\color{orange}{H}</script>&#xFF0C;&#x4E3A;<script type="math/tex; ">\color{purple}{y}</script>&#x6234;&#x4E0A;&#x5E3D;&#x5B50;&#xFF0C;&#x6240;&#x505A;&#x7684;&#x5C31;&#x662F;&#x6295;&#x5F71;&#x8FD9;&#x4E2A;&#x52A8;&#x4F5C;&#xFF0C;&#x5BFB;&#x627E;<script type="math/tex; ">\color{red}{span}</script>&#x4E0A;<script type="math/tex; ">\color{purple}{y}</script>&#x7684;&#x6295;&#x5F71;&#x3002;</li>
+<li><script type="math/tex; ">\color{orange}{H}\color{purple}{y}=\hat{y}</script>&#xFF0C;<script type="math/tex; ">(I-\color{orange}{H})\color{purple}{y}=\color{green}{y-\hat{y}}</script>&#x3002;(<script type="math/tex; ">I</script>&#x4E3A;&#x5355;&#x4F4D;&#x77E9;&#x9635;)</li>
+</ul>
+<p>&#x2003;&#x2003;&#x4E0B;&#x9762;&#x6765;&#x63A2;&#x7A76;&#x4E00;&#x4E0B;<script type="math/tex; ">\color{orange}{H}</script>&#x7684;&#x6027;&#x8D28;&#xFF0C;&#x8FD9;&#x4E2A;&#x5F88;&#x91CD;&#x8981;&#x5662;&#x3002;</p>
+<p><script type="math/tex; mode=display">
+\text{Hat Matrix }\color{orange}{H} = \color{red}{X(X^TX)}^{-1}\color{red}{X^T}
+</script></p>
+<ul>
+<li>&#x5BF9;&#x79F0;&#x6027;(symetric)&#xFF0C;&#x5373;<script type="math/tex; ">\color{orange}{H}=\color{orange}{H^T}</script>&#xFF1A;</li>
+</ul>
+<p><script type="math/tex; mode=display">
+\begin{aligned}
+\color{orange}{H^T} &= (\color{red}{X(X^TX)}^{-1}\color{red}{X^T})^T \\\
+&=\color{red}{X({(X^TX)}^{-1})^TX^T} \\\
+&=\color{red}{\color{red}{X(X^TX)}^{-1}\color{red}{X^T}}\\\
+&=\color{orange}{H}
+\end{aligned}
+</script></p>
+<ul>
+<li>&#x5E42;&#x7B49;&#x6027;(idempotent)&#xFF0C;&#x5373;<script type="math/tex; ">\color{orange}{H^2}=\color{orange}{H}</script>&#xFF1A;</li>
+</ul>
+<p><script type="math/tex; mode=display">
+\begin{aligned}
+\color{orange}{H^2} &= (\color{red}{X(X^TX)}^{-1}\color{red}{X^T})(\color{red}{X(X^TX)}^{-1}\color{red}{X^T})\\\
+&=\color{red}{X\;}\underbrace{\color{red}{(X^TX)}^{-1}\color{red}{(X^TX)}}_{I}\;\color{red}{(X^TX)}^{-1}\color{red}{X^T} \\\
+&=\color{red}{X}\color{red}{(X^TX)}^{-1}\color{red}{X^T}\\\
+&=\color{orange}{H}
+\end{aligned}
+</script></p>
+<ul>
+<li>&#x534A;&#x6B63;&#x5B9A;(positive semi-definite)&#xFF0C;&#x5373;&#x6240;&#x6709;&#x7279;&#x5F81;&#x503C;&#x4E3A;&#x975E;&#x8D1F;&#x6570;&#xFF1A;<br>(&#x4EE5;&#x4E0B;<script type="math/tex; ">\lambda</script>&#x4E3A;&#x7279;&#x5F81;&#x503C;&#xFF0C;<script type="math/tex; ">b</script>&#x4E3A;&#x5BF9;&#x5E94;&#x7684;&#x7279;&#x5F81;&#x5411;&#x91CF;)</li>
+</ul>
+<p><script type="math/tex; mode=display">
+\begin{aligned}
+\color{orange}{H}b&=\lambda b\\\
+\color{orange}{H^2}b&=\lambda \color{orange}{H}b \\\
+&=\lambda (\lambda b)\\\
+\text{(因为}\color{orange}{H^2}&=\color{orange}{H}\text{)}\\\
+\color{orange}{H^2}b&=\color{orange}{H}b=\lambda b\\\
+\text{所以}&:\\\
+\lambda ^2b&=\lambda b \\\
+\text{即}&:\\\
+\lambda (\lambda -1)b&=0 \\\
+\lambda = 0 &\text{ or } \lambda=1
+\end{aligned}
+</script></p>
+<p>&#x2003;&#x2003;&#x6797;&#x8001;&#x5E08;&#x5728;&#x8BFE;&#x5802;&#x4E0A;&#x8BB2;&#x5230;&#xFF1A;</p>
+<p><script type="math/tex; mode=display">
+trace(I-\color{orange}{H}) = N-(d+1)
+</script></p>
+<p>&#x2003;&#x2003;<script type="math/tex; ">trace</script>&#x4E3A;&#x77E9;&#x9635;&#x7684;&#x8FF9;&#x3002;&#x8FD9;&#x6761;&#x6027;&#x8D28;&#x5F88;&#x91CD;&#x8981;&#xFF0C;&#x4F46;&#x662F;&#x4E3A;&#x4EC0;&#x4E48;&#x5462;&#xFF1F;&#x8BC1;&#x660E;&#x8FC7;&#x7A0B;&#x6709;&#x70B9;&#x591A;&#xFF0C;&#x4EE5;&#x540E;&#x6709;&#x673A;&#x4F1A;&#x518D;&#x8865;&#x5145;&#xFF0C;&#x5FC3;&#x6025;&#x7684;&#x540C;&#x5B66;&#x53EF;&#x4EE5;&#x770B;&#x8FD9;&#x91CC;[General formulas for bias and variance in OLS][4]&#x3002;&#x4E00;&#x4E2A;&#x77E9;&#x9635;&#x7684;<script type="math/tex; ">trace</script>&#x7B49;&#x4E8E;&#x8BE5;&#x77E9;&#x9635;&#x7684;&#x6240;&#x6709;&#x7279;&#x5F81;&#x503C;(Eigenvalues)&#x4E4B;&#x548C;&#x3002;</p>
+<p><img src="images/geoview_hatmatrix_noise.png" alt=""></p>
+<p>&#x2003;&#x2003;&#x5047;&#x8BBE;<script type="math/tex; ">\color{purple}{y}</script>&#x7531;<script type="math/tex; ">\color{red}{f(X)\in span}+noise</script>&#x6784;&#x6210;&#x7684;&#x3002;&#x6709;<script type="math/tex; ">\color{purple}{y}=\color{red}{f(X)}+noise</script>&#x3002;&#x4E4B;&#x524D;&#x8BB2;&#x5230;<script type="math/tex; ">\color{orange}{H}</script>&#x4F5C;&#x7528;&#x4E8E;&#x67D0;&#x4E2A;&#x5411;&#x91CF;&#xFF0C;&#x4F1A;&#x5F97;&#x5230;&#x8BE5;&#x5411;&#x91CF;&#x5728;<script type="math/tex; ">\color{red}{span}</script>&#x4E0A;&#x7684;&#x6295;&#x5F71;&#xFF0C;&#x800C;<script type="math/tex; ">I-\color{orange}{H}</script>&#x4F5C;&#x7528;&#x4E8E;&#x67D0;&#x4E2A;&#x5411;&#x91CF;&#xFF0C;&#x4F1A;&#x5F97;&#x5230;&#x90A3;&#x6761;&#x4E0E;<script type="math/tex; ">\color{red}{span}</script>&#x5782;&#x76F4;&#x7684;&#x5411;&#x91CF;&#xFF0C;&#x5728;&#x8FD9;&#x91CC;&#x5C31;&#x662F;&#x56FE;&#x4E2D;&#x7684;<script type="math/tex; ">\color{green}{y-\hat{y}}</script>&#xFF0C;&#x5373;<script type="math/tex; ">(I-\color{orange}{H})noise=\color{green}{y-\hat{y}}</script>&#x3002;</p>
+<p>&#x2003;&#x2003;&#x8FD9;&#x4E2A;<script type="math/tex; ">\color{green}{y-\hat{y}}</script>&#x662F;&#x771F;&#x5B9E;&#x503C;&#x4E0E;&#x9884;&#x6D4B;&#x503C;&#x7684;&#x5DEE;&#xFF0C;&#x5176;&#x957F;&#x5EA6;&#x5C31;&#x662F;&#x5C31;&#x662F;&#x6240;&#x6709;&#x70B9;&#x7684;&#x5E73;&#x65B9;&#x8BEF;&#x5DEE;&#x4E4B;&#x548C;&#x3002;&#x4E8E;&#x662F;&#x5C31;&#x6709;&#xFF1A;</p>
+<p><script type="math/tex; mode=display">
+\begin{aligned}
+E_{in}(\color{blue}{w_{LIN}})&=\frac{1}{N}||\color{green}{y-\hat{y}}||^2\\\
+&=\frac{1}{N}||(I-\color{orange}{H})noise||^2 \\\
+&=\frac{1}{N}trace(I-\color{orange}{H})||noise||^2 \\\
+&=\frac{1}{N}(N-(d+1))||noise||^2
+\end{aligned}
+</script></p>
+<p>&#x2003;&#x2003;&#x4E0A;&#x9762;&#x7684;&#x8BC1;&#x660E;&#x4E0D;&#x592A;&#x597D;&#x6574;&#x7406;&#x8FDB;&#x6765;&#xFF0C;&#x4F9D;&#x7136;&#x53EF;&#x4EE5;&#x53C2;&#x8003;<a href="http://www.stat.berkeley.edu/~census/general.pdf" target="_blank">General formulas for bias and variance in OLS</a>&#x3002;</p>
+<p>&#x2003;&#x2003;&#x56E0;&#x6B64;&#xFF0C;&#x5C31;&#x5E73;&#x5747;&#x800C;&#x8A00;&#xFF0C;&#x6709;&#xFF1A;</p>
+<p><script type="math/tex; mode=display">
+\begin{aligned}
+\color{red}{\overline{E_{in}}}&=\text{noise level}\cdot(1-\frac{d+1}{N})\\\
+\color{blue}{\overline{E_{out}}}&=\text{noise level}\cdot(1+\frac{d+1}{N}) \;\;\;(后面这个不懂证了。)
+\end{aligned}
+</script></p>
+<p>&#x2003;&#x2003;&#x82B1;&#x8FD9;&#x4E48;&#x5927;&#x529B;&#x6C14;&#x662F;&#x4E3A;&#x4E86;&#x4EC0;&#x4E48;&#xFF0C;&#x53C8;&#x56DE;&#x5230;&#x4E4B;&#x524D;learning&#x53EF;&#x884C;&#x6027;&#x7684;&#x8BDD;&#x9898;&#x4E86;&#x3002;</p>
+<p>  <img src="images/linear_regression_learning_curve.png" alt=""></p>
+<p>&#x2003;&#x2003;<script type="math/tex; ">\color{red}{\overline{E_{in}}}</script>&#x548C;<script type="math/tex; ">\color{blue}{\overline{E_{out}}}</script>&#x90FD;&#x5411;<script type="math/tex; ">\sigma ^2</script>(noise level)&#x6536;&#x655B;&#xFF0C;&#x5E76;&#x4E14;&#x4ED6;&#x4EEC;&#x4E4B;&#x95F4;&#x7684;&#x5DEE;&#x5F02;&#x88AB;<script type="math/tex; ">\frac{2(d+1)}{N}</script>&#x7ED9;bound&#x4F4F;&#x4E86;&#x3002;&#x6709;&#x90A3;&#x4E48;&#x70B9;&#x50CF;VC bound&#xFF0C;&#x4E0D;&#x8FC7;&#x8981;&#x6BD4;VC bound&#x6765;&#x7684;&#x66F4;&#x4E25;&#x683C;&#x4E00;&#x4E9B;&#x3002;</p>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../section3/index.html" class="navigation navigation-prev " aria-label="Previous page: How Can Machines Learn?"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../section3/logistic-regression.html" class="navigation navigation-next " aria-label="Next page: Logistic Regression"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="http://cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-mathjax-update/plugin.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-disqus/plugin.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-github/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2},"disqus":{"shortName":"mlnotebook"},"github":{"url":"https://github.com/beader/mlnotebook"},"mathjax":{}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

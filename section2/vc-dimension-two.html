@@ -1,0 +1,538 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=11; IE=10; IE=9; IE=8; IE=7; IE=EDGE" />
+        <title>VC Dimension Part II | 机器学习笔记</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.0.1">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    
+    
+    <link rel="next" href="../section2/vc-dimension-three.html" />
+    
+    
+    <link rel="prev" href="../section2/vc-dimension-one.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+    
+
+        
+    <div class="book" data-level="2.3" data-basepath=".." data-revision="Thu Nov 07 2019 08:46:53 GMT+0000 (UTC)">
+    
+
+<div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Type to search" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+        
+        
+        
+
+        
+
+        
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="section1/index.html">
+            
+                
+                    <a href="../section1/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        When Can Machines Learn?
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="section2/index.html">
+            
+                
+                    <a href="../section2/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        Why Can Machines Learn?
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="section2/is-learning-feasible.html">
+            
+                
+                    <a href="../section2/is-learning-feasible.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        机器学习的可行性
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="section2/vc-dimension-one.html">
+            
+                
+                    <a href="../section2/vc-dimension-one.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        VC Dimension Part I
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="2.3" data-path="section2/vc-dimension-two.html">
+            
+                
+                    <a href="../section2/vc-dimension-two.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        VC Dimension Part II
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="section2/vc-dimension-three.html">
+            
+                
+                    <a href="../section2/vc-dimension-three.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        VC Dimension Part III
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="section2/noise-and-error.html">
+            
+                
+                    <a href="../section2/noise-and-error.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.</b>
+                        
+                        Noise and Error
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="section3/index.html">
+            
+                
+                    <a href="../section3/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        How Can Machines Learn?
+                    </a>
+                
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="section3/linear-regression.html">
+            
+                
+                    <a href="../section3/linear-regression.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        Linear Regression
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="section3/logistic-regression.html">
+            
+                
+                    <a href="../section3/logistic-regression.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        Logistic Regression
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="section3/linear_models_for_classification.html">
+            
+                
+                    <a href="../section3/linear_models_for_classification.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        Linear Models for Classification
+                    </a>
+                
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="section4/index.html">
+            
+                
+                    <a href="../section4/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        How Can Machines Learn Better?
+                    </a>
+                
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="section5/index.html">
+            
+                
+                    <a href="../section5/index.html">
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        FAQ
+                    </a>
+                
+            
+            
+        </li>
+    
+
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                Published with GitBook
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Table of Contents"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search" aria-label="Search"><i class="fa fa-search"></i></a>
+    
+    <div id="font-settings-wrapper" class="dropdown pull-left">
+        <a href="#" class="btn toggle-dropdown" aria-label="Font Settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="button" id="reduce-font-size" class="button size-2">A</button>
+        <button type="button" id="enlarge-font-size" class="button size-2">A</button>
+    </div>
+
+    <div class="buttons font-family-list">
+        <button type="button" data-font="0" class="button">Serif</button>
+        <button type="button" data-font="1" class="button">Sans</button>
+    </div>
+
+    <div class="buttons color-theme-list">
+        <button type="button" id="color-theme-preview-0" class="button size-3" data-theme="0">White</button>
+        <button type="button" id="color-theme-preview-1" class="button size-3" data-theme="1">Sepia</button>
+        <button type="button" id="color-theme-preview-2" class="button size-3" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </div>
+
+    <!-- Actions Right -->
+    
+    <div class="dropdown pull-right">
+        <a href="#" class="btn toggle-dropdown" aria-label="Share"><i class="fa fa-share-alt"></i>
+        </a>
+        <div class="dropdown-menu font-settings dropdown-left">
+            <div class="dropdown-caret">
+                <span class="caret-outer"></span>
+                <span class="caret-inner"></span>
+            </div>
+            <div class="buttons">
+                <button type="button" data-sharing="twitter" class="button">
+                    Share on Twitter
+                </button>
+                <button type="button" data-sharing="google-plus" class="button">
+                    Share on Google
+                </button>
+                <button type="button" data-sharing="facebook" class="button">
+                    Share on Facebook
+                </button>
+                <button type="button" data-sharing="weibo" class="button">
+                    Share on Weibo
+                </button>
+                <button type="button" data-sharing="instapaper" class="button">
+                    Share on Instapaper
+                </button>
+            </div>
+        </div>
+    </div>
+    
+
+    
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Google"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Twitter"><i class="fa fa-twitter"></i></a>
+    
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >机器学习笔记</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <p>&#x2003;&#x2003;<a href="http://beader.me/2014/01/23/vc-dimension-one/" target="_blank">&#x4E0A;&#x4E00;&#x7BC7;</a>&#x7528;&#x6210;&#x957F;&#x51FD;&#x6570;<script type="math/tex; ">m_{\mathcal{H}}(N)</script>&#x6765;&#x8861;&#x91CF;Hypotheses Set <script type="math/tex; ">\mathcal{H}</script>&#x4E2D;&#x6709;&#x6548;&#x7684;&#x65B9;&#x7A0B;&#x7684;&#x6570;&#x91CF;(Effective Number of Hypotheses)&#xFF0C;&#x4EE5;&#x53D6;&#x4EE3;Hoeffding&apos;s Inequality&#x4E2D;&#x7684;&#x5927;<script type="math/tex; ">M</script>&#xFF0C;&#x5E76;&#x7528;&#x4E00;&#x79CD;&#x95F4;&#x63A5;&#x7684;&#x65B9;&#x5F0F; --- break point&#xFF0C;&#x6765;&#x5BFB;&#x627E;<script type="math/tex; ">m_{\mathcal{H}}(N)</script>&#x7684;&#x4E0A;&#x754C;&#xFF0C;&#x4ECE;&#x800C;&#x907F;&#x514D;&#x4E86;&#x76F4;&#x63A5;&#x7814;&#x7A76;<script type="math/tex; ">\mathcal{H}</script>&#x7684;&#x6210;&#x957F;&#x51FD;&#x6570;&#x7684;&#x56F0;&#x96BE;&#x3002;</p>
+<!--more-->
+<h2 id="%E5%AD%A6%E4%B9%A0%E6%89%80%E9%9C%80-%E7%BB%B4%E4%BB%96%E5%91%BD-the-vc-dimension">&#x5B66;&#x4E60;&#x6240;&#x9700;&quot;&#x7EF4;&#x4ED6;&#x547D;&quot;(The VC Dimension)</h2>
+<p><script type="math/tex; mode=display">
+m_{\mathcal{H}}(N)\leq \sum_{i=0}^{k-1}\binom {N}{i}
+</script></p>
+<p>&#x2003;&#x2003;&#x6839;&#x636E;&#x4E4B;&#x524D;&#x5F97;&#x5230;&#x7684;&#x5F0F;&#x5B50;&#xFF0C;&#x6211;&#x4EEC;&#x77E5;&#x9053;&#x5982;&#x679C;&#x4E00;&#x4E2A;<script type="math/tex; ">\mathcal{H}</script>&#x5B58;&#x5728;break point&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x6709;&#x529E;&#x6CD5;&#x4FDD;&#x8BC1;&#x5B66;&#x51FA;&#x6765;&#x7684;&#x4E1C;&#x897F;&#x80FD;&#x591F;&#x201C;&#x4E3E;&#x4E00;&#x53CD;&#x4E09;&#x201D;(good generalization)&#x3002;&#x4E00;&#x822C;&#x6765;&#x8BF4;break point&#x8D8A;&#x5927;&#x7684;<script type="math/tex; ">\mathcal{H}</script>&#xFF0C;&#x5176;&#x590D;&#x6742;&#x5EA6;&#x4E5F;&#x66F4;&#x9AD8;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;vc dimension&#x6765;&#x63CF;&#x8FF0;&#x4E00;&#x4E2A;<script type="math/tex; ">\mathcal{H}</script>&#x7684;&#x590D;&#x6742;&#x7A0B;&#x5EA6;&#xFF0C;&#x8FD9;&#x4E2A;vc dimension&#x6765;&#x81EA;Vladimir Vapnik&#x4E0E;Alexey Chervonenkis&#x6240;&#x63D0;&#x51FA;&#x7684;<a href="http://en.wikipedia.org/wiki/Vapnik%E2%80%93Chervonenkis_theory" target="_blank">VC Theory</a>&#x3002;</p>
+<p>&#x2003;&#x2003;&#x6839;&#x636E;&#x5B9A;&#x4E49;&#xFF0C;&#x4E00;&#x4E2A;<script type="math/tex; ">\mathcal{H}</script>&#x7684;vc dimension(&#x8BB0;&#x4E3A;<script type="math/tex; ">d_{vc}(\mathcal{H})</script>)&#xFF0C;&#x662F;&#x8FD9;&#x4E2A;<script type="math/tex; ">\mathcal{H}</script>&#x6700;&#x591A;&#x80FD;&#x591F;shatter&#x6389;&#x7684;&#x70B9;&#x7684;&#x6570;&#x91CF; (the largest value of N for which <script type="math/tex; ">m_{\mathcal{H}}(N)=2^N</script>)&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x7BA1;&#x591A;&#x5C11;&#x4E2A;&#x70B9;<script type="math/tex; ">\mathcal{H}</script>&#x90FD;&#x80FD;&#x591F;shatter&#x4ED6;&#x4EEC;&#xFF0C;&#x5219;<script type="math/tex; ">d_{vc}(H)=\infty</script>&#x3002;&#x4E0D;&#x96BE;&#x770B;&#x51FA;<script type="math/tex; ">d_{vc}</script>&#x4E0E;break point k&#x7684;&#x5173;&#x7CFB;&#xFF0C;&#x6709;<script type="math/tex; ">k=d_{vc}+1</script>&#xFF0C;&#x56E0;&#x6B64;&#x6211;&#x4EEC;&#x7528;&#x8FD9;&#x4E2A;<script type="math/tex; ">d_{vc}</script>&#x6765;&#x63CF;&#x8FF0;&#x6210;&#x957F;&#x51FD;&#x6570;&#x7684;&#x4E0A;&#x754C;&#xFF1A;</p>
+<p><script type="math/tex; mode=display">
+m_{\mathcal{H}}(N)\leq \sum_{i=0}^{d_{vc}} \binom {N}{i}
+</script></p>
+<p>&#x2003;&#x2003;&#x4E0A;&#x5F0F;&#x53F3;&#x8FB9;(RHS)&#x4E8B;&#x5B9E;&#x4E0A;&#x662F;&#x6700;&#x9AD8;&#x9879;&#x4E3A;<script type="math/tex; ">d_{vc}</script>&#x7684;&#x591A;&#x9879;&#x5F0F;&#xFF0C;&#x5229;&#x7528;&#x6570;&#x5B66;&#x5F52;&#x7EB3;&#x6CD5;&#x53EF;&#x5F97;&#xFF1A;</p>
+<p><script type="math/tex; mode=display">
+m_{\mathcal{H}}(N)\leq \sum_{i=0}^{d_{vc}} \binom {N}{i} \leq N^{d_{vc}}+1
+</script></p>
+<h2 id="%E6%9B%B4%E5%8A%A0%E4%B8%80%E8%88%AC%E5%8C%96%E7%9A%84bound-the-vc-generalization-bound">&#x66F4;&#x52A0;&#x4E00;&#x822C;&#x5316;&#x7684;Bound (The VC Generalization Bound)</h2>
+<p>&#x2003;&#x2003;&#x4E0A;&#x4E00;&#x7BC7;&#x7684;&#x672B;&#x5C3E;&#x6211;&#x4EEC;&#x8BBE;&#x60F3;&#x5229;&#x7528;&#x6709;&#x9650;&#x7684;<script type="math/tex; ">m_{\mathcal{H}}(N)</script>&#x6765;&#x66FF;&#x6362;&#x65E0;&#x9650;&#x7684;&#x5927;<script type="math/tex; ">M</script>&#xFF0C;&#x5F97;&#x5230;<script type="math/tex; ">\mathcal{H}</script>&#x9047;&#x5230;Bad Sample&#x7684;&#x6982;&#x7387;&#x4E0A;&#x754C;&#xFF1A;</p>
+<p><script type="math/tex; mode=display">
+\mathbb{P}_\mathcal{D}[BAD\ D]\leq 2m_{\mathcal{H}}(N)\cdot exp(-2\epsilon ^2N)
+</script></p>
+<p>&#x2003;&#x2003;&#x5176;&#x4E2D;<script type="math/tex; ">\mathbb{P}_\mathcal{D}[BAD\ D]</script>&#x662F;<script type="math/tex; ">\mathcal{H}</script>&#x4E2D;&#x6240;&#x6709;&#x6709;&#x6548;&#x7684;&#x65B9;&#x7A0B;(Effective Hypotheses)&#x9047;&#x5230;Bad Sample&#x7684;&#x8054;&#x5408;&#x6982;&#x7387;&#xFF0C;&#x5373;<script type="math/tex; ">\mathcal{H}</script>&#x4E2D;&#x5B58;&#x5728;&#x4E00;&#x4E2A;&#x65B9;&#x7A0B;&#x9047;&#x4E0A;bad sample&#xFF0C;&#x5219;&#x8BF4;<script type="math/tex; ">\mathcal{H}</script>&#x9047;&#x4E0A;bad sample&#x3002;&#x7528;&#x66F4;&#x52A0;&#x7CBE;&#x51C6;&#x7684;&#x6570;&#x5B66;&#x7B26;&#x53F7;&#x6765;&#x8868;&#x793A;&#x4E0A;&#x9762;&#x7684;&#x4E0D;&#x7B49;&#x5F0F;&#xFF1A;</p>
+<p><script type="math/tex; mode=display">
+\mathbb{P}[\exists h \in \mathcal{H}\text{ s.t. } |E_{in}(h)-E_{out}(h)|\gt \epsilon]\leq 2m_{\mathcal{H}}(N)\cdot exp(-2\epsilon ^2N)
+</script></p>
+<p>&#x2003;&#x2003;&#x6CE8;&#xFF1A;<script type="math/tex; ">\exists h \in \mathcal{H}\text{ s.t. }</script> - <script type="math/tex; ">\mathcal{H}</script>&#x4E2D;&#x5B58;&#x5728;(<script type="math/tex; ">\exists</script>)&#x6EE1;&#x8DB3;(<script type="math/tex; ">\text{ s.t }</script>)...&#x7684;<script type="math/tex; ">h</script></p>
+<p>&#x2003;&#x2003;&#x4F46;&#x4E8B;&#x5B9E;&#x4E0A;&#x4E0A;&#x9762;&#x7684;&#x4E0D;&#x7B49;&#x5F0F;&#x662F;&#x4E0D;&#x4E25;&#x8C28;&#x7684;&#xFF0C;&#x4E3A;&#x4EC0;&#x4E48;&#x5462;&#xFF1F;<script type="math/tex; ">m_{\mathcal{H}}(N)</script>&#x63CF;&#x8FF0;&#x7684;&#x662F;<script type="math/tex; ">\mathcal{H}</script>&#x4F5C;&#x7528;&#x4E8E;&#x6570;&#x636E;&#x91CF;&#x4E3A;<script type="math/tex; ">N</script>&#x7684;&#x8D44;&#x6599;<script type="math/tex; ">\mathcal{D}</script>&#xFF0C;&#x6709;&#x6548;&#x7684;&#x65B9;&#x7A0B;&#x6570;&#xFF0C;&#x56E0;&#x6B64;<script type="math/tex; ">\mathcal{H}</script>&#x5F53;&#x4E2D;&#x6BCF;&#x4E00;&#x4E2A;<script type="math/tex; ">h</script>&#x4F5C;&#x7528;&#x4E8E;<script type="math/tex; ">\mathcal{D}</script>&#x90FD;&#x80FD;&#x7B97;&#x51FA;&#x4E00;&#x4E2A;<script type="math/tex; ">E_{in}</script>&#x6765;&#xFF0C;&#x4E00;&#x5171;&#x80FD;&#x6709;<script type="math/tex; ">m_{\mathcal{H}}(N)</script>&#x4E2A;&#x4E0D;&#x540C;&#x7684;<script type="math/tex; ">E_{in}</script>&#xFF0C;&#x662F;&#x4E00;&#x4E2A;&#x6709;&#x9650;&#x7684;&#x6570;&#x3002;&#x4F46;&#x5728;out of sample&#x7684;&#x4E16;&#x754C;&#x91CC;(&#x603B;&#x4F53;)&#xFF0C;&#x5F80;&#x5F80;&#x5B58;&#x5728;&#x65E0;&#x9650;&#x591A;&#x4E2A;&#x70B9;&#xFF0C;&#x5E73;&#x9762;&#x4E2D;&#x4EFB;&#x610F;&#x4E00;&#x6761;&#x76F4;&#x7EBF;&#xFF0C;&#x968F;&#x4FBF;&#x8F6C;&#x4E00;&#x8F6C;&#x52A8;&#x4E00;&#x52A8;&#xFF0C;&#x5C31;&#x80FD;&#x4EA7;&#x751F;&#x4E00;&#x4E2A;&#x4E0D;&#x540C;&#x7684;<script type="math/tex; ">E_{out}</script>&#x6765;&#x3002;<script type="math/tex; ">E_{in}</script>&#x7684;&#x53EF;&#x80FD;&#x53D6;&#x503C;&#x662F;&#x6709;&#x9650;&#x4E2A;&#x7684;&#xFF0C;&#x800C;<script type="math/tex; ">E_{out}</script>&#x7684;&#x53EF;&#x80FD;&#x53D6;&#x503C;&#x662F;&#x65E0;&#x9650;&#x7684;&#xFF0C;&#x65E0;&#x6CD5;&#x76F4;&#x63A5;&#x5957;&#x7528;union bound&#xFF0C;&#x6211;&#x4EEC;&#x5F97;&#x5148;&#x628A;&#x4E0A;&#x9762;&#x90A3;&#x4E2A;&#x65E0;&#x9650;&#x591A;&#x79CD;&#x53EF;&#x80FD;&#x7684;<script type="math/tex; ">E_{out}</script>&#x6362;&#x6389;&#x3002;&#x90A3;&#x4E48;&#x5982;&#x4F55;&#x628A;<script type="math/tex; ">E_{out}</script>&#x53D8;&#x6210;&#x6709;&#x9650;&#x4E2A;&#x5462;&#xFF1F;<br>&#x2003;&#x2003;&#x5047;&#x8BBE;&#x6211;&#x4EEC;&#x80FD;&#x4ECE;&#x603B;&#x4F53;&#x5F53;&#x4E2D;&#x518D;&#x83B7;&#x5F97;&#x4E00;&#x4EFD;<script type="math/tex; ">N</script>&#x7B14;&#x7684;&#x9A8C;&#x8BC1;&#x8D44;&#x6599;(verification set)<script type="math/tex; ">\mathcal{D}'</script>&#xFF0C;&#x5BF9;&#x4E8E;&#x4EFB;&#x4F55;&#x4E00;&#x4E2A;<script type="math/tex; ">h</script>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x7B97;&#x51FA;&#x5B83;&#x4F5C;&#x7528;&#x4E8E;<script type="math/tex; ">\mathcal{D}'</script>&#x4E0A;&#x7684;<script type="math/tex; ">E_{in}^{'}</script>&#xFF0C;&#x7531;&#x4E8E;<script type="math/tex; ">\mathcal{D}'</script>&#x4E5F;&#x662F;&#x603B;&#x4F53;&#x7684;&#x4E00;&#x4E2A;&#x6837;&#x672C;&#xFF0C;&#x56E0;&#x6B64;&#x5982;&#x679C;<script type="math/tex; ">E_{in}</script>&#x548C;<script type="math/tex; ">E_{out}</script>&#x79BB;&#x5F88;&#x8FDC;&#xFF0C;&#x6709;&#x975E;&#x5E38;&#x5927;&#x7684;&#x53EF;&#x80FD;<script type="math/tex; ">E_{in}</script>&#x548C;<script type="math/tex; ">E_{in}^{'}</script>&#x4E5F;&#x4F1A;&#x79BB;&#x5F97;&#x6BD4;&#x8F83;&#x8FDC;&#x3002; </p>
+<p><img src="images/pdf_of_ein.png" alt=""></p>
+<p>&#x2003;&#x2003;&#x4E8B;&#x5B9E;&#x4E0A;&#x5F53;N&#x5F88;&#x5927;&#x7684;&#x65F6;&#x5019;&#xFF0C;<script type="math/tex; ">E_{in}</script>&#x548C;<script type="math/tex; ">E_{in}^{'}</script>&#x53EF;&#x4EE5;&#x770B;&#x505A;&#x670D;&#x4ECE;&#x4EE5;<script type="math/tex; ">E_{out}</script>&#x4E3A;&#x4E2D;&#x5FC3;&#x7684;&#x8FD1;&#x4F3C;&#x6B63;&#x6001;&#x5206;&#x5E03;(Gaussian)&#xFF0C;&#x5982;&#x4E0A;&#x56FE;&#x3002;<script type="math/tex; ">[|E_{in}-E_{out}|\text{ is large}]</script>&#x8FD9;&#x4E2A;&#x4E8B;&#x4EF6;&#x53D6;&#x51B3;&#x4E8E;<script type="math/tex; ">\mathcal{D}</script>&#xFF0C;&#x5982;&#x679C;<script type="math/tex; ">[|E_{in}-E_{out}|\text{ is large}]</script>&#xFF0C;&#x5219;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x4ECE;&#x603B;&#x4F53;&#x4E2D;&#x518D;&#x62BD;&#x4E00;&#x4EFD;<script type="math/tex; ">\mathcal{D}^{'}</script>&#x51FA;&#x6765;&#xFF0C;&#x6709;50%&#x5DE6;&#x53F3;&#x7684;&#x53EF;&#x80FD;&#x6027;&#x4F1A;&#x53D1;&#x751F;<script type="math/tex; ">[|E_{in}-E_{in}^{'}|\text{ is large}]</script>&#xFF0C;&#x8FD8;&#x6709;&#x5927;&#x7EA6;50%&#x7684;&#x53EF;&#x80FD;<script type="math/tex; ">[|E_{in}-E_{in}^{'}|\text{ is not large}]</script>&#x3002;<br>&#x2003;&#x2003;&#x56E0;&#x6B64;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5F97;&#x5230;<script type="math/tex; ">\mathbb{P}[|E_{in}-E_{out}|\text{ is large}]</script>&#x7684;&#x4E00;&#x4E2A;&#x5927;&#x6982;&#x7684;&#x4E0A;&#x754C;&#x53EF;&#x4EE5;&#x662F;<script type="math/tex; ">2\mathbb{P}[|E_{in}-E_{in}^{'}|\text{ is large}]</script>&#xFF0C;&#x4EE5;&#x6B64;&#x4E3A;&#x542F;&#x53D1;&#x53BB;&#x5BFB;&#x627E;&#x4E8C;&#x8005;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;&#x3002;</p>
+<p>&#x2003;&#x2003;&#x5F15;&#x7406;&#xFF1A;</p>
+<p><script type="math/tex; mode=display">
+(1-2e^{-\frac{1}{2}\epsilon^2N})\mathbb{P}[\underset{h\in \mathcal{H}}{sup}\ |E_{in}(h)-E_{out}(h)| \gt \epsilon]\leq \mathbb{P}[\underset{h\in \mathcal{H}}{sup}\ |E_{in}(h)-E_{in}^{'}(h)| \gt \frac{\epsilon}{2}]
+</script></p>
+<p>&#x2003;&#x2003;&#x4E0A;&#x9762;&#x7684;&#x4E0D;&#x7B49;&#x5F0F;&#x662F;&#x4ECE;&#x4F55;&#x800C;&#x6765;&#x7684;&#x5462;&#xFF1F;&#x6211;&#x4EEC;&#x5148;&#x4ECE;RHS&#x51FA;&#x53D1;&#xFF1A;</p>
+<p><script type="math/tex; mode=display">
+\begin{aligned}
+&\;\;\;\,\mathbb{P}[\underset{h\in \mathcal{H}}{sup}\ |E_{in}(h)-E_{in}^{'}(h)| \gt \frac{\epsilon}{2}] \\\
+&\geq \mathbb{P}[\underset{h\in \mathcal{H}}{sup}\ |E_{in}(h)-E_{in}^{'}(h)| \gt \frac{\epsilon}{2} \mathbf{\;and\;} \underset{h\in \mathcal{H}}{sup}\ |E_{in}(h)-E_{out}(h)| \gt \epsilon] \\\
+&=\mathbb{P}[\underset{h\in \mathcal{H}}{sup}\ |E_{in}(h)-E_{out}(h)| \gt \epsilon] \;\times \\\
+&\;\;\;\,\mathbb{P}[\underset{h\in \mathcal{H}}{sup}\ |E_{in}(h)-E_{in}^{'}(h)| \gt \frac{\epsilon}{2}\;\;|\;\;\underset{h\in \mathcal{H}}{sup}\ |E_{in}(h)-E_{out}(h)| \gt \epsilon] \\\
+&\;\;\;\,\text{(注：sup - 上确界，最小上界。)}
+\end{aligned}
+</script></p>
+<p>&#x2003;&#x2003;&#x4E0A;&#x5F0F;&#x7B2C;&#x4E8C;&#x884C;&#x7684;&#x4E0D;&#x7B49;&#x53F7;&#x53EF;&#x4EE5;&#x7531;<script type="math/tex; ">\mathbb{P}[\mathcal{B}_1]\geq \mathbb{P}[\mathcal{B}_1 \textbf{ and } \mathcal{B}_2]</script>&#x5F97;&#x5230;&#xFF0C;&#x7B2C;&#x4E09;&#x3001;&#x56DB;&#x884C;&#x5219;&#x662F;&#x8D1D;&#x53F6;&#x65AF;&#x516C;&#x5F0F;&#xFF0C;&#x8054;&#x5408;&#x6982;&#x7387;&#x7B49;&#x4E8E;&#x5148;&#x9A8C;&#x6982;&#x7387;&#x4E0E;&#x6761;&#x4EF6;&#x6982;&#x7387;&#x4E4B;&#x79EF;&#x3002;</p>
+<p>&#x2003;&#x2003;&#x4E0B;&#x9762;&#x6765;&#x770B;&#x770B;&#x4E0D;&#x7B49;&#x5F0F;&#x7684;&#x6700;&#x540E;&#x4E00;&#x9879;<script type="math/tex; ">\mathbb{P}[\underset{h\in \mathcal{H}}{sup}\ |E_{in}(h)-E_{in}^{'}(h)| \gt \frac{\epsilon}{2}\;\;|\;\;\underset{h\in \mathcal{H}}{sup}\ |E_{in}(h)-E_{out}(h)| \gt \epsilon]</script>&#x3002;&#x5BF9;&#x4E8E;&#x4E00;&#x4E2A;&#x56FA;&#x5B9A;&#x7684;data set <script type="math/tex; ">\mathcal{D}</script>&#x6765;&#x8BF4;&#xFF0C;&#x6211;&#x4EEC;&#x4EFB;&#x9009;&#x4E00;&#x4E2A;<script type="math/tex; ">h^{*}</script>&#x4F7F;&#x5F97;<script type="math/tex; ">|E_{in}(h^{*})-E_{out}(h^{*})|\gt \epsilon</script>&#xFF0C;&#x6CE8;&#x610F;&#x5230;&#x8FD9;&#x4E2A;<script type="math/tex; ">h^{*}</script>&#x53EA;&#x4F9D;&#x8D56;&#x4E8E;<script type="math/tex; ">\mathcal{D}</script>&#x800C;&#x4E0D;&#x4F9D;&#x8D56;&#x4E8E;<script type="math/tex; ">\mathcal{D}^{'}</script>&#x5662;&#xFF0C;&#x5BF9;&#x4E8E;<script type="math/tex; ">\mathcal{D}^{'}</script>&#x6765;&#x8BF4;&#x53EF;&#x4EE5;&#x8BA4;&#x4E3A;&#x8FD9;&#x4E2A;<script type="math/tex; ">h^{*}</script> is forced to pick out&#x3002;  </p>
+<p>&#x2003;&#x2003;&#x7531;&#x4E8E;<script type="math/tex; ">h^{*}</script>&#x662F;&#x5BF9;&#x4E8E;<script type="math/tex; ">\mathcal{D}</script>&#x6765;&#x8BF4;&#x6EE1;&#x8DB3;<script type="math/tex; ">|E_{in}-E_{out}|\gt \epsilon</script>&#x7684;&#x4EFB;&#x610F;&#x4E00;&#x4E2A;hypothesis&#xFF0C;&#x56E0;&#x6B64;&#x53EF;&#x4EE5;&#x628A;&#x5F0F;&#x5B50;&#x4E2D;&#x7684;&#x4E0A;&#x786E;&#x754C;(sup)&#x5148;&#x53BB;&#x6389;&#x3002;</p>
+<p><script type="math/tex; mode=display">
+\begin{aligned}
+&\;\;\;\,\mathbb{P}[\underset{h\in \mathcal{H}}{sup}\ |E_{in}(h)-E_{in}^{'}(h)| \gt \frac{\epsilon}{2}\;\;|\;\;\underset{h\in \mathcal{H}}{sup}\ |E_{in}(h)-E_{out}(h)| \gt \epsilon] \\\
+&\geq \mathbb{P}[|E_{in}(h^{*})-E_{in}^{'}(h^{*})| \gt \frac{\epsilon}{2}\;\;|\;\;\underset{h\in \mathcal{H}}{sup}\ |E_{in}(h)-E_{out}(h)| \gt \epsilon]
+\end{aligned}
+</script></p>
+<p>&#x2003;&#x2003;&#x8FD9;&#x91CC;&#x5C31;&#x8981;&#x7A0D;&#x5FAE;&#x51FA;&#x52A8;&#x4E00;&#x4E0B;&#x524D;&#x4EBA;&#x7684;&#x667A;&#x6167;&#x4E86;&#xFF1A;</p>
+<p><script type="math/tex; mode=display">
+\left.\begin{matrix}
+|E_{in}^{'} - E_{out}|\leq \frac{\epsilon}{2}\\\
+|E_{in}-E_{out}| \gt \epsilon
+\end{matrix}\right\}
+\Rightarrow
+|E_{in}-E_{in}^{'}| \gt \frac{\epsilon}{2}
+</script></p>
+<p>&#x2003;&#x2003;&#x4E3A;&#x4E86;&#x76F4;&#x89C2;&#x4E00;&#x70B9;<script type="math/tex; ">h^{*}</script>&#x5C31;&#x4E0D;&#x5199;&#x4E86;&#x3002;&#x7ECF;&#x8FC7;&#x5404;&#x79CD;&#x53BB;&#x6389;&#x7EDD;&#x5BF9;&#x503C;&#x7B26;&#x53F7;&#x53C8;&#x52A0;&#x4E0A;&#x7EDD;&#x5BF9;&#x503C;&#x7B26;&#x53F7;&#x7684;&#x8FD0;&#x7B97;&#xFF0C;&#x53EF;&#x4EE5;&#x53D1;&#x73B0;LHS&#x7684;&#x4E24;&#x4E2A;&#x4E0D;&#x7B49;&#x5F0F;&#x662F;RHS&#x90A3;&#x4E2A;&#x4E0D;&#x7B49;&#x5F0F;&#x7684;&#x5145;&#x5206;&#x975E;&#x5FC5;&#x8981;&#x6761;&#x4EF6;&#x3002;&#x800C;LHS&#x7B2C;&#x4E8C;&#x4E2A;&#x4E0D;&#x7B49;&#x5F0F;&#x662F;&#x5DF2;&#x77E5;&#x7684;&#xFF0C;&#x5BF9;&#x4E8E;<script type="math/tex; ">h^{*}</script>&#x5FC5;&#x6210;&#x7ACB;&#x7684;&#x3002;&#x56E0;&#x6B64;&#x6211;&#x4EEC;&#x62FF;LHS&#x8FD9;&#x4E2A;&#x5145;&#x5206;&#x975E;&#x5FC5;&#x8981;&#x6761;&#x4EF6;&#x53BB;&#x66FF;&#x6362;RHS&#x8FD9;&#x4E2A;&#x4E0D;&#x7B49;&#x5F0F;&#xFF0C;&#x7EE7;&#x7EED;&#x524D;&#x9762;&#x7684;&#x4E0D;&#x7B49;&#x5F0F;&#xFF1A;</p>
+<p><script type="math/tex; mode=display">
+\begin{aligned}
+&\;\;\;\,\mathbb{P}[\underset{h\in \mathcal{H}}{sup}\ |E_{in}(h)-E_{in}^{'}(h)| \gt \frac{\epsilon}{2}\;\;|\;\;\underset{h\in \mathcal{H}}{sup}\ |E_{in}(h)-E_{out}(h)| \gt \epsilon] \\\
+&\geq \mathbb{P}[|E_{in}(h^{*})-E_{in}^{'}(h^{*})| \gt \frac{\epsilon}{2}\;\;|\;\;\underset{h\in \mathcal{H}}{sup}\ |E_{in}(h)-E_{out}(h)| \gt \epsilon] \\\
+&\geq \mathbb{P}[|E_{in}^{'}(h^{*})-E_{out}(h^{*})| \leq \frac{\epsilon}{2}\;\;|\;\;\underset{h\in \mathcal{H}}{sup}\ |E_{in}(h)-E_{out}(h)| \gt \epsilon] \\\
+&\geq 1-2e^{-\frac{1}{2}\epsilon^2N}
+\end{aligned}
+</script></p>
+<p>&#x2003;&#x2003;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x4E0D;&#x7B49;&#x53F7;&#x52A8;&#x7528;&#x4E86;Hoeffding Inequality&#xFF1A;</p>
+<p><script type="math/tex; mode=display">
+\begin{aligned}
+&\;\;\;\,\mathbb{P}[|...|\gt \epsilon]\leq 2Mexp(-2\epsilon^2N) \\\
+&\Leftrightarrow 1-\mathbb{P}[|...|\gt \epsilon]\geq 1-2Mexp(-2\epsilon^2N) \\\
+&\Leftrightarrow \mathbb{P}[|...|\leq \epsilon]\geq 1-2Mexp(-2\epsilon^2N)
+\end{aligned}
+</script></p>
+<p>&#x2003;&#x2003;&#x4E4B;&#x524D;&#x8BF4;&#x8FC7;&#x5BF9;&#x4E8E;<script type="math/tex; ">\mathcal{D}^{'}</script>&#x6765;&#x8BF4;&#xFF0C;<script type="math/tex; ">h^{*}</script> is forced to pick out&#xFF0C;&#x56E0;&#x6B64;<script type="math/tex; ">M=1</script>&#x3002;&#x63A5;&#x7740;&#x628A;<script type="math/tex; ">\epsilon</script>&#x66FF;&#x6362;&#x4E3A;<script type="math/tex; ">\frac{\epsilon}{2}</script>&#xFF0C;&#x5C31;&#x6210;&#x4E86;<script type="math/tex; ">\mathbb{P}[|...|\lt \frac{\epsilon}{2}]\geq 2exp(-\frac{1}{2}\epsilon^2N)</script>&#x3002;&#x5219;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5F97;&#x5230;&#x5F15;&#x7406;&#x4E2D;&#x7684;&#x4E0D;&#x7B49;&#x5F0F;&#x3002;</p>
+<p>&#x2003;&#x2003;&#x5BF9;&#x4E8E;<script type="math/tex; ">e^{-\frac{1}{2}e^2N}</script>&#xFF0C;&#x4E00;&#x4E2A;&#x6BD4;&#x8F83;&#x5408;&#x7406;&#x7684;&#x8981;&#x6C42;&#x662F;<script type="math/tex; ">e^{-\frac{1}{2}\epsilon^2N}\lt \frac{1}{4}</script>&#xFF0C;&#x8B6C;&#x5982;&#x6211;&#x4EEC;&#x6709;400&#x7B14;&#x8D44;&#x6599;&#xFF0C;&#x60F3;&#x8981;<script type="math/tex; ">E_{in}</script>&#x548C;<script type="math/tex; ">E_{out}</script>&#x76F8;&#x5DEE;&#x4E0D;&#x8D85;&#x8FC7;0.1&#x3002;&#x6CE8;&#x610F;&#x5230;&#x8FD9;&#x53EA;&#x662F;&#x4E00;&#x4E2A;bound&#xFF0C;&#x53EA;&#x8981;&#x8981;&#x6C42;&#x4E0D;&#x592A;&#x8FC7;&#x5206;&#xFF0C;&#x4E5F;&#x4E0D;&#x80FD;&#x592A;&#x5BBD;&#x677E;&#x5373;&#x53EF;&#xFF0C;&#x9002;&#x5F53;&#x7684;&#x5BBD;&#x677E;&#x4E00;&#x70B9;&#x662F;OK&#x7684;&#x3002;&#x5F53;&#x7136;&#x8FD9;&#x91CC;&#x4E5F;&#x662F;&#x60F3;&#x8DDF;&#x4E4B;&#x524D;&#x6240;&#x8BF4;&#x7684; &quot;<script type="math/tex; ">\mathbb{P}[|E_{in}-E_{out}|\text{ is large}]</script>&#x7684;&#x4E00;&#x4E2A;&#x5927;&#x6982;&#x7684;&#x4E0A;&#x754C;&#x53EF;&#x4EE5;&#x662F;<script type="math/tex; ">2\mathbb{P}[|E_{in}-E_{in}^{'}|\text{ is large}]</script>&quot; &#x5F53;&#x4E2D;&#x7684;2&#x500D;&#x6709;&#x6240;&#x7ED3;&#x5408;&#x3002;</p>
+<p>&#x2003;&#x2003;&#x6240;&#x4EE5;&#x5C31;&#x6709;<script type="math/tex; ">1-2e^{-\frac{1}{2}e^2N}\gt \frac{1}{2}</script>&#x3002;&#x5E26;&#x56DE;&#x5F15;&#x7406;&#xFF0C;&#x53EF;&#x5F97;&#xFF1A;</p>
+<p><script type="math/tex; mode=display">
+\mathbb{P}[\underset{h\in \mathcal{H}}{sup}\ |E_{in}(h)-E_{out}(h)| \gt \epsilon]\leq 2\,\mathbb{P}[\underset{h\in \mathcal{H}}{sup}\ |E_{in}(h)-E_{in}^{'}(h)| \gt \frac{\epsilon}{2}]
+</script></p>
+<p>&#x2003;&#x2003;&#x8FD9;&#x6837;&#x4E00;&#x6765;&#x6211;&#x4EEC;&#x5C31;&#x628A;&#x65E0;&#x9650;&#x591A;&#x79CD;&#x7684;<script type="math/tex; ">E_{out}</script>&#x6362;&#x6210;&#x4E86;&#x6709;&#x9650;&#x591A;&#x79CD;&#x7684;<script type="math/tex; ">E_{in}</script>&#xFF0C;&#x56E0;&#x4E3A;<script type="math/tex; ">\mathcal{D}</script>&#x4E0E;<script type="math/tex; ">\mathcal{D}^{'}</script>&#x7684;&#x5927;&#x5C0F;&#x76F8;&#x7B49;&#xFF0C;&#x90FD;&#x4E3A;<script type="math/tex; ">N</script>&#xFF0C;&#x56E0;&#x6B64;&#x6211;&#x4EEC;&#x624B;&#x4E2D;&#x4E00;&#x5171;&#x6709;<script type="math/tex; ">2N</script>&#x7B14;&#x6570;&#x636E;&#xFF0C;&#x8FD9;&#x6837;<script type="math/tex; ">\mathcal{H}</script>&#x4F5C;&#x7528;&#x4E8E;<script type="math/tex; ">\mathcal{D}+\mathcal{D}^{'}</script>&#x6700;&#x591A;&#x80FD;&#x4EA7;&#x751F;<script type="math/tex; ">m_{\mathcal{H}}(2N)</script>&#x79CD;dichotomies&#x3002;&#x6B64;&#x65F6;&#x6211;&#x4EEC;&#x9488;&#x5BF9;&#x4E0A;&#x9762;&#x7684;&#x4E0D;&#x7B49;&#x5F0F;&#xFF0C;&#x5C31;&#x53C8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;union bound&#x4E86;&#x3002;(&#x5173;&#x4E8E;union bound&#xFF0C;&#x53EF;&#x4EE5;&#x53C2;&#x8003;&#x4E0A;&#x4E00;&#x7BC7;<a href="http://beader.me/2014/01/23/vc-dimension-one/" target="_blank">VC Dimension, Part I</a>)</p>
+<p><script type="math/tex; mode=display">
+\begin{aligned}
+\mathbb{P}[BAD] &\leq 2\,\mathbb{P}[\underset{h\in \mathcal{H}}{sup}\ |E_{in}(h)-E_{in}^{'}(h)| \gt \frac{\epsilon}{2}] \\\
+&\leq 2\,m_{\mathcal{H}}(2N)\,\mathbb{P}[\text{fixed } \textit{h} \text{ s.t. } |E_{in}(h)-E_{in}^{'}(h)| \gt \frac{\epsilon}{2}] \\\
+&\text{(用固定的hypothesis去看}E_{in}与E_{in}^{'}\text{的差别。)}
+\end{aligned}
+</script></p>
+<p>&#x2003;&#x2003;&#x524D;&#x9762;&#x7684;&#x52A8;&#x4F5C;&#x76F8;&#x5F53;&#x4E8E;&#x5148;&#x4ECE;&#x603B;&#x4F53;&#x4E2D;&#x62BD;&#x51FA;<script type="math/tex; ">2N</script>&#x7B14;&#x6570;&#x636E;&#xFF0C;&#x628A;&#x8FD9;<script type="math/tex; ">2N</script>&#x7B14;&#x6570;&#x636E;&#x5F53;&#x6210;&#x4E00;&#x4E2A;&#x6BD4;&#x8F83;&#x5C0F;&#x7684;bin&#xFF0C;&#x7136;&#x540E;&#x5728;&#x8FD9;&#x4E2A;bin&#x4E2D;&#x62BD;&#x53D6;<script type="math/tex; ">N</script>&#x7B14;&#x4F5C;&#x4E3A;<script type="math/tex; ">\mathcal{D}</script>&#xFF0C;&#x5269;&#x4E0B;&#x7684;<script type="math/tex; ">N</script>&#x7B14;&#x4F5C;&#x4E3A;<script type="math/tex; ">\mathcal{D}^{'}</script>&#xFF0C;<script type="math/tex; ">\mathcal{D}</script>&#x548C;<script type="math/tex; ">\mathcal{D}^{'}</script>&#x4E4B;&#x95F4;&#x662F;&#x6CA1;&#x6709;&#x4EA4;&#x96C6;&#x7684;&#x3002;&#x5728;&#x6211;&#x4EEC;&#x60F3;&#x8C61;&#x51FA;&#x6765;&#x7684;&#x8FD9;&#x4E2A;small bin&#x5F53;&#x4E2D;&#xFF0C;&#x6574;&#x4E2A;bin&#x7684;&#x9519;&#x8BEF;&#x7387;&#x4E3A;<script type="math/tex; ">\frac{E_{in}+E_{out}}{2}</script>&#xFF0C;&#x53C8;&#x56E0;&#x4E3A;&#xFF1A;</p>
+<p><script type="math/tex; mode=display">
+|E_{in}-E_{in}^{'}|\gt \frac{\epsilon}{2} \Leftrightarrow |E_{in} - \frac{E_{in}+E_{in}^{'}}{2}|\gt \frac{\epsilon}{4}
+</script></p>
+<p>&#x2003;&#x2003;&#x6240;&#x4EE5;&#x7528;RHS&#x66FF;&#x6362;LHS&#x4E4B;&#x540E;&#xFF0C;&#x524D;&#x9762;&#x4E0D;&#x7B49;&#x5F0F;&#x5C31;&#x53C8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;Hoeffding inequality&#x4E86;&#xFF1A;</p>
+<p><script type="math/tex; mode=display">
+\begin{aligned}
+\mathbb{P}[BAD]
+&\leq 2\,m_{\mathcal{H}}(2N)\,\mathbb{P}[\text{fixed } \textit{h} \text{ s.t. } |E_{in}(h)-E_{in}^{'}(h)| \gt \frac{\epsilon}{2}] \\\
+&=2\,m_{\mathcal{H}}(2N)\,\mathbb{P}[\text{fixed } \textit{h} \text{ s.t. } |E_{in}(h)-\frac{E_{in}(h)+E_{in}^{'}(h)}{2}| \gt \frac{\epsilon}{4}]\\\
+&\;\;\;\text{(Hoeffding without replacement)} \\\
+&\leq 2\,m_{\mathcal{H}}(2N)\cdot 2\,exp(-2(\frac{\epsilon}{4})^2N)
+\end{aligned}
+</script></p>
+<p>&#x2003;&#x2003;&#x8FD9;&#x4E0A;&#x9762;&#x5343;&#x8F9B;&#x4E07;&#x82E6;&#x5F97;&#x51FA;&#x6765;&#x7684;&#x8FD9;&#x4E2A;bound&#x5C31;&#x53EB;&#x505A;Vapnik-Chervonenkis (VC) bound&#xFF1A;</p>
+<p><script type="math/tex; mode=display">
+\begin{aligned}
+\mathbb{P}[BAD] &= \mathbb{P}[\exists h \in \mathcal{H}\text{ s.t. } |E_{in}(h)-E_{out}(h)|\gt \epsilon] \\\
+&\leq 4m_{\mathcal{H}}(2N)exp(-\frac{1}{8}\epsilon^2N)
+\end{aligned}
+</script></p>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../section2/vc-dimension-one.html" class="navigation navigation-prev " aria-label="Previous page: VC Dimension Part I"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../section2/vc-dimension-three.html" class="navigation navigation-next " aria-label="Next page: VC Dimension Part III"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="http://cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-mathjax-update/plugin.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-disqus/plugin.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-github/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"fontSettings":{"theme":null,"family":"sans","size":2},"disqus":{"shortName":"mlnotebook"},"github":{"url":"https://github.com/beader/mlnotebook"},"mathjax":{}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>
